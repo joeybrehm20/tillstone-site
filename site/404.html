@@ -692,8 +692,8 @@
       <div style="border:1px solid #33312A;background:#FFFFFF;display:flex;flex-direction:column;{{ span2 }}">
         <div style="border-bottom:1px solid #33312A;background:#F5F2ED;height:300px;overflow:hidden;position:relative;padding:0;box-sizing:border-box;">
           <sc-if value="{{ photo2is0 }}" hint-placeholder-val="{{ true }}"><img src="/assets/img/img-15.png" alt="River Mews Estates site plan" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
-          <sc-if value="{{ photo2is1 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-05.jpg" alt="River Mews Estates grading progress aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
-          <sc-if value="{{ photo2is2 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-10.jpg" alt="River Mews Estates mass grading" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
+          <sc-if value="{{ photo2is1 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-05.jpg" alt="River Mews Estates mass grading" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
+          <sc-if value="{{ photo2is2 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
           <div style="position:absolute;bottom:0;right:0;display:flex;background:#33312A;">
             <button type="button" sc-camel-on-click="{{ setPhoto2a }}" style="background:{{ p2a }};border:0;border-right:1px solid #5A564C;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">01</button>
             <button type="button" sc-camel-on-click="{{ setPhoto2b }}" style="background:{{ p2b }};border:0;border-right:1px solid #5A564C;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">02</button>
@@ -788,9 +788,9 @@
       <div style="border:1px solid #33312A;background:#FFFFFF;display:flex;flex-direction:column;{{ span5 }}">
         <div style="border-bottom:1px solid #33312A;background:#F5F2ED;height:300px;overflow:hidden;position:relative;padding:0;box-sizing:border-box;">
           <sc-if value="{{ photo5is0 }}" hint-placeholder-val="{{ true }}"><img src="/assets/img/img-11.jpg" alt="Carolina Springs master plan" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;"></sc-if>
-          <sc-if value="{{ photo5is1 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-01.jpg" alt="Carolina Springs townhomes aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
+          <sc-if value="{{ photo5is1 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-01.jpg" alt="Carolina Springs playground" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
           <sc-if value="{{ photo5is2 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-06.jpg" alt="Carolina Springs pool and clubhouse" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
-          <sc-if value="{{ photo5is3 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-04.jpg" alt="Carolina Springs playground" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
+          <sc-if value="{{ photo5is3 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
           <div style="position:absolute;bottom:0;right:0;display:flex;background:#33312A;">
             <button type="button" sc-camel-on-click="{{ setPhoto5a }}" style="background:{{ p5a }};border:0;border-right:1px solid #5A564C;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">01</button>
             <button type="button" sc-camel-on-click="{{ setPhoto5b }}" style="background:{{ p5b }};border:0;border-right:1px solid #5A564C;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">02</button>
@@ -1132,7 +1132,7 @@ class Component extends DCLogic {
         return acc;
       })(),
       ...(() => {
-        const labels = ['EXHIBIT — SITE PLAN','SITE — GRADING PROGRESS AERIAL','SITE — MASS GRADING'];
+        const labels = ['EXHIBIT — SITE PLAN','SITE — MASS GRADING','SITE — GRADING PROGRESS AERIAL'];
         const i = this.state.photo2 || 0;
         const acc = { photo2label: labels[i] };
         labels.forEach((_, k) => {
@@ -1154,7 +1154,7 @@ class Component extends DCLogic {
         return acc;
       })(),
       ...(() => {
-        const labels = ['EXHIBIT — MASTER PLAN','TOWNHOMES — AERIAL','AMENITY — POOL','AMENITY — PLAYGROUND'];
+        const labels = ['EXHIBIT — MASTER PLAN','AMENITY — PLAYGROUND','AMENITY — POOL','TOWNHOMES — AERIAL'];
         const i = this.state.photo5 || 0;
         const acc = { photo5label: labels[i] };
         labels.forEach((_, k) => {
