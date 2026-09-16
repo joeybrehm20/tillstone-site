@@ -1185,4 +1185,57 @@ class Component extends DCLogic {
 </script>
 
 
+<script>
+// Stat counters: the big figures ($750M+, 10,000+, 3,000+) run up from zero the first
+// time they scroll into view. Formatting (prefix, commas, suffix) is read from the text
+// itself, so editing a number in the markup is all that's needed. Reduced-motion users
+// see the final values immediately.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var PATTERN = /^([^\d]*)([\d,]+)(.*)$/;
+  var seen = new WeakSet();
+
+  function animate(el) {
+    var m = PATTERN.exec(el.textContent.trim());
+    if (!m) return;
+    var prefix = m[1], target = parseInt(m[2].replace(/,/g, ''), 10), suffix = m[3];
+    if (!target || target < 100) return;
+    if (reduce) return;
+    var duration = 1600, start = null;
+    function frame(now) {
+      if (start === null) start = now;
+      var t = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - t, 4);
+      el.textContent = prefix + Math.round(target * eased).toLocaleString('en-US') + suffix;
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    el.textContent = prefix + '0' + suffix;
+    requestAnimationFrame(frame);
+  }
+
+  function arm() {
+    var els = Array.prototype.filter.call(document.querySelectorAll('[style*="font-size: 52px"]'), function (el) {
+      var m = PATTERN.exec(el.textContent.trim()); return !seen.has(el) && m && parseInt(m[2].replace(/,/g, ""), 10) >= 100;
+    });
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting || seen.has(e.target)) return;
+        seen.add(e.target);
+        io.unobserve(e.target);
+        animate(e.target);
+      });
+    }, { threshold: 0.6 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  // The page body is rendered by the runtime after load; arm once the stats exist.
+  var tries = 0;
+  var poll = setInterval(function () {
+    tries++;
+    if (document.querySelector('[style*="font-size: 52px"]') || tries > 100) { clearInterval(poll); arm(); }
+  }, 50);
+})();
+</script>
 </body></html>
