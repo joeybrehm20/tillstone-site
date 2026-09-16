@@ -1212,21 +1212,31 @@ class Component extends DCLogic {
     requestAnimationFrame(frame);
   }
 
+  // Trigger rule: never before 2s after load (the arrival sequence owns that window),
+  // and only once the visitor has started to scroll (or the stats scroll into view on
+  // small screens). Counts each figure once.
+  var ready = false, scrolled = false, pending = [];
+  setTimeout(function () { ready = true; flush(); }, 2000);
+  window.addEventListener("scroll", function () { scrolled = true; flush(); }, { passive: true });
+
+  function inView(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1;
+  }
+  function flush() {
+    if (!ready || !scrolled) return;
+    pending = pending.filter(function (el) {
+      if (!inView(el)) return true;
+      seen.add(el); animate(el); return false;
+    });
+  }
+
   function arm() {
     var els = Array.prototype.filter.call(document.querySelectorAll('[style*="font-size: 52px"]'), function (el) {
       var m = PATTERN.exec(el.textContent.trim()); return !seen.has(el) && m && parseInt(m[2].replace(/,/g, ""), 10) >= 100;
     });
-    if (!els.length) return;
-    if (!('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting || seen.has(e.target)) return;
-        seen.add(e.target);
-        io.unobserve(e.target);
-        animate(e.target);
-      });
-    }, { threshold: 0.6 });
-    els.forEach(function (el) { io.observe(el); });
+    pending = pending.concat(els);
+    flush();
   }
 
   // The page body is rendered by the runtime after load; arm once the stats exist.
