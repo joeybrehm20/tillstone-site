@@ -352,6 +352,7 @@
   @media (max-width: 820px) {
     /* Containers: tighter gutters and vertical rhythm */
     [style*="max-width: 1240px"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [style*="max-width: 1240px"][style*="padding: 168px"],
     [style*="max-width: 1240px"][style*="padding: 104px"],
     [style*="max-width: 1240px"][style*="padding: 112px"],
     [style*="max-width: 1240px"][style*="padding: 96px"],
@@ -380,9 +381,13 @@
     /* Grids collapse to a single column */
     [style*="grid-template-columns:"] { grid-template-columns: 1fr !important; gap: 28px !important; }
     [style*="grid-template-columns: 1fr 1fr 1fr"] > [style*="border-left"] { border-left: 0 !important; border-right: 0 !important; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
-    [style*="grid-template-columns: 1fr 1fr 1fr"] > [style*="padding: 54px"] { padding-top: 28px !important; padding-bottom: 28px !important; }
-    [style*="grid-template-columns: 120px 1fr 40px"] { grid-template-columns: 52px 1fr 28px !important; gap: 14px !important; padding-top: 26px !important; padding-bottom: 26px !important; }
-    [style*="grid-template-columns: 120px 1fr 40px"] > [style*="font-size: 52px"] { font-size: 30px !important; }
+    [style*="grid-template-columns: 1fr 1fr 1fr"] > [style*="padding: 48px"] { padding: 26px 0 !important; }
+    [style*="grid-template-columns: 1fr 1fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; gap: 28px 24px !important; }
+    [style*="grid-template-columns: 48px 1fr 40px"] { grid-template-columns: 28px 1fr 24px !important; gap: 16px !important; padding-top: 24px !important; padding-bottom: 24px !important; }
+    main [style*="rgb(51, 49, 42)"] [style*="border-right"] { border-right: 0 !important; border-bottom: 1px solid rgba(245,242,237,0.14); padding: 0 0 32px !important; }
+    main [style*="rgb(51, 49, 42)"] [style*="padding: 0px 0px 0px 40px"] { padding: 0 !important; }
+    [style*="height: 420px"] { height: 240px !important; }
+    [style*="font-size: 19px"] { font-size: 17px !important; }
     [style*="grid-template-columns: 1fr 1fr"][style*="gap: 20px"] { gap: 20px !important; }
 
     /* Hero services line: one item per line on phones, no stray separators */
@@ -392,7 +397,7 @@
     /* Flex rows wrap instead of overflowing */
     main [style*="display: flex"]:not([style*="flex-direction: column"]),
     footer [style*="display: flex"]:not([style*="flex-direction: column"]) { flex-wrap: wrap; gap: 12px 20px; }
-    main [style*="display: flex"][style*="justify-content: center"][style*="gap: 16px"] > a { width: 100%; text-align: center; }
+    main h1 + div + div + div > a[href="/contact/"] { width: 100%; text-align: center; }
 
     /* Wide tables scroll sideways */
     main table { display: block; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
@@ -405,6 +410,7 @@
     main form { padding: 24px !important; }
   }
   @media (max-width: 420px) {
+    [style*="grid-template-columns: 1fr 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
     [style*="font-size: 72px"] { font-size: 34px !important; }
     [style*="font-size: 96px"] { font-size: 44px !important; }
     header nav { gap: 10px 14px !important; }
@@ -442,95 +448,135 @@
 <main data-screen-label="Home">
   <section style="background:#2C2A24;position:relative;overflow:hidden;">
     <img src="/assets/img/img-07.jpg" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(30,28,23,0.72) 0%,rgba(30,28,23,0.55) 55%,rgba(30,28,23,0.78) 100%);"></div>
-    <div style="max-width:1240px;margin:0 auto;padding:112px 48px 104px;text-align:center;position:relative;">
-      <h1 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:72px;font-weight:400;letter-spacing:-1px;line-height:1.08;margin:0 auto 34px;max-width:900px;text-wrap:pretty;color:#F5F2ED;">Land development &amp; project management, <em style="font-style:italic;font-weight:300;color:#D8BA99;">earned from the ground up.</em></h1>
-      <div style="display:flex;flex-direction:column;gap:3px;width:64px;margin:0 auto 30px;"><span style="height:3px;background:#8B9A85;display:block;"></span><span style="height:3px;background:#D8BA99;display:block;"></span><span style="height:3px;background:#7A6049;display:block;"></span><span style="height:3px;background:#3A382F;display:block;"></span></div>
-      <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:4px;color:#F5F2ED;margin-bottom:44px;"><span>CONSTRUCTION MANAGEMENT</span><span class="dot">&nbsp;·&nbsp;</span><span>LENDER SERVICES</span><span class="dot">&nbsp;·&nbsp;</span><span>DEVELOPMENT ADVISORY</span></div>
-      <div style="display:flex;justify-content:center;gap:16px;">
-        <a href="/services/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:17px 36px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;color:#33312A;">OUR SERVICES</a>
-        <a href="/experience/" style="display:inline-block;border:1px solid rgba(245,242,237,0.6);color:#F5F2ED;padding:17px 36px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="border-color:#D8BA99;color:#D8BA99;">OUR EXPERIENCE</a>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(30,28,23,0.55) 0%,rgba(30,28,23,0.35) 45%,rgba(30,28,23,0.82) 100%);"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:168px 48px 96px;position:relative;">
+      <h1 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:72px;font-weight:400;letter-spacing:-1px;line-height:1.06;margin:0 0 30px;max-width:860px;text-wrap:pretty;color:#F5F2ED;">Land development &amp; project management, <em style="display:block;font-weight:300;color:#D8BA99;">earned from the ground up.</em></h1>
+      <div style="display:flex;flex-direction:column;gap:3px;width:64px;margin:0 0 30px;"><span style="height:3px;background:#8B9A85;display:block;"></span><span style="height:3px;background:#D8BA99;display:block;"></span><span style="height:3px;background:#8D7059;display:block;"></span><span style="height:3px;background:#5A564C;display:block;"></span></div>
+      <div style="font-size:19px;line-height:1.65;color:rgba(245,242,237,0.92);max-width:600px;margin:0 0 40px;">Construction management, lender services, development management, and project controls — from partners who have run the crews, estimated the bids, directed a national homebuilder’s land division, and built communities of their own.</div>
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+        <a href="/contact/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:17px 36px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;">TALK TO A PARTNER</a>
+        <a href="/experience/" style="display:inline-block;color:#F5F2ED;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;border-bottom:1px solid rgba(245,242,237,0.5);padding:6px 0;" style-hover="border-color:#D8BA99;color:#D8BA99;">SEE THE WORK →</a>
       </div>
     </div>
   </section>
 
-  <section style="background:#2C2A24;">
+  <section style="background:#2C2A24;border-top:4px solid #D8BA99;">
     <div style="max-width:1240px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr 1fr;">
-      <div style="padding:54px 24px;text-align:center;"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;">$750M+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.72);margin-top:12px;">LAND DEVELOPMENT COSTS MANAGED</div></div>
-      <div style="padding:54px 24px;text-align:center;border-left:1px solid rgba(255,255,255,0.12);border-right:1px solid rgba(255,255,255,0.12);"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;">10,000+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.72);margin-top:12px;">LOTS DELIVERED</div></div>
-      <div style="padding:54px 24px;text-align:center;"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;">3,000+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.72);margin-top:12px;">UNITS ENTITLED</div></div>
+      <div style="padding:48px 32px 48px 0;"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;line-height:1;">$750M+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);margin-top:14px;">LAND DEVELOPMENT COSTS MANAGED</div></div>
+      <div style="padding:48px 32px;border-left:1px solid rgba(255,255,255,0.12);border-right:1px solid rgba(255,255,255,0.12);"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;line-height:1;">10,000+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);margin-top:14px;">LOTS DELIVERED</div></div>
+      <div style="padding:48px 0 48px 32px;"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#D8BA99;line-height:1;">3,000+</div><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);margin-top:14px;">UNITS ENTITLED</div></div>
     </div>
   </section>
 
   <section style="background:#FBF9F5;">
-    <div style="max-width:1240px;margin:0 auto;padding:104px 48px;">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:16px;"><span style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#7A6049;">SERVICES</span><span style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;color:#6E6A5F;">I.</span></div>
-      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 24px;color:#33312A;">What we do.</h2>
-      <p style="font-size:17px;line-height:1.75;color:#454239;max-width:640px;margin:0 0 48px;">Our partners have managed civil site work crews from the contractor side, estimated public and private bid projects for one of North Carolina’s largest firms, directed land development for the Triangle’s biggest homebuilder, and entitled thousands of units across the Carolinas.</p>
-      <div style="display:flex;flex-direction:column;">
-        <a href="/services/" style="display:grid;grid-template-columns:120px 1fr 40px;align-items:baseline;gap:32px;padding:38px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F5F2ED;">
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#9A8868;line-height:1;">01</span>
-          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Construction Management</span><span style="display:block;font-size:16px;line-height:1.65;color:#454239;max-width:620px;">Value engineering, contract bidding, and construction oversight that pay for themselves.</span></span>
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
-        </a>
-        <a href="/services/" style="display:grid;grid-template-columns:120px 1fr 40px;align-items:baseline;gap:32px;padding:38px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F5F2ED;">
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#9A8868;line-height:1;">02</span>
-          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Lender Services &amp; Project Oversight</span><span style="display:block;font-size:16px;line-height:1.65;color:#454239;max-width:620px;">Independent loan monitoring, draw certification, and completion-risk assessment for capital providers.</span></span>
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
-        </a>
-        <a href="/services/" style="display:grid;grid-template-columns:120px 1fr 40px;align-items:baseline;gap:32px;padding:38px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F5F2ED;">
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#9A8868;line-height:1;">03</span>
-          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Development Management</span><span style="display:block;font-size:16px;line-height:1.65;color:#454239;max-width:620px;">End-to-end management of the development process, from the first site walk through delivered lots.</span></span>
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
-        </a>
-        <a href="/services/" style="display:grid;grid-template-columns:120px 1fr 40px;align-items:baseline;gap:32px;padding:38px 0;border-top:1px solid #C9C2B4;border-bottom:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F5F2ED;">
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:52px;font-weight:300;color:#9A8868;line-height:1;">04</span>
-          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Project Controls</span><span style="display:block;font-size:16px;line-height:1.65;color:#454239;max-width:620px;">Schedule management, budget reconciliation, and cost analysis maintained across every engagement.</span></span>
-          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
-        </a>
+    <div style="max-width:1240px;margin:0 auto;padding:112px 48px 104px;">
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:end;margin-bottom:72px;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0;color:#33312A;">We have sat in every seat at the development table.</h2>
+        <p style="font-size:17px;line-height:1.75;color:#454239;margin:0;max-width:520px;">Excavating crews, public bid rooms, the land development division of a national homebuilder, and communities of our own. Every seat taught the same lesson: the quality of project oversight varies widely, and the gap is expensive.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;">
+        <div style="border-top:3px solid #8B9A85;padding-top:22px;"><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#5A564C;margin-bottom:12px;">THE CONTRACTOR</div><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;line-height:1.4;color:#33312A;">Ran the crews, graded the sites, installed the utilities.</div></div>
+        <div style="border-top:3px solid #D8BA99;padding-top:22px;"><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#5A564C;margin-bottom:12px;">THE ESTIMATOR</div><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;line-height:1.4;color:#33312A;">Priced and bid public and private civil work for one of North Carolina’s largest contractors.</div></div>
+        <div style="border-top:3px solid #8D7059;padding-top:22px;"><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#5A564C;margin-bottom:12px;">THE HOMEBUILDER</div><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;line-height:1.4;color:#33312A;">Directed land development for a top-3 national homebuilder’s Raleigh division.</div></div>
+        <div style="border-top:3px solid #5A564C;padding-top:22px;"><div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#5A564C;margin-bottom:12px;">THE OWNER</div><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;line-height:1.4;color:#33312A;">Acquired, entitled, and built master-planned communities of our own.</div></div>
       </div>
     </div>
   </section>
 
   <section style="background:#F5F2ED;">
     <div style="max-width:1240px;margin:0 auto;padding:104px 48px;">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:16px;"><span style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#7A6049;">SELECTED EXPERIENCE</span><span style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;color:#6E6A5F;">II.</span></div>
-      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 56px;color:#33312A;">The work behind the numbers.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;">
-        <div style="border-top:1px solid #33312A;padding-top:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#7A6049;">N° 01 — CONSTRUCTION MANAGEMENT</div>
-          <div style="height:190px;"><img src="/assets/img/img-17.jpg" alt="Master-planned community aerial" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Lennar — Raleigh Division Land Development Program</h3>
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">TRIANGLE, NC · 10,000+ HOMESITES</div>
-          <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;flex:1;">Direction of all land development for a top-3 national homebuilder’s Raleigh division — contract bidding, budget and schedule management, and contractor coordination across a $140M annual spend.</p>
-          <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;">VIEW ON EXPERIENCE →</a>
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 24px;color:#33312A;">What we do.</h2>
+      <p style="font-size:17px;line-height:1.75;color:#454239;max-width:640px;margin:0 0 56px;">Four disciplines, one firm. Each one is delivered by a partner who has done that job from the other side of the table.</p>
+      <div style="display:flex;flex-direction:column;">
+        <a href="/services/" style="display:grid;grid-template-columns:48px 1fr 40px;align-items:center;gap:32px;padding:36px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F0EBE2;">
+          <span style="display:flex;flex-direction:column;gap:3px;width:28px;" aria-hidden="true"><span style="height:4px;background:#8B9A85;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span></span>
+          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Construction Management</span><span style="display:block;font-size:16px;line-height:1.6;color:#454239;max-width:640px;">Value engineering, contract bidding, and construction oversight that pay for themselves.</span></span>
+          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
+        </a>
+        <a href="/services/" style="display:grid;grid-template-columns:48px 1fr 40px;align-items:center;gap:32px;padding:36px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F0EBE2;">
+          <span style="display:flex;flex-direction:column;gap:3px;width:28px;" aria-hidden="true"><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#D8BA99;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span></span>
+          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Lender Services &amp; Project Oversight</span><span style="display:block;font-size:16px;line-height:1.6;color:#454239;max-width:640px;">Independent loan monitoring, draw certification, and completion-risk assessment for capital providers.</span></span>
+          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
+        </a>
+        <a href="/services/" style="display:grid;grid-template-columns:48px 1fr 40px;align-items:center;gap:32px;padding:36px 0;border-top:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F0EBE2;">
+          <span style="display:flex;flex-direction:column;gap:3px;width:28px;" aria-hidden="true"><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#8D7059;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span></span>
+          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Development Management</span><span style="display:block;font-size:16px;line-height:1.6;color:#454239;max-width:640px;">End-to-end management of the development process, from the first site walk through delivered lots.</span></span>
+          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
+        </a>
+        <a href="/services/" style="display:grid;grid-template-columns:48px 1fr 40px;align-items:center;gap:32px;padding:36px 0;border-top:1px solid #C9C2B4;border-bottom:1px solid #C9C2B4;text-decoration:none;" style-hover="background:#F0EBE2;">
+          <span style="display:flex;flex-direction:column;gap:3px;width:28px;" aria-hidden="true"><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#DDD6C8;display:block;"></span><span style="height:4px;background:#5A564C;display:block;"></span></span>
+          <span style="display:block;"><span style="display:block;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;color:#33312A;margin-bottom:8px;">Project Controls</span><span style="display:block;font-size:16px;line-height:1.6;color:#454239;max-width:640px;">Schedule management, budget reconciliation, and cost analysis maintained across every engagement.</span></span>
+          <span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:24px;color:#7A6049;">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#33312A;color:#F5F2ED;">
+    <div style="max-width:1240px;margin:0 auto;padding:104px 48px;">
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 64px;max-width:720px;">Where do you sit?</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+        <div style="padding:0 40px 0 0;border-right:1px solid rgba(245,242,237,0.14);display:flex;flex-direction:column;gap:16px;">
+          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#A8B5A1;">LENDERS · BANKS · CAPITAL PARTNERS</div>
+          <div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;line-height:1.15;">Financing a project.</div>
+          <p style="font-size:16px;line-height:1.7;color:rgba(245,242,237,0.85);margin:0;flex:1;">Independent eyes on the ground — loan monitoring, draw certification, and completion-risk assessment from people who have built what they are inspecting.</p>
+          <a href="/services/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#D8BA99;" style-hover="color:#F5F2ED;">LENDER SERVICES →</a>
         </div>
-        <div style="border-top:1px solid #33312A;padding-top:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#7A6049;">N° 02 — FULL SUITE</div>
-          <div style="height:190px;"><img src="/assets/img/img-19.png" alt="Bluejack Falls site plan" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div>
-          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Bluejack Falls</h3>
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">RALEIGH, NC · 1,200 UNITS · 300 ACRES</div>
-          <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;flex:1;">Two raw-land parcels strategically combined and rezoned as a major subdivision — a 1,200-unit master-planned community integrating open space, trails, parks, and mixed residential product.</p>
-          <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;">VIEW ON EXPERIENCE →</a>
+        <div style="padding:0 40px;border-right:1px solid rgba(245,242,237,0.14);display:flex;flex-direction:column;gap:16px;">
+          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#A8B5A1;">DEVELOPERS · OWNERS · LANDOWNERS</div>
+          <div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;line-height:1.15;">Building a project.</div>
+          <p style="font-size:16px;line-height:1.7;color:rgba(245,242,237,0.85);margin:0;flex:1;">An owner’s representative who has actually been the owner — from the first site walk through entitlement, construction, and delivered lots.</p>
+          <a href="/services/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#D8BA99;" style-hover="color:#F5F2ED;">DEVELOPMENT MANAGEMENT →</a>
         </div>
-        <div style="border-top:1px solid #33312A;padding-top:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#7A6049;">N° 03 — DEVELOPMENT MANAGEMENT</div>
-          <div style="height:190px;"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div>
-          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">The Wilds at Cedar Mountain</h3>
-          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">ASHEVILLE, NC · 425 UNITS · 90 ACRES</div>
-          <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;flex:1;">Three product types — 80 single family homes, 133 townhomes, and 212 multifamily units — across 90 acres, with trails, a clubhouse, and mountain views throughout.</p>
-          <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;">VIEW ON EXPERIENCE →</a>
+        <div style="padding:0 0 0 40px;display:flex;flex-direction:column;gap:16px;">
+          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#A8B5A1;">CONSULTANTS · ATTORNEYS · BROKERS</div>
+          <div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;line-height:1.15;">Advising a client.</div>
+          <p style="font-size:16px;line-height:1.7;color:rgba(245,242,237,0.85);margin:0;flex:1;">Bring us in when your client’s project needs someone who has run the work, not just reviewed it. You keep the relationship; we carry the ground.</p>
+          <a href="/contact/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#D8BA99;" style-hover="color:#F5F2ED;">START A CONVERSATION →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background:#2C2A24;color:#F5F2ED;">
-    <div style="max-width:1240px;margin:0 auto;padding:96px 48px;text-align:center;">
-      <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3.5px;color:#D8BA99;margin-bottom:24px;">CONTACT</div>
-      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 18px;">Let’s discuss your project.</h2>
-      <p style="font-size:16.5px;line-height:1.7;color:rgba(245,242,237,0.85);max-width:560px;margin:0 auto 38px;">Start with a conversation about scope, schedule, and budget.</p>
-      <a href="/contact/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:17px 36px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;color:#33312A;">GET IN TOUCH</a>
+  <section style="background:#F5F2ED;">
+    <div style="max-width:1240px;margin:0 auto;padding:104px 48px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0;color:#33312A;">The work behind the numbers.</h2>
+        <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;">WHERE THE NUMBERS COME FROM →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;">
+        <a href="/experience/" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:#33312A;">
+          <div style="height:420px;"><img src="/assets/img/img-17.jpg" alt="Master-planned community aerial" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">CONSTRUCTION MANAGEMENT · TRIANGLE, NC · 10,000+ HOMESITES</div>
+          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.5px;margin:0;color:#33312A;">Lennar — Raleigh Division Land Development Program</h3>
+          <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;max-width:640px;">Direction of all land development for a top-3 national homebuilder’s Raleigh division — contract bidding, budget and schedule management, and contractor coordination across a $140M annual spend.</p>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:40px;">
+          <a href="/experience/" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:#33312A;">
+            <div style="height:190px;"><img src="/assets/img/img-19.png" alt="Bluejack Falls site plan" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div>
+            <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">FULL SUITE · RALEIGH, NC · 1,200 UNITS · 300 ACRES</div>
+            <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0;color:#33312A;">Bluejack Falls</h3>
+          </a>
+          <a href="/experience/" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:#33312A;">
+            <div style="height:190px;"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">DEVELOPMENT MANAGEMENT · ASHEVILLE, NC · 425 UNITS · 90 ACRES</div>
+            <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0;color:#33312A;">The Wilds at Cedar Mountain</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#2C2A24;color:#F5F2ED;border-top:4px solid #D8BA99;">
+    <div style="max-width:1240px;margin:0 auto;padding:96px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:46px;font-weight:400;letter-spacing:-0.5px;margin:0 0 18px;">Start with a conversation.</h2>
+        <p style="font-size:17px;line-height:1.7;color:rgba(245,242,237,0.85);max-width:560px;margin:0;">Tillstone is a partner-led firm — when you reach out, you are talking to a principal, not a business development layer. Bring the scope, schedule, and budget as they stand today.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px;">
+        <a href="/contact/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:17px 36px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;">TALK TO A PARTNER</a>
+        <a href="mailto:info@tillstone.land" style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;color:#F5F2ED;border-bottom:1px solid rgba(245,242,237,0.4);padding-bottom:3px;" style-hover="color:#D8BA99;border-color:#D8BA99;">info@tillstone.land</a>
+      </div>
     </div>
   </section>
 </main>
