@@ -1,0 +1,5 @@
+# The original bundled export is kept locally for reference but is 9 MB — don't push it
+original-export.html
+.image-slots.state.json
+Thumbs.db
+.DS_Store
