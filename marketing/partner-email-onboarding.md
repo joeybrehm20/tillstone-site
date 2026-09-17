@@ -6,7 +6,7 @@
 2. **Users** → **Add new user**.
 3. Fill in:
    - First / last name
-   - Primary email: `drew@tillstoneland.com` (then `dan@`, `landon@`)
+   - Primary email: `drew@tillstoneland.com` (then `daniel@`, `landon@`)
    - Password: leave **Automatically generate** on, and keep **Ask for a password change at the next sign-in** checked.
 4. **Add new user** → copy the temporary password shown (or use "Email login info" and send it to their personal address).
 5. Repeat for the other two.
@@ -49,3 +49,10 @@ Optional, recommended: **Groups** → create `info@tillstoneland.com` as a group
 
 Each partner gets their own page at `tillstone.land/signature/<firstname>/`, same design as Joey's.
 To build them I need, per partner: **name as it should appear, title, phone number** (email is `<first>@tillstoneland.com`).
+
+| Partner | Email | Phone | Signature page |
+|---|---|---|---|
+| Joey Brehm — Partner | joey@tillstoneland.com | 952-913-8076 | tillstone.land/signature/joey/ |
+| Drew Levin — Partner | drew@tillstoneland.com | 352-246-8321 | tillstone.land/signature/drew/ |
+| Daniel Perkins — Partner | daniel@tillstoneland.com | 561-870-2468 | tillstone.land/signature/daniel/ |
+| Landon Walls — Partner | landon@tillstoneland.com | 919-830-2036 | tillstone.land/signature/landon/ |
