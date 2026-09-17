@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /signature/
 
 Sitemap: https://tillstone.land/sitemap.xml
-
-User-agent: *
-Disallow: /signature/
