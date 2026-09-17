@@ -1050,12 +1050,17 @@
           </label>
         </div>
         <label style="display:flex;flex-direction:column;gap:8px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">YOUR EMAIL
-          <input name="Email" type="email" placeholder="you@company.com" style="padding:12px;border:1px solid #C9C2B4;background:#FBF9F5;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:16px;color:#33312A;" style-focus="border-color:#7A6049;outline:none;">
+          <input name="Email" type="email" placeholder="you@company.com" required="required" style="padding:12px;border:1px solid #C9C2B4;background:#FBF9F5;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:16px;color:#33312A;" style-focus="border-color:#7A6049;outline:none;">
         </label>
         <label style="display:flex;flex-direction:column;gap:8px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#5A564C;">MESSAGE
-          <textarea name="Message" rows="4" placeholder="Scope, schedule, budget — where the project stands today." style="padding:12px;border:1px solid #C9C2B4;background:#FBF9F5;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:16px;color:#33312A;resize:vertical;" style-focus="border-color:#7A6049;outline:none;"></textarea>
+          <textarea name="Message" rows="4" placeholder="Scope, schedule, budget — where the project stands today." required="required" style="padding:12px;border:1px solid #C9C2B4;background:#FBF9F5;font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:16px;color:#33312A;resize:vertical;" style-focus="border-color:#7A6049;outline:none;"></textarea>
         </label>
-        <button type="submit" style="background:#33312A;color:#F5F2ED;border:none;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;cursor:pointer;align-self:flex-start;transition:background .2s ease;" style-hover="background:#7A6049;">SEND INQUIRY</button>
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;" aria-hidden="true">
+        <button type="submit" style="background:#33312A;color:#F5F2ED;border:none;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;cursor:pointer;align-self:flex-start;transition:background .2s ease;" style-hover="background:#7A6049;">{{ submitLabel }}</button>
+        <sc-if value="{{ formSent }}"><div style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:17px;line-height:1.5;color:#33312A;border-top:1px solid #DDD6C8;padding-top:18px;">Thank you — your inquiry is on its way. A partner will reply directly.</div></sc-if>
+        <sc-if value="{{ formError }}"><div style="font-size:15px;line-height:1.6;color:#8C3B2E;">We couldn’t send that automatically. Email us instead: <a href="mailto:info@tillstoneland.com" style="color:#7A6049;">info@tillstoneland.com</a></div></sc-if>
+        <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.5px;color:#6E6A5F;">PREFER YOUR OWN EMAIL? &nbsp;<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@tillstoneland.com&amp;su=Project%20Inquiry%20%E2%80%94%20Tillstone" target="_blank" rel="noopener" style="color:#7A6049;">OPEN IN GMAIL</a> &nbsp;·&nbsp; <a href="mailto:info@tillstoneland.com?subject=Project%20Inquiry%20%E2%80%94%20Tillstone" style="color:#7A6049;">MAIL APP</a></div>
+
       </form>
     </div>
   </section>
@@ -1091,6 +1096,8 @@
 // index them separately. The first path segment picks the page; a legacy
 // #services-style hash is still honored and rewritten to the real URL.
 const PAGES = ['home', 'services', 'experience', 'about', 'contact'];
+// Web3Forms access key for the contact form. Empty = the form opens a prefilled Gmail compose instead.
+const CONTACT_FORM_KEY = '';
 function pageFromLocation() {
   if (typeof location === 'undefined') return 'home';
   const seg = location.pathname.split('/').filter(Boolean)[0];
@@ -1119,6 +1126,8 @@ class Component extends DCLogic {
     return {
       isHome: page === 'home', isServices: page === 'services', isExperience: page === 'experience',
       isAbout: page === 'about', isContact: page === 'contact',
+      submitLabel: this.state.form === 'sending' ? 'SENDING…' : 'SEND INQUIRY',
+      formSent: this.state.form === 'sent', formError: this.state.form === 'error',
       uHome: u('home'), uServices: u('services'), uExperience: u('experience'), uAbout: u('about'),
       ...(() => {
         const labels = ['EXHIBIT — SITE PLAN','SITE — GRADING PROGRESS AERIAL'];
@@ -1176,9 +1185,21 @@ class Component extends DCLogic {
       submitForm: (e) => {
         e.preventDefault();
         const f = e.target;
-        const body = Array.from(f.elements).filter((el) => el.name).map((el) => el.name + ': ' + el.value).join('\n');
-        location.href = 'mailto:info@tillstoneland.com?subject=' + encodeURIComponent('Project Inquiry — Tillstone') + '&body=' + encodeURIComponent(body);
+        const fields = Array.from(f.elements).filter((el) => el.name && el.name !== 'botcheck');
+        const body = fields.map((el) => el.name + ': ' + el.value).join('\n');
+        const gmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=info@tillstoneland.com&su=' + encodeURIComponent('Project Inquiry — Tillstone') + '&body=' + encodeURIComponent(body);
+        if (!CONTACT_FORM_KEY) { window.open(gmail, '_blank', 'noopener'); return; }
+        if (f.elements.botcheck && f.elements.botcheck.checked) return;
+        this.setState({ form: 'sending' });
+        const data = { access_key: CONTACT_FORM_KEY, subject: 'Project Inquiry — Tillstone', from_name: 'tillstone.land contact form' };
+        fields.forEach((el) => { data[el.name] = el.value; });
+        if (data.Email) data.replyto = data.Email;
+        fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+          .then((r) => r.json())
+          .then((j) => { if (j && j.success) { f.reset(); this.setState({ form: 'sent' }); } else { this.setState({ form: 'error' }); } })
+          .catch(() => this.setState({ form: 'error' }));
       }
+
     };
   }
 }
