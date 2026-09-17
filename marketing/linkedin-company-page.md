@@ -14,7 +14,7 @@ Images: `linkedin-logo-300.png` (logo, 300×300) and `linkedin-cover-1128x191.jp
 | Company size | 2–10 employees |
 | Company type | Privately Held |
 | Headquarters | Raleigh, North Carolina, United States |
-| Tagline (120 chars max) | Partner-led land development firm in Raleigh, NC — construction management, lender services, development management. |
+| Tagline (120 chars max) | Partner-led land development firm in Raleigh, NC, serving the U.S. — construction, lender, and development management. |
 
 ## About (2,000 chars max — this is 1,190)
 
