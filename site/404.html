@@ -362,8 +362,8 @@
     [style*="max-width: 1240px"][style*="padding: 56px"] { padding-top: 40px !important; padding-bottom: 32px !important; }
 
     /* Header on phones: one-line top bar; logo row with CONTACT pinned top-right; nav links on their own row */
-    header [style*="height: 32px"] { height: auto !important; justify-content: center; gap: 4px 16px; padding-top: 8px !important; padding-bottom: 8px !important; }
-    header [style*="height: 32px"] > span:first-child { display: none; }
+    header [style*="height: 32px"] { height: auto !important; flex-direction: column; align-items: center; gap: 3px; padding-top: 8px !important; padding-bottom: 8px !important; }
+    header [style*="height: 32px"] > span { text-align: center; white-space: nowrap; letter-spacing: 1.8px !important; }
     header [style*="height: 78px"] { position: relative; height: auto !important; flex-wrap: wrap; gap: 14px 24px; padding-top: 14px !important; padding-bottom: 14px !important; }
     header [style*="height: 78px"] > a { max-width: calc(100% - 130px); }
     header nav { flex-wrap: wrap; gap: 12px 20px !important; width: 100%; border-top: 1px solid rgba(245,242,237,0.12); padding-top: 12px; }
