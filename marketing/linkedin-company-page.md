@@ -1,14 +1,14 @@
 # Tillstone — LinkedIn Company Page
 
 Everything the "Create a LinkedIn Page" form asks for, ready to paste.
-Images: `linkedin-logo-300.png` (logo, 300×300) and `linkedin-cover-1128x191.png` (cover).
+Images: `linkedin-logo-300.png` (logo, 300×300) and `linkedin-cover-1128x191.jpg` (cover).
 
 ## Page identity
 
 | Field | Value |
 |---|---|
 | Name | Tillstone Land Solutions |
-| LinkedIn public URL | linkedin.com/company/**tillstone** (fallback: `tillstone-land-solutions`) |
+| LinkedIn public URL | linkedin.com/company/tillstone-land-solutions (live) |
 | Website | https://tillstone.land |
 | Industry | Real Estate |
 | Company size | 2–10 employees |
