@@ -1,2 +1,0 @@
-# Cloudflare Pages redirects — www is an alias; tillstone.land is canonical
-https://www.tillstone.land/* https://tillstone.land/:splat 301
