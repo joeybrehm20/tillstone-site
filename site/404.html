@@ -763,8 +763,14 @@
       </div>
 
       <div style="border:1px solid #33312A;background:#FFFFFF;display:flex;flex-direction:column;{{ span4 }}">
-        <div sc-camel-on-click="{{ toggle4 }}" style="border-bottom:1px solid #33312A;background:#F5F2ED;height:300px;overflow:hidden;cursor:pointer;padding:0;box-sizing:border-box;">
-          <img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+        <div style="border-bottom:1px solid #33312A;background:#F5F2ED;height:300px;overflow:hidden;position:relative;padding:0;box-sizing:border-box;">
+          <sc-if value="{{ photo4is0 }}" hint-placeholder-val="{{ true }}"><img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></sc-if>
+          <sc-if value="{{ photo4is1 }}" hint-placeholder-val="{{ false }}"><img src="/assets/img/img-21.jpg" alt="Fountain Inn proposed site plan" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;padding:10px 12px 40px;box-sizing:border-box;"></sc-if>
+          <div style="position:absolute;bottom:0;right:0;display:flex;background:#33312A;">
+            <button type="button" sc-camel-on-click="{{ setPhoto4a }}" style="background:{{ p4a }};border-right:1px solid #5A564C;border:0;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">01</button>
+            <button type="button" sc-camel-on-click="{{ setPhoto4b }}" style="background:{{ p4b }};border:0;padding:9px 13px;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:#F5F2ED;">02</button>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;background:#33312A;padding:9px 14px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;color:#D8BA99;">{{ photo4label }}</div>
         </div>
         <div style="padding:28px 28px 24px;display:flex;flex-direction:column;flex:1;">
           <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#7A6049;margin-bottom:12px;">N° 04 — DEVELOPMENT MANAGEMENT</div>
@@ -1163,6 +1169,17 @@ class Component extends DCLogic {
           acc['photo3is' + k] = i === k;
           acc['p3' + 'abcde'[k]] = i === k ? '#7A6049' : '#33312A';
           acc['setPhoto3' + 'abcde'[k]] = () => this.setState({ photo3: k });
+        });
+        return acc;
+      })(),
+      ...(() => {
+        const labels = ['SITE — AERIAL','EXHIBIT — SITE PLAN'];
+        const i = this.state.photo4 || 0;
+        const acc = { photo4label: labels[i] };
+        labels.forEach((_, k) => {
+          acc['photo4is' + k] = i === k;
+          acc['p4' + 'ab'[k]] = i === k ? '#7A6049' : '#33312A';
+          acc['setPhoto4' + 'ab'[k]] = () => this.setState({ photo4: k });
         });
         return acc;
       })(),
