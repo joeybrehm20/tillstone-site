@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept 3 · Locate Marks · Tillstone</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --clay: #A23E1E; --clay-d: #7C2C14; --clay-dd: #4E1B0C; --dust: #E9CDB9;
+    --white: #F7F3EA; --pink: #FF5EA3; --orange: #FF7A1A; --yellow: #FFD21F; --blue: #3B86FF;
+    --disp: 'Big Shoulders Display', Impact, sans-serif; --body: 'Barlow', Arial, sans-serif; --spray: 'Rubik Spray Paint', 'Big Shoulders Display', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--clay); scrollbar-color: var(--white) var(--clay-d); }
+  body { margin: 0; color: var(--white); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .55; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .13 0 0 0 0 .05 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  body > * { position: relative; z-index: 1; }
+  ::selection { background: var(--yellow); color: var(--clay-dd); }
+  a { color: inherit; text-underline-offset: 4px; }
+  :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+  header.top { display: flex; justify-content: space-between; align-items: center; padding: 22px 40px; max-width: 1360px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand svg { width: 36px; height: 36px; }
+  .brand b { font-family: var(--disp); font-weight: 900; font-size: 26px; letter-spacing: .06em; line-height: 1; display: block; }
+  .brand span { font-size: 11px; font-weight: 600; letter-spacing: .22em; }
+  nav.marks { display: flex; gap: 26px; font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+  nav.marks a { text-decoration: none; padding-bottom: 3px; border-bottom: 3px dashed transparent; }
+  nav.marks a:hover { border-bottom-color: var(--white); }
+  nav.marks a.cta { color: var(--clay-dd); background: var(--white); padding: 8px 14px; border: 0; }
+
+  /* hero */
+  .hero { position: relative; padding: 70px 0 120px; }
+  .hero .field { position: relative; padding: 70px 70px 64px; }
+  .hero svg.outline { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .hero h1 { font-family: var(--disp); font-weight: 900; font-size: clamp(60px, 8.6vw, 124px); line-height: .88; letter-spacing: .005em; text-transform: uppercase; margin: 0 0 30px; max-width: 12ch; text-wrap: balance; }
+  .hero p { max-width: 50ch; font-size: 19px; line-height: 1.6; margin: 0 0 34px; color: #FBEFE5; }
+  .actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; background: var(--white); color: var(--clay-dd); text-decoration: none; font-family: var(--disp); font-weight: 900; font-size: 21px; letter-spacing: .06em; text-transform: uppercase; transition: background .15s; }
+  .btn:hover { background: var(--yellow); }
+  .btn.line { background: transparent; color: var(--white); outline: 3px dashed var(--white); outline-offset: -3px; }
+  .btn.line:hover { background: rgba(247,243,234,.12); }
+  .btn svg { width: 22px; height: 14px; }
+  .tag { position: absolute; font-family: var(--spray); font-size: 38px; line-height: 1; pointer-events: none; }
+  .tag.tls { right: 6%; top: 18%; color: var(--orange); transform: rotate(-6deg); }
+  .tag.num { right: 12%; bottom: 20%; color: var(--white); transform: rotate(3deg); font-size: 30px; }
+  .flags { position: absolute; left: 0; bottom: 26px; width: 100%; height: 60px; pointer-events: none; }
+
+  /* legend */
+  section { padding: 110px 0; }
+  .sh { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 44px; }
+  .sh h2 { font-family: var(--disp); font-weight: 900; font-size: clamp(44px, 5.6vw, 78px); line-height: .9; text-transform: uppercase; margin: 0; max-width: 14ch; }
+  .sh p { max-width: 44ch; margin: 0; color: #FBEFE5; }
+  .legend { list-style: none; margin: 0; padding: 0; border-top: 3px solid rgba(247,243,234,.35); }
+  .legend li { display: grid; grid-template-columns: 170px minmax(0, 1.1fr) minmax(0, 1fr) 200px; gap: 30px; align-items: center; padding: 30px 0; border-bottom: 3px solid rgba(247,243,234,.35); }
+  .stroke { height: 30px; position: relative; }
+  .stroke svg { width: 100%; height: 100%; overflow: visible; }
+  .legend h3 { font-family: var(--disp); font-weight: 800; font-size: 36px; line-height: .95; text-transform: uppercase; margin: 0; }
+  .legend p { margin: 0; font-size: 16px; color: #FBEFE5; }
+  .legend .who { font-weight: 700; font-size: 15px; text-align: right; }
+  .legend .who span { display: block; font-weight: 500; opacity: .85; font-size: 13px; }
+
+  /* record line */
+  .record { position: relative; padding: 40px 0 10px; }
+  .record svg.line { width: 100%; height: 40px; display: block; overflow: visible; }
+  .calls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 6px; }
+  .call { font-family: var(--spray); font-size: clamp(46px, 6vw, 88px); line-height: 1; color: var(--white); }
+  .call small { display: block; font-family: var(--body); font-weight: 600; font-size: 16px; letter-spacing: .02em; margin-top: 10px; color: #FBEFE5; }
+  .record-note { max-width: 62ch; margin: 40px 0 0; color: #FBEFE5; }
+
+  /* tickets */
+  .tickets { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 26px; }
+  .ticket { background: var(--white); color: var(--clay-dd); grid-column: span 4; display: flex; flex-direction: column; box-shadow: 0 14px 30px -14px rgba(40,10,0,.6); }
+  .ticket.big { grid-column: span 6; }
+  .ticket img { width: 100%; height: 220px; object-fit: cover; display: block; }
+  .ticket.big img { height: 300px; }
+  .ticket .t-body { padding: 18px 20px 20px; font-size: 14.5px; }
+  .ticket .t-head { display: flex; justify-content: space-between; gap: 12px; border-bottom: 2px dashed #C9B3A4; padding-bottom: 10px; margin-bottom: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .ticket h3 { font-family: var(--disp); font-weight: 900; font-size: 32px; line-height: 1; text-transform: uppercase; margin: 0 0 8px; }
+  .ticket dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 0; }
+  .ticket dt { font-weight: 700; }
+  .ticket dd { margin: 0; }
+  .ticket .flag { width: 14px; height: 14px; display: inline-block; vertical-align: -2px; margin-right: 6px; }
+
+  /* close */
+  .close { text-align: left; padding: 120px 0 90px; }
+  .close h2 { font-family: var(--disp); font-weight: 900; font-size: clamp(56px, 8vw, 116px); line-height: .88; text-transform: uppercase; margin: 0 0 26px; max-width: 13ch; }
+  .close p { max-width: 50ch; margin: 0 0 34px; color: #FBEFE5; font-size: 19px; }
+  footer { border-top: 3px dashed rgba(247,243,234,.45); padding: 26px 40px 40px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 14px; max-width: 1360px; margin: 0 auto; }
+
+  .reveal-mask rect { transform-box: fill-box; }
+  @media (prefers-reduced-motion: no-preference) {
+    .sprayed .wipe { transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.16,1,.3,1); }
+    .sprayed.on .wipe { transform: scaleX(1); }
+  }
+
+  @media (max-width: 900px) {
+    .wrap { padding: 0 20px; }
+    header.top { padding: 16px 20px; flex-wrap: wrap; gap: 14px; }
+    nav.marks { gap: 16px; font-size: 13px; flex-wrap: wrap; }
+    .hero { padding: 30px 0 90px; }
+    .hero .field { padding: 44px 26px 40px; }
+    .tag { font-size: 22px; }
+    .tag.tls { top: 12px; right: 16px; transform: rotate(-4deg); }
+    .tag.tls svg { width: 40px !important; }
+    .tag.num { display: none; }
+    .sh { flex-direction: column; align-items: start; }
+    .legend li { grid-template-columns: 1fr; gap: 10px; }
+    .legend .who { text-align: left; }
+    .stroke { max-width: 180px; }
+    .calls { grid-template-columns: 1fr; }
+    .tickets { grid-template-columns: 1fr; }
+    .ticket, .ticket.big { grid-column: auto; }
+    section { padding: 80px 0; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="spray" filterUnits="userSpaceOnUse" x="-200" y="-200" width="4000" height="2400">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".5" result="core"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="halo"/>
+      <feComponentTransfer in="halo" result="halo2"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+      <feMerge><feMergeNode in="halo2"/><feMergeNode in="core"/></feMerge>
+    </filter>
+    <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#F7F3EA" opacity=".45"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#F7F3EA" opacity=".65"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#F7F3EA" opacity=".85"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#F7F3EA"/></g>
+    <g id="flag"><path d="M2 1v13" stroke="#F7F3EA" stroke-width="1.5"/><path d="M3 1h10l-3 3 3 3H3z" fill="#FF5EA3"/></g>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="brand" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><div><b>TILLSTONE</b><span>LAND SOLUTIONS</span></div></a>
+  <nav class="marks" aria-label="Main"><a href="#code">Services</a><a href="#record">Record</a><a href="#tickets">Experience</a><a class="cta" href="/contact/">Talk to a partner</a></nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-top:40px">
+    <div class="wrap">
+      <div class="field sprayed" id="heroField">
+        <svg class="outline" preserveAspectRatio="none" aria-hidden="true">
+          <defs><mask id="wipe1"><rect class="wipe" x="0" y="0" width="100%" height="100%" fill="#fff"/></mask></defs>
+          <g mask="url(#wipe1)" filter="url(#spray)" fill="none" stroke="#F7F3EA" stroke-width="7" stroke-linecap="round">
+            <rect x="6" y="6" width="calc(100% - 12px)" height="calc(100% - 12px)" stroke-dasharray="46 22" style="width:calc(100% - 12px);height:calc(100% - 12px)"/>
+          </g>
+        </svg>
+        <span class="tag tls" aria-hidden="true">TLS <svg viewBox="0 0 60 24" style="width:60px;height:24px;vertical-align:middle;overflow:visible" filter="url(#spray)"><path d="M2 12 H52 M40 3 L54 12 L40 21" fill="none" stroke="#FF7A1A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h1>Know what’s in the ground before capital goes into it.</h1>
+        <p>Tillstone is a partner-led land development firm in Raleigh, serving the U.S. Its partners have run the crews, priced the bids, directed a national homebuilder’s land division, and developed their own communities. Construction management, lender services, and development management, marked out by people who have dug before.</p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Talk to a partner <svg viewBox="0 0 22 14" aria-hidden="true"><path d="M0 7h19M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
+          <a class="btn line" href="#code">Read the marks</a>
+        </div>
+        <span class="tag num" aria-hidden="true">RALEIGH NC</span>
+      </div>
+    </div>
+    <svg class="flags" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 44 H1200" stroke="#FF5EA3" stroke-width="5" stroke-dasharray="2 16" stroke-linecap="round" filter="url(#spray)"/>
+    </svg>
+  </section>
+
+  <section id="code">
+    <div class="wrap">
+      <div class="sh"><h2>Each partner marks their own line</h2><p>Before anyone digs, every utility is located and marked in its own color. Tillstone works the same way: one partner owns each line of risk on your project.</p></div>
+      <ul class="legend">
+        <li>
+          <div class="stroke"><svg viewBox="0 0 170 30" preserveAspectRatio="none"><path d="M4 15 H166" stroke="#FF7A1A" stroke-width="10" stroke-linecap="round" filter="url(#spray)"/></svg></div>
+          <h3>Construction management</h3>
+          <p>Value engineering, contract bidding, and construction oversight that pay for themselves: contractor’s pricing, a builder’s pace, an owner’s accountability.</p>
+          <div class="who">Landon Walls<span>Contractor, then Lennar land director</span></div>
+        </li>
+        <li>
+          <div class="stroke"><svg viewBox="0 0 170 30" preserveAspectRatio="none"><path d="M4 15 H166" stroke="#FFD21F" stroke-width="10" stroke-linecap="round" filter="url(#spray)"/></svg></div>
+          <h3>Lender services &amp; oversight</h3>
+          <p>Construction loan monitoring, draw review and certification, budget and schedule validation, and completion-risk assessment.</p>
+          <div class="who">Drew Levin<span>$500M+ in debt and equity capitalized</span></div>
+        </li>
+        <li>
+          <div class="stroke"><svg viewBox="0 0 170 30" preserveAspectRatio="none"><path d="M4 15 H166" stroke="#3B86FF" stroke-width="10" stroke-linecap="round" filter="url(#spray)"/></svg></div>
+          <h3>Development management</h3>
+          <p>From site control and entitlement through delivered lots, with consensus built among planning boards, councils, and neighbors.</p>
+          <div class="who">Daniel Perkins<span>3,000+ units entitled</span></div>
+        </li>
+        <li>
+          <div class="stroke"><svg viewBox="0 0 170 30" preserveAspectRatio="none"><path d="M4 15 H166" stroke="#FF5EA3" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 12" filter="url(#spray)"/></svg></div>
+          <h3>Land &amp; market strategy</h3>
+          <p>Site selection, acquisition due diligence, and absorption analysis, confirming the market before capital is committed.</p>
+          <div class="who">Joey Brehm<span>$70M+ in land acquisitions</span></div>
+        </li>
+        <li>
+          <div class="stroke"><svg viewBox="0 0 170 30" preserveAspectRatio="none"><path d="M4 15 H166" stroke="#F7F3EA" stroke-width="10" stroke-linecap="round" stroke-dasharray="3 14" filter="url(#spray)"/></svg></div>
+          <h3>Project controls</h3>
+          <p>Schedule management, budget reconciliation, and cost analysis on every engagement.</p>
+          <div class="who">All partners<span>Every project</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="record" style="background:var(--clay-d)">
+    <div class="wrap">
+      <div class="sh"><h2>What’s already been dug</h2><p>The partners’ combined record, across principal and executive roles.</p></div>
+      <div class="record sprayed" id="recLine">
+        <svg class="line" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs><mask id="wipe2"><rect class="wipe" width="1200" height="40" fill="#fff"/></mask></defs>
+          <g mask="url(#wipe2)" filter="url(#spray)"><path d="M6 20 H1194" stroke="#F7F3EA" stroke-width="8" stroke-linecap="round"/><path d="M1150 6 L1194 20 L1150 34" fill="none" stroke="#F7F3EA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
+        </svg>
+        <div class="calls">
+          <div class="call">$750M+<small>Land development costs managed</small></div>
+          <div class="call">10,000+<small>Lots delivered</small></div>
+          <div class="call">3,000+<small>Units entitled across the Carolinas</small></div>
+        </div>
+      </div>
+      <p class="record-note">Including direction of all land development for a top-3 national homebuilder’s Raleigh division, a $140M annual spend, and publicly bid federal, state, and NCDOT civil work.</p>
+    </div>
+  </section>
+
+  <section id="tickets">
+    <div class="wrap">
+      <div class="sh"><h2>Recent tickets</h2><p>Selected engagements: where the ground was, and what was done with it.</p></div>
+      <div class="tickets">
+        <article class="ticket big"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial"><div class="t-body"><div class="t-head"><span>Ticket TLS-01</span><span>Wake Co.</span></div><h3>Bluejack Falls</h3><dl><dt>Where</dt><dd>Raleigh, NC</dd><dt>Scope</dt><dd>1,200 units · 300 ac · full suite</dd><dt>Result</dt><dd><svg class="flag" viewBox="0 0 14 14"><use href="#flag"/></svg>Rezoned as a major subdivision</dd></dl></div></article>
+        <article class="ticket big"><img src="/assets/img/img-05.jpg" alt="River Mews Estates mass grading"><div class="t-body"><div class="t-head"><span>Ticket TLS-02</span><span>Johnston Co.</span></div><h3>River Mews Estates</h3><dl><dt>Where</dt><dd>Clayton, NC</dd><dt>Scope</dt><dd>825 units · 275 ac · entitlement &amp; development</dd><dt>Result</dt><dd><svg class="flag" viewBox="0 0 14 14"><use href="#flag"/></svg>PUD approved, annexed before purchase</dd></dl></div></article>
+        <article class="ticket"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial"><div class="t-body"><div class="t-head"><span>Ticket TLS-03</span><span>Wake Co.</span></div><h3>Carolina Springs</h3><dl><dt>Where</dt><dd>Apex, NC</dd><dt>Scope</dt><dd>800 units · 200 ac</dd><dt>Result</dt><dd><svg class="flag" viewBox="0 0 14 14"><use href="#flag"/></svg>$100M+ site budget overseen</dd></dl></div></article>
+        <article class="ticket"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial"><div class="t-body"><div class="t-head"><span>Ticket TLS-04</span><span>Buncombe Co.</span></div><h3>The Wilds</h3><dl><dt>Where</dt><dd>Asheville, NC</dd><dt>Scope</dt><dd>425 units · 90 ac</dd><dt>Result</dt><dd><svg class="flag" viewBox="0 0 14 14"><use href="#flag"/></svg>Three end users, one plan</dd></dl></div></article>
+        <article class="ticket"><img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial"><div class="t-body"><div class="t-head"><span>Ticket TLS-05</span><span>Greenville Co.</span></div><h3>Fountain Inn</h3><dl><dt>Where</dt><dd>Fountain Inn, SC</dd><dt>Scope</dt><dd>288 units · 93 ac</dd><dt>Result</dt><dd><svg class="flag" viewBox="0 0 14 14"><use href="#flag"/></svg>Carried to final plat</dd></dl></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>Call before you commit.</h2>
+      <p>Whether you are delivering lots or funding them, a partner will read your project and mark what matters. No business development layer.</p>
+      <div class="actions"><a class="btn" href="/contact/">Talk to a partner <svg viewBox="0 0 22 14" aria-hidden="true"><path d="M0 7h19M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a><a class="btn line" href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></div>
+    </div>
+  </section>
+</main>
+<footer><span>Tillstone Land Solutions · Raleigh, NC · serving the U.S.</span><span><a href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener">LinkedIn</a> · © 2026</span></footer>
+
+<script>
+  // Hero outline: size the sprayed rectangle to the field in px (SVG rect can't take calc()).
+  (function () {
+    var f = document.getElementById('heroField'), r = f.querySelector('svg.outline rect:not(.wipe)');
+    function fit() { r.setAttribute('width', f.clientWidth - 12); r.setAttribute('height', f.clientHeight - 12); r.removeAttribute('style'); }
+    fit(); window.addEventListener('resize', fit);
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .35 });
+    document.querySelectorAll('.sprayed').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

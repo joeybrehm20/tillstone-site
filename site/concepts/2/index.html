@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept 2 · Draw Request · Tillstone</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800;900&family=Courier+Prime:wght@400;700&family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FCFCFA; --desk: #2B3A33; --ink: #141414; --rule: #141414; --soft: #5E625F; --band: #E2EEDD; --band2: #F2F7EF; --type: #1D2B47; --stamp: #C4122F;
+    --sans: 'Schibsted Grotesk', Arial, sans-serif; --typed: 'Courier Prime', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--desk); scrollbar-color: var(--band) var(--desk); }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--band); color: var(--ink); }
+  a { color: inherit; text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--stamp); outline-offset: 3px; }
+
+  .form { max-width: 1180px; margin: 36px auto 60px; background: var(--paper); padding: 40px 48px 56px; box-shadow: 0 30px 60px -25px rgba(0,0,0,.55); position: relative; }
+  .form::before { content: ""; position: absolute; left: 22px; top: 0; bottom: 0; width: 1px; background: repeating-linear-gradient(var(--band) 0 10px, transparent 10px 22px); }
+
+  /* page header */
+  .formhead { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: end; border-bottom: 3px solid var(--rule); padding-bottom: 14px; }
+  .formhead svg { width: 44px; height: 44px; }
+  .formhead .t { font-weight: 900; font-size: 15px; letter-spacing: .02em; line-height: 1.25; text-transform: uppercase; }
+  .formhead .t span { display: block; font-weight: 500; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--soft); }
+  .formhead .page { text-align: right; font-size: 12px; color: var(--soft); }
+  .formhead .page b { display: block; font-size: 22px; color: var(--ink); font-weight: 900; }
+
+  nav.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--rule); font-size: 12px; font-weight: 700; letter-spacing: .03em; }
+  nav.tabs a { padding: 9px 14px; text-decoration: none; border-right: 1px solid var(--rule); }
+  nav.tabs a:first-child { padding-left: 0; }
+  nav.tabs a:hover { background: var(--band); }
+
+  /* boxes */
+  .boxes { display: grid; grid-template-columns: 1.3fr 1fr 1fr; border-left: 1px solid var(--rule); margin-top: 22px; }
+  .box { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-top: 1px solid var(--rule); padding: 8px 12px 12px; margin-top: -1px; min-height: 76px; }
+  .box label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; }
+  .typed { font-family: var(--typed); color: var(--type); font-size: 16px; line-height: 1.4; }
+  .checks { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; }
+  .checks span { display: inline-flex; align-items: center; gap: 6px; }
+  .checks svg { width: 14px; height: 14px; }
+
+  /* hook */
+  .hook { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; padding: 44px 0 40px; border-bottom: 1px solid var(--rule); align-items: end; }
+  .hook h1 { font-size: clamp(42px, 5.6vw, 76px); line-height: .98; letter-spacing: -.035em; font-weight: 800; margin: 0; text-wrap: balance; }
+  .hook h1 em { font-style: normal; font-family: var(--typed); font-weight: 700; letter-spacing: -.02em; color: var(--type); background: linear-gradient(transparent 62%, var(--band) 62%); }
+  .hook p { margin: 0 0 22px; max-width: 46ch; font-size: 16px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 20px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 800; font-size: 15px; border: 2px solid var(--ink); transition: background .15s, color .15s; }
+  .btn:hover { background: var(--paper); color: var(--ink); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--band); }
+  .btn svg { width: 20px; height: 12px; }
+
+  h2 { font-size: 13px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; margin: 0; }
+  .sechead { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 36px 0 12px; border-bottom: 2px solid var(--rule); }
+  .sechead .big { font-size: clamp(26px, 3vw, 36px); letter-spacing: -.02em; font-weight: 800; text-transform: none; }
+  .sechead span { font-size: 12px; color: var(--soft); }
+
+  /* summary lines (G702 style) */
+  .summary { list-style: none; margin: 0; padding: 0; counter-reset: l; }
+  .summary li { counter-increment: l; display: grid; grid-template-columns: 34px auto 1fr auto; align-items: baseline; gap: 10px; padding: 14px 0; border-bottom: 1px solid #CFD6CC; }
+  .summary li::before { content: counter(l) "."; font-weight: 800; }
+  .summary .d { font-weight: 500; }
+  .summary .dots { border-bottom: 2px dotted #9DA59A; transform: translateY(-5px); }
+  .summary .amt { font-family: var(--typed); font-weight: 700; color: var(--type); font-size: clamp(22px, 2.4vw, 30px); font-variant-numeric: tabular-nums; }
+  .summary small { grid-column: 2 / -1; color: var(--soft); font-size: 12.5px; }
+
+  /* continuation sheet */
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .sov th { font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; text-align: left; padding: 8px 10px; border: 1px solid var(--rule); vertical-align: bottom; }
+  .sov th i { display: block; font-style: normal; font-weight: 900; font-size: 12px; }
+  .sov td { border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); padding: 14px 10px; vertical-align: top; font-size: 14px; }
+  .sov tbody tr:nth-child(odd) td { background: var(--band); }
+  .sov tbody tr:nth-child(even) td { background: var(--band2); }
+  .sov tbody tr:last-child td { border-bottom: 1px solid var(--rule); }
+  .sov td.n { font-weight: 800; width: 48px; }
+  .sov td.w { font-weight: 800; font-size: 17px; letter-spacing: -.01em; width: 26%; }
+  .sov td.by { font-family: var(--typed); color: var(--type); width: 18%; }
+  .sov td.for { width: 18%; font-size: 13px; }
+
+  /* attachments */
+  .attach { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding-top: 20px; }
+  .attach figure { margin: 0; background: #fff; padding: 8px 8px 10px; border: 1px solid #C9CFC6; box-shadow: 0 6px 14px -8px rgba(0,0,0,.35); transform: rotate(var(--r, 0deg)); transition: transform .2s; }
+  .attach figure:hover { transform: rotate(0deg) translateY(-3px); }
+  .attach img { width: 100%; height: 130px; object-fit: cover; display: block; }
+  .attach figcaption { font-family: var(--typed); font-size: 12px; color: var(--type); margin-top: 7px; line-height: 1.35; }
+  .ledger td, .ledger th { padding: 12px 10px; border-bottom: 1px solid #CFD6CC; text-align: left; font-size: 14px; vertical-align: top; }
+  .ledger th { font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; border-bottom: 1px solid var(--rule); }
+  .ledger td.p { font-weight: 800; font-size: 16px; }
+  .ledger td.num { font-family: var(--typed); color: var(--type); text-align: right; white-space: nowrap; }
+  .ledger th.num { text-align: right; }
+  .ledger td.st { font-family: var(--typed); color: var(--type); }
+
+  /* certification */
+  .cert { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; border: 2px solid var(--rule); margin-top: 20px; position: relative; }
+  .form { overflow-x: clip; }
+  .cert > div { padding: 22px 24px; }
+  .cert .text { border-right: 1px solid var(--rule); font-size: 14.5px; line-height: 1.7; }
+  .cert .text p { margin: 0 0 16px; max-width: 54ch; }
+  .sigs { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 24px; }
+  .sig .hand { font-family: 'Herr Von Muellerhoff', cursive; font-size: 40px; line-height: 1; color: var(--type); height: 44px; white-space: nowrap; }
+  .sig .line { border-top: 1px solid var(--rule); padding-top: 4px; font-size: 12.5px; font-weight: 700; }
+  .sig .line span { display: block; font-weight: 400; color: var(--soft); font-size: 11.5px; }
+  .stamp { position: absolute; right: 36px; top: -30px; border: 3px double var(--stamp); color: var(--stamp); padding: 8px 16px 6px; font-weight: 900; letter-spacing: .12em; text-align: center; transform: rotate(-9deg); background: rgba(252,252,250,.6); mix-blend-mode: multiply; }
+  .stamp b { display: block; font-size: 30px; line-height: 1; }
+  .stamp span { font-size: 10px; }
+
+  .submit { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; padding: 40px 0 0; }
+  .submit h2 { font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -.03em; line-height: 1; text-transform: none; font-weight: 800; }
+  .submit p { margin: 10px 0 0; color: var(--soft); max-width: 56ch; }
+
+  .foot { max-width: 1180px; margin: -40px auto 40px; padding: 0 12px; color: #B9C7BE; font-size: 12px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .foot a { color: #E2EEDD; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .stamp { opacity: 0; transform: rotate(-9deg) scale(1.6); }
+    .stamp.on { animation: thump .5s cubic-bezier(.2,1.4,.4,1) forwards; }
+    @keyframes thump { 60% { opacity: 1; transform: rotate(-9deg) scale(.94); } 100% { opacity: 1; transform: rotate(-9deg) scale(1); } }
+  }
+
+  @media (max-width: 900px) {
+    .form { margin: 0; padding: 24px 18px 40px; }
+    .form::before { display: none; }
+    .boxes { grid-template-columns: 1fr 1fr; }
+    .boxes .box:first-child { grid-column: 1 / -1; }
+    .hook, .cert, .submit { grid-template-columns: 1fr; }
+    .cert .text { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .attach { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .attach figure:last-child { grid-column: 1 / -1; }
+    nav.tabs { overflow-x: auto; white-space: nowrap; }
+    .sov thead { display: none; }
+    .sov tr { display: grid; grid-template-columns: 36px 1fr; border: 1px solid var(--rule); margin-bottom: -1px; }
+    .sov td { border: 0; padding: 6px 10px; width: auto !important; }
+    .sov td.n { grid-row: span 4; padding-top: 12px; }
+    .ledger thead { display: none; }
+    .ledger tr { display: grid; grid-template-columns: 1fr auto; padding: 8px 0; border-bottom: 1px solid #CFD6CC; }
+    .ledger td { border: 0; padding: 2px 0; }
+    .ledger td.p { grid-column: 1 / -1; }
+    .foot { margin: 16px auto 30px; padding: 0 18px; }
+    .stamp { right: 16px; top: -24px; }
+    .sigs { grid-template-columns: 1fr; }
+    .formhead { grid-template-columns: auto 1fr; }
+    .formhead .page { grid-column: 1 / -1; text-align: left; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#141414" opacity=".3"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#141414" opacity=".5"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#141414" opacity=".75"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#141414"/></g>
+  <g id="chk"><rect x="1" y="1" width="12" height="12" fill="none" stroke="#141414"/><path d="M3 7l3 3 6-7" fill="none" stroke="#1D2B47" stroke-width="2"/></g>
+</defs></svg>
+
+<main class="form">
+  <header class="formhead">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg>
+    <div class="t">Tillstone Land Solutions · Application &amp; certificate for oversight<span>Construction management, lender services, and development management. Raleigh, North Carolina, serving the U.S.</span></div>
+    <div class="page">Page<b>1 of 1</b></div>
+  </header>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#summary">Summary</a><a href="#sov">Schedule of values</a><a href="#ledger">Project ledger</a><a href="#cert">Certification</a><a href="#submit">Submit</a>
+  </nav>
+
+  <div class="boxes">
+    <div class="box"><label>To owner / lender</label><div class="typed">Lenders, banks, developers, owners, and the consultants who advise them</div></div>
+    <div class="box"><label>From</label><div class="typed">Tillstone Land Solutions<br>Raleigh, NC</div></div>
+    <div class="box"><label>Application no. / period to</label><div class="typed">001 &nbsp;/&nbsp; 09.2026</div></div>
+    <div class="box"><label>Project</label><div class="typed">Your next land development</div></div>
+    <div class="box"><label>Via</label><div class="typed">A partner, directly</div></div>
+    <div class="box"><label>Distribution to</label><div class="checks"><span><svg viewBox="0 0 14 14"><use href="#chk"/></svg>Owner</span><span><svg viewBox="0 0 14 14"><use href="#chk"/></svg>Lender</span><span><svg viewBox="0 0 14 14"><use href="#chk"/></svg>Builder</span><span><svg viewBox="0 0 14 14"><use href="#chk"/></svg>Engineer</span></div></div>
+  </div>
+
+  <section class="hook">
+    <h1>We have built the budgets lenders lend against, <em>and reported against them.</em></h1>
+    <div>
+      <p>Tillstone’s partners have run the crews, priced public bid work, directed a national homebuilder’s land division, and developed communities of their own. Every engagement is led by a principal who has held the seat on the other side of your table.</p>
+      <div class="actions">
+        <a class="btn" href="/contact/">Start an application <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18M13 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+        <a class="btn ghost" href="#sov">Read the schedule of values</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sechead" id="summary"><h2 class="big">Partner track record</h2><span>Summary, across principal and executive roles</span></div>
+  <ol class="summary">
+    <li><span class="d">Land development costs managed</span><span class="dots"></span><span class="amt">$750,000,000+</span></li>
+    <li><span class="d">Lots delivered</span><span class="dots"></span><span class="amt">10,000+</span></li>
+    <li><span class="d">Units entitled across the Carolinas</span><span class="dots"></span><span class="amt">3,000+</span></li>
+    <li><span class="d">Debt and equity capitalized</span><span class="dots"></span><span class="amt">$500,000,000+</span><small>HUD, Fannie Mae, traditional banks, and private lenders.</small></li>
+    <li><span class="d">Annual land development spend directed, Lennar Raleigh</span><span class="dots"></span><span class="amt">$140,000,000</span></li>
+  </ol>
+
+  <div class="sechead" id="sov"><h2 class="big">Schedule of values</h2><span>Continuation sheet: services and who leads them</span></div>
+  <table class="sov">
+    <thead><tr><th><i>A</i>Item</th><th><i>B</i>Description of work</th><th><i>C</i>Led by</th><th><i>D</i>What you receive</th><th><i>E</i>Engaged by</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td class="w">Construction management</td><td class="by">Landon Walls</td><td>Value engineering, contract bidding, and construction oversight that pay for themselves: contractor’s pricing, a builder’s pace, an owner’s accountability.</td><td class="for">Developers, owners</td></tr>
+      <tr><td class="n">2</td><td class="w">Lender services &amp; project oversight</td><td class="by">Drew Levin</td><td>Construction loan monitoring, draw review and certification, budget and schedule validation, and completion-risk assessment.</td><td class="for">Banks, lenders, capital partners</td></tr>
+      <tr><td class="n">3</td><td class="w">Development management</td><td class="by">Daniel Perkins</td><td>The full arc from site control and entitlement through delivered lots, with consensus built among boards, councils, and neighbors.</td><td class="for">Developers, landowners</td></tr>
+      <tr><td class="n">4</td><td class="w">Land &amp; market strategy</td><td class="by">Joey Brehm</td><td>Acquisition due diligence, market and absorption analysis, and land positioning before capital is committed.</td><td class="for">Developers, capital partners</td></tr>
+      <tr><td class="n">5</td><td class="w">Project controls</td><td class="by">All partners</td><td>Schedule management, budget reconciliation, and cost analysis maintained on every engagement.</td><td class="for">Every client</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sechead" id="ledger"><h2 class="big">Project ledger</h2><span>Selected engagements, discipline applied</span></div>
+  <table class="ledger">
+    <thead><tr><th>Project</th><th>Location</th><th class="num">Units</th><th class="num">Acres</th><th>Discipline</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="p">Bluejack Falls</td><td>Raleigh, NC</td><td class="num">1,200</td><td class="num">300</td><td>Full suite</td><td class="st">Rezoned as major subdivision</td></tr>
+      <tr><td class="p">River Mews Estates</td><td>Clayton, NC</td><td class="num">825</td><td class="num">275</td><td>Entitlement &amp; development</td><td class="st">PUD approved, annexed pre-purchase</td></tr>
+      <tr><td class="p">Carolina Springs</td><td>Apex, NC</td><td class="num">800</td><td class="num">200</td><td>Development management</td><td class="st">$100M+ site budget overseen</td></tr>
+      <tr><td class="p">The Wilds at Cedar Mountain</td><td>Asheville, NC</td><td class="num">425</td><td class="num">90</td><td>Development management</td><td class="st">Three end users, one plan</td></tr>
+      <tr><td class="p">Fountain Inn</td><td>Fountain Inn, SC</td><td class="num">288</td><td class="num">93</td><td>Development management</td><td class="st">Carried to final plat</td></tr>
+    </tbody>
+  </table>
+  <div class="attach" aria-label="Supporting documentation">
+    <figure style="--r:-1.2deg"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial"><figcaption>Exhibit A. Bluejack Falls, grading progress</figcaption></figure>
+    <figure style="--r:.8deg"><img src="/assets/img/img-05.jpg" alt="River Mews Estates mass grading"><figcaption>Exhibit B. River Mews, mass grading</figcaption></figure>
+    <figure style="--r:-.5deg"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial"><figcaption>Exhibit C. Carolina Springs, townhomes</figcaption></figure>
+    <figure style="--r:1.1deg"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial"><figcaption>Exhibit D. The Wilds, aerial</figcaption></figure>
+    <figure style="--r:-.9deg"><img src="/assets/img/img-21.jpg" alt="Fountain Inn proposed site plan"><figcaption>Exhibit E. Fountain Inn, site plan</figcaption></figure>
+  </div>
+
+  <div class="sechead" id="cert"><h2 class="big">Certification</h2><span>By the partners</span></div>
+  <div class="cert">
+    <div class="text">
+      <p>The undersigned are the partners of Tillstone Land Solutions. Each engagement is led by one of us, not handed to a business development layer.</p>
+      <p>Between us we have been the contractor, the estimator, the homebuilder’s land director, the developer, and the borrower. We review your project from each of those seats.</p>
+    </div>
+    <div class="sigs">
+      <div class="sig"><div class="hand">Landon Walls</div><div class="line">Landon Walls<span>Partner, construction management</span></div></div>
+      <div class="sig"><div class="hand">Drew Levin</div><div class="line">Drew Levin<span>Partner, underwriting &amp; lender services</span></div></div>
+      <div class="sig"><div class="hand">Daniel Perkins</div><div class="line">Daniel Perkins<span>Partner, development services</span></div></div>
+      <div class="sig"><div class="hand">Joey Brehm</div><div class="line">Joey Brehm<span>Partner, land &amp; market strategy</span></div></div>
+    </div>
+    <div class="stamp" id="stamp" aria-hidden="true"><b>CERTIFIED</b><span>TILLSTONE · RALEIGH NC</span></div>
+  </div>
+
+  <section class="submit" id="submit">
+    <div><h2>Submit your project. A partner reviews it.</h2><p>Bring the budget, the schedule, and the plans as they stand today, whether you are delivering lots or funding them.</p></div>
+    <div class="actions"><a class="btn" href="/contact/">Start an application <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18M13 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a><a class="btn ghost" href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></div>
+  </section>
+</main>
+<div class="foot"><span>Tillstone Land Solutions · Raleigh, NC · serving the U.S.</span><span><a href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener">LinkedIn</a> · © 2026</span></div>
+
+<script>
+  (function () {
+    var s = document.getElementById('stamp');
+    new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { s.classList.add('on'); o.disconnect(); } }, { threshold: 1 }).observe(s);
+  })();
+</script>
+</body>
+</html>

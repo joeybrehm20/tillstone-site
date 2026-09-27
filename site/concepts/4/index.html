@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept 4 · Project Sign · Tillstone</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00633B; --green-d: #004D2E; --brown: #5A3417; --blue: #1D4F9A; --white: #FFFFFF; --sky: #DCE4E6; --sky2: #C9D4D6; --steel: #7F8A8D; --steel-d: #596366; --ink: #13201A;
+    --f: 'Overpass', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--sky); scrollbar-color: var(--green) var(--sky); }
+  body { margin: 0; font-family: var(--f); color: var(--ink); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--green); color: var(--white); }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid #F2B705; outline-offset: 3px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+  /* sign primitive: green face, inset white border, rounded */
+  .sign { background: var(--green); color: var(--white); border-radius: 18px; padding: 7px; box-shadow: 0 16px 30px -18px rgba(10,30,20,.55); }
+  .sign > .face { border: 4px solid var(--white); border-radius: 12px; padding: 26px 32px 28px; height: 100%; }
+  .sign.brown { background: var(--brown); }
+  .sign.blue { background: var(--blue); }
+
+  header.bar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; max-width: 1360px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand svg { width: 36px; height: 36px; }
+  .brand b { font-weight: 900; font-size: 22px; letter-spacing: .06em; display: block; line-height: 1; }
+  .brand span { font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--green); }
+  nav.route { display: flex; gap: 8px; }
+  nav.route a { text-decoration: none; background: var(--green); color: var(--white); font-weight: 800; font-size: 14px; letter-spacing: .04em; padding: 9px 14px 7px; border-radius: 8px; box-shadow: inset 0 0 0 2px var(--green), inset 0 0 0 4px var(--white); }
+  nav.route a:hover { background: var(--green-d); }
+  nav.route a.blue { background: var(--blue); box-shadow: inset 0 0 0 2px var(--blue), inset 0 0 0 4px var(--white); }
+
+  /* hero: sign mounted in front of a graded site */
+  .hero { position: relative; margin-top: 8px; padding: 90px 0 0; background: url('/assets/img/img-12.jpg') center 38% / cover no-repeat; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(220,228,230,0) 55%, var(--sky) 100%); pointer-events: none; }
+  .mount { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 0 40px; }
+  .tab { display: inline-flex; align-items: center; gap: 12px; margin-left: auto; float: right; background: var(--green); color: var(--white); text-decoration: none; border-radius: 12px 12px 0 0; padding: 7px 7px 0; position: relative; z-index: 2; }
+  .tab span { border: 4px solid var(--white); border-bottom: 0; border-radius: 8px 8px 0 0; padding: 10px 18px 8px; font-weight: 900; font-size: 18px; letter-spacing: .04em; display: flex; gap: 12px; align-items: center; }
+  .tab svg { width: 26px; height: 22px; }
+  .tab:hover span { background: var(--green-d); }
+  .main-sign { clear: both; border-top-right-radius: 0; }
+  .main-sign .face { padding: 34px 44px 30px; }
+  .main-sign .firm { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 3px solid var(--white); }
+  .main-sign .firm svg { width: 54px; height: 54px; }
+  .main-sign .firm b { font-weight: 900; font-size: 34px; letter-spacing: .07em; display: block; line-height: 1; }
+  .main-sign .firm span { font-weight: 700; font-size: 13px; letter-spacing: .24em; }
+  .main-sign h1 { font-weight: 900; font-size: clamp(38px, 5vw, 66px); line-height: 1.02; letter-spacing: -.005em; margin: 26px 0 26px; text-wrap: balance; }
+  .roster { list-style: none; margin: 0; padding: 0; }
+  .roster li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; padding: 13px 0 11px; border-top: 2px solid rgba(255,255,255,.55); align-items: baseline; }
+  .roster li:last-child { border-bottom: 2px solid rgba(255,255,255,.55); }
+  .roster .role { font-weight: 700; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+  .roster .who { font-weight: 900; font-size: 26px; text-align: right; }
+  .main-sign .base { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; font-weight: 800; font-size: 15px; letter-spacing: .08em; }
+  .posts { display: flex; justify-content: space-around; height: 120px; max-width: 980px; margin: 0 auto; padding: 0 180px; position: relative; z-index: 1; }
+  .posts i { width: 22px; background: linear-gradient(90deg, var(--steel-d), var(--steel) 45%, var(--steel-d)); }
+
+  .intro { max-width: 980px; margin: 0 auto; padding: 40px 40px 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+  .intro p { margin: 0; font-size: 19px; line-height: 1.65; max-width: 54ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; background: var(--green); color: var(--white); font-weight: 900; font-size: 17px; letter-spacing: .03em; padding: 15px 22px 13px; border-radius: 10px; box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 6px var(--white); transition: background .15s; }
+  .btn:hover { background: var(--green-d); }
+  .btn.plain { background: transparent; color: var(--green); box-shadow: inset 0 0 0 3px var(--green); }
+  .btn.plain:hover { background: rgba(0,99,59,.08); }
+  .btn svg { width: 22px; height: 16px; }
+
+  section { padding: 110px 0 0; }
+  h2.plain { font-weight: 900; font-size: clamp(34px, 4vw, 52px); line-height: 1; letter-spacing: -.01em; margin: 0 0 14px; color: var(--green); }
+  .lede { max-width: 58ch; margin: 0 0 40px; font-size: 18px; }
+
+  /* gantry */
+  .gantry { position: relative; padding-top: 34px; }
+  .truss { position: absolute; left: -40px; right: -40px; top: 0; height: 26px; background:
+      linear-gradient(var(--steel-d), var(--steel-d)) top / 100% 4px no-repeat,
+      linear-gradient(var(--steel-d), var(--steel-d)) bottom / 100% 4px no-repeat,
+      repeating-linear-gradient(60deg, transparent 0 12px, var(--steel) 12px 15px, transparent 15px 26px),
+      repeating-linear-gradient(-60deg, transparent 0 12px, var(--steel) 12px 15px, transparent 15px 26px); }
+  .overhead { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; align-items: start; }
+  .overhead .sign { position: relative; }
+  .overhead .sign::before { content: ""; position: absolute; top: -16px; left: 22%; right: 22%; height: 16px; background: linear-gradient(90deg, var(--steel-d) 0 8px, transparent 8px calc(100% - 8px), var(--steel-d) calc(100% - 8px)); }
+  .overhead h3 { font-weight: 900; font-size: 25px; line-height: 1.05; margin: 0 0 14px; min-height: 2.1em; }
+  .overhead p { margin: 0 0 18px; font-size: 15px; line-height: 1.55; }
+  .overhead .lead { display: flex; justify-content: space-between; align-items: end; gap: 10px; border-top: 2px solid rgba(255,255,255,.55); padding-top: 12px; font-weight: 800; font-size: 15px; }
+  .overhead .lead svg { width: 30px; height: 34px; flex: none; }
+  .controls-note { margin: 26px 0 0; font-size: 15px; max-width: 70ch; }
+
+  /* distance sign */
+  .distance { max-width: 860px; }
+  .distance .face { padding: 18px 36px; }
+  .distance table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .distance td { padding: 16px 0 12px; font-weight: 800; font-size: clamp(22px, 2.6vw, 34px); border-bottom: 2px solid rgba(255,255,255,.35); line-height: 1.1; }
+  .distance tr:last-child td { border-bottom: 0; }
+  .distance td.n { text-align: right; font-weight: 900; padding-left: 30px; white-space: nowrap; }
+  .distance-note { margin: 18px 0 0; font-size: 15px; max-width: 64ch; }
+
+  /* attraction signs */
+  .attractions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+  .attr { display: grid; grid-template-rows: auto auto; }
+  .attr img { width: 100%; height: 280px; object-fit: cover; display: block; border-radius: 4px; }
+  .attr .sign { margin: -40px 22px 0; position: relative; }
+  .attr .face { padding: 16px 22px 14px; display: flex; justify-content: space-between; gap: 14px; align-items: end; }
+  .attr h3 { font-weight: 900; font-size: 28px; line-height: 1; margin: 0 0 6px; }
+  .attr .meta { font-weight: 700; font-size: 14px; letter-spacing: .06em; }
+  .attr .n { text-align: right; font-weight: 900; font-size: 22px; white-space: nowrap; }
+  .attr .n span { display: block; font-size: 12px; letter-spacing: .1em; font-weight: 700; }
+  .attr .what { margin: 14px 22px 0; font-size: 15px; }
+
+  .close { padding: 130px 0 70px; }
+  .close .sign { max-width: 760px; }
+  .close .face { padding: 30px 36px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  .close h2 { font-weight: 900; font-size: clamp(34px, 4.4vw, 58px); line-height: 1; margin: 0 0 10px; }
+  .close p { margin: 0; font-size: 17px; }
+  .close .arrow { width: 96px; height: 96px; }
+  .close .face a { color: var(--white); }
+  footer { border-top: 2px solid var(--sky2); padding: 22px 40px 40px; max-width: 1360px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mountable { transform: translateY(-26px) rotate(-1.2deg); opacity: 0; transition: transform .9s cubic-bezier(.16,1,.3,1), opacity .5s; }
+    .mountable.on { transform: none; opacity: 1; }
+    .overhead .mountable:nth-child(2) { transition-delay: .08s; } .overhead .mountable:nth-child(3) { transition-delay: .16s; } .overhead .mountable:nth-child(4) { transition-delay: .24s; }
+  }
+
+  @media (max-width: 960px) {
+    .wrap { padding: 0 20px; }
+    header.bar { padding: 12px 16px; gap: 12px; }
+    .brand b { font-size: 18px; }
+    .brand span { font-size: 9px; letter-spacing: .14em; }
+    .brand svg { width: 30px; height: 30px; }
+    nav.route a:not(.blue) { display: none; }
+    .hero { padding-top: 40px; }
+    .mount { padding: 0 14px; }
+    .main-sign .face { padding: 22px 20px 20px; }
+    .main-sign .firm b { font-size: 24px; }
+    .roster li { grid-template-columns: 1fr; gap: 0; }
+    .roster .who { text-align: left; font-size: 22px; }
+    .main-sign .base { flex-direction: column; gap: 4px; font-size: 13px; }
+    .posts { padding: 0 60px; height: 70px; }
+    .tab span { font-size: 15px; padding: 8px 12px 6px; }
+    .intro { grid-template-columns: 1fr; padding: 30px 20px 0; }
+    .overhead { grid-template-columns: 1fr; gap: 34px; }
+    .truss { left: -20px; right: -20px; }
+    .overhead h3 { min-height: 0; }
+    .attractions { grid-template-columns: 1fr; }
+    .attr img { height: 220px; }
+    .attr .sign { margin: -30px 10px 0; }
+    .attr .face { flex-direction: column; align-items: start; }
+    .attr .n { text-align: left; }
+    .close .face { grid-template-columns: 1fr; }
+    .close .arrow { width: 60px; height: 60px; }
+    .distance .face { padding: 10px 18px; }
+    section { padding-top: 80px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="currentColor" opacity=".5"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="currentColor" opacity=".7"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="currentColor" opacity=".85"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="currentColor"/></g>
+  <g id="down"><path d="M15 2v22M5 16l10 12 10-12" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="square"/></g>
+  <g id="upright"><path d="M4 26L26 4M10 4h16v16" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="square"/></g>
+</defs></svg>
+
+<header class="bar">
+  <a class="brand" href="#"><svg viewBox="0 0 40 40" style="color:#00633B" aria-hidden="true"><use href="#mark"/></svg><div><b>TILLSTONE</b><span>LAND SOLUTIONS</span></div></a>
+  <nav class="route" aria-label="Main"><a href="#services">Services</a><a href="#record">Record</a><a href="#projects">Projects</a><a class="blue" href="/contact/">Contact</a></nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="mount">
+      <a class="tab" href="/contact/"><span>Talk to a partner <svg viewBox="0 0 30 30" aria-hidden="true"><use href="#upright"/></svg></span></a>
+      <div class="sign main-sign mountable" id="mainSign">
+        <div class="face">
+          <div class="firm"><svg viewBox="0 0 40 40" style="color:#fff" aria-hidden="true"><use href="#mark"/></svg><div><b>TILLSTONE</b><span>LAND SOLUTIONS</span></div></div>
+          <h1>Every seat on the project sign, held by a partner.</h1>
+          <ul class="roster">
+            <li><span class="role">Developer / owner</span><span class="who">Daniel Perkins</span></li>
+            <li><span class="role">General contractor</span><span class="who">Landon Walls</span></li>
+            <li><span class="role">Homebuilder land division</span><span class="who">Landon Walls</span></li>
+            <li><span class="role">Lender / capital</span><span class="who">Drew Levin</span></li>
+            <li><span class="role">Land acquisition</span><span class="who">Joey Brehm</span></li>
+          </ul>
+          <div class="base"><span>Raleigh, North Carolina · Serving the U.S.</span><span>tillstone.land</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="posts" aria-hidden="true"><i></i><i></i></div>
+  </div>
+
+  <div class="intro">
+    <p>Tillstone is a partner-led land development and project management firm. Each partner has held one of the lines on that sign for real, and now works from your side of the table: construction management, lender services, and development management.</p>
+    <div class="actions"><a class="btn" href="/contact/">Talk to a partner <svg viewBox="0 0 30 22" aria-hidden="true"><path d="M0 11h26M18 2l9 9-9 9" fill="none" stroke="currentColor" stroke-width="3.4"/></svg></a><a class="btn plain" href="#projects">See the projects</a></div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="plain">Choose your lane.</h2>
+      <p class="lede">Four services, each led by the partner who has done that job from the other side.</p>
+      <div class="gantry">
+        <div class="truss" aria-hidden="true"></div>
+        <div class="overhead">
+          <div class="sign mountable"><div class="face"><h3>Construction management</h3><p>Value engineering, contract bidding, and oversight that pay for themselves.</p><div class="lead"><span>Landon Walls</span><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#down"/></svg></div></div></div>
+          <div class="sign mountable"><div class="face"><h3>Lender services</h3><p>Loan monitoring, draw review and certification, completion-risk assessment.</p><div class="lead"><span>Drew Levin</span><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#down"/></svg></div></div></div>
+          <div class="sign mountable"><div class="face"><h3>Development management</h3><p>Site control and entitlement through delivered lots.</p><div class="lead"><span>Daniel Perkins</span><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#down"/></svg></div></div></div>
+          <div class="sign mountable"><div class="face"><h3>Land &amp; market strategy</h3><p>Due diligence and absorption analysis before capital is committed.</p><div class="lead"><span>Joey Brehm</span><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#down"/></svg></div></div></div>
+        </div>
+      </div>
+      <p class="controls-note">Project controls, meaning schedule, budget reconciliation, and cost analysis, run under every lane.</p>
+    </div>
+  </section>
+
+  <section id="record">
+    <div class="wrap">
+      <h2 class="plain">How far the partners have come.</h2>
+      <p class="lede">Combined record across principal and executive roles.</p>
+      <div class="sign distance mountable"><div class="face">
+        <table>
+          <tr><td>Land development costs managed</td><td class="n">$750M+</td></tr>
+          <tr><td>Lots delivered</td><td class="n">10,000+</td></tr>
+          <tr><td>Units entitled</td><td class="n">3,000+</td></tr>
+          <tr><td>Debt &amp; equity capitalized</td><td class="n">$500M+</td></tr>
+        </table>
+      </div></div>
+      <p class="distance-note">Including direction of all land development for a top-3 national homebuilder’s Raleigh division, a $140M annual spend, and publicly bid federal, state, and NCDOT civil work.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="plain">Points of interest.</h2>
+      <p class="lede">Selected engagements and the discipline applied.</p>
+      <div class="attractions">
+        <article class="attr"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial"><div class="sign brown"><div class="face"><div><h3>Bluejack Falls</h3><div class="meta">Raleigh, NC · Full suite</div></div><div class="n">1,200<span>units · 300 ac</span></div></div></div><p class="what">Two raw-land parcels combined and rezoned as a major subdivision.</p></article>
+        <article class="attr"><img src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial"><div class="sign brown"><div class="face"><div><h3>River Mews Estates</h3><div class="meta">Clayton, NC · Entitlement</div></div><div class="n">825<span>units · 275 ac</span></div></div></div><p class="what">PUD approval secured and the land annexed before purchase.</p></article>
+        <article class="attr"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial"><div class="sign brown"><div class="face"><div><h3>Carolina Springs</h3><div class="meta">Apex, NC · Oversight</div></div><div class="n">800<span>units · 200 ac</span></div></div></div><p class="what">Delivery of every lot against a $100M+ site budget, including a school’s offsite utilities.</p></article>
+        <article class="attr"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial"><div class="sign brown"><div class="face"><div><h3>The Wilds</h3><div class="meta">Asheville, NC · Development</div></div><div class="n">425<span>units · 90 ac</span></div></div></div><p class="what">Mountain terrain developed for three end users at once.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <div class="sign blue mountable"><div class="face">
+        <div><h2>Talk to a partner</h2><p>Next right: <a href="/contact/">tillstone.land/contact</a> · <a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></p></div>
+        <a href="/contact/" aria-label="Contact Tillstone"><svg class="arrow" viewBox="0 0 30 30"><use href="#upright"/></svg></a>
+      </div></div>
+    </div>
+  </section>
+</main>
+<footer><span>Tillstone Land Solutions · Raleigh, NC · serving the U.S.</span><span><a href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener">LinkedIn</a> · © 2026</span></footer>
+
+<script>
+  (function () {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .2 });
+    document.querySelectorAll('.mountable').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
