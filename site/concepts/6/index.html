@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept 6 · Field &amp; Office · Tillstone</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0E1915; --night-2: #16241F; --line-d: rgba(236,241,238,.14); --paper: #FFFFFF; --panel: #F1F4F2; --ink: #0E1915; --muted: #5E6A65; --soft-d: #9AA6A0; --stone: #C9A97F; --stone-d: #8A6B45;
+    --sans: 'Geist', Arial, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scrollbar-color: var(--night) var(--panel); }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--stone); color: var(--night); }
+  a { color: inherit; text-underline-offset: 4px; }
+  :focus-visible { outline: 2px solid var(--stone); outline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+
+  /* header */
+  header.nav { position: absolute; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; color: #ECF1EE; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; }
+  .brand b { font-weight: 600; font-size: 18px; letter-spacing: .02em; }
+  nav.links { display: flex; align-items: center; gap: 30px; font-size: 14.5px; }
+  nav.links a { text-decoration: none; opacity: .82; transition: opacity .15s; }
+  nav.links a:hover { opacity: 1; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 6px; font-size: 14.5px; font-weight: 500; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
+  .pill.light { background: #F6F8F7; color: var(--night); }
+  .pill.light:hover { background: var(--stone); }
+  .pill.dark { background: var(--night-2); color: #ECF1EE; border: 1px solid var(--line-d); }
+  .pill.dark:hover { border-color: rgba(236,241,238,.4); }
+  .pill.ink { background: var(--night); color: #ECF1EE; }
+  .pill.ink:hover { background: var(--stone-d); }
+  .pill svg { width: 16px; height: 16px; }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line-d); border-radius: 6px; color: #ECF1EE; width: 42px; height: 42px; cursor: pointer; }
+  .menu-btn svg { width: 20px; height: 20px; }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; background: var(--night); color: #ECF1EE; }
+  .hero .left { display: flex; flex-direction: column; justify-content: flex-end; padding: 150px 56px 56px 40px; border-right: 1px solid var(--line-d); position: relative; }
+  .hero h1 { font-weight: 300; font-size: clamp(46px, 4.7vw, 78px); line-height: 1.02; letter-spacing: -.035em; margin: 0 0 30px; text-wrap: balance; }
+  .hero h1 span { color: var(--soft-d); display: block; }
+  .hero p { font-size: 18px; line-height: 1.6; color: #C9D2CD; max-width: 46ch; margin: 0 0 32px; }
+  .hero .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero .foot { display: flex; justify-content: space-between; align-items: end; margin-top: 70px; padding-top: 22px; border-top: 1px solid var(--line-d); font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--soft-d); text-transform: uppercase; }
+  .hero .right { position: relative; overflow: hidden; }
+  .hero .right img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero .right::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,25,21,.35), rgba(14,25,21,0) 30%, rgba(14,25,21,0) 60%, rgba(14,25,21,.6)); }
+  .caption { position: absolute; left: 28px; bottom: 28px; right: 28px; z-index: 2; display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+  .caption .card { background: rgba(14,25,21,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line-d); border-radius: 8px; padding: 14px 16px; max-width: 320px; font-size: 14px; color: #DDE4E0; }
+  .caption .card b { display: block; font-weight: 500; color: #fff; font-size: 15px; }
+  .caption .loc { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+
+  /* experience strip */
+  .strip { background: var(--panel); border-bottom: 1px solid #E1E6E3; }
+  .strip .in { max-width: 1360px; margin: 0 auto; padding: 26px 40px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .strip .lbl { font-size: 14px; color: var(--muted); max-width: 24ch; line-height: 1.4; }
+  .strip ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 44px; flex-wrap: wrap; flex: 1; justify-content: space-between; }
+  .strip li { font-weight: 500; font-size: 19px; letter-spacing: -.01em; color: #26332E; }
+  .strip li small { display: block; font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+  /* sections with a label rail */
+  .sec { max-width: 1360px; margin: 0 auto; padding: 130px 40px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 60px; }
+  .rail { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 10px; border-top: 1px solid #D6DDD9; align-self: start; position: sticky; top: 30px; }
+  h2 { font-weight: 300; font-size: clamp(38px, 4.2vw, 60px); line-height: 1.05; letter-spacing: -.03em; margin: 0; text-wrap: balance; }
+  h2 span { color: #8B9691; }
+
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; }
+  .about .lead { font-size: 20px; line-height: 1.55; margin: 0 0 20px; }
+  .about p { color: var(--muted); margin: 0 0 18px; max-width: 58ch; }
+  .figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 34px 0 30px; border-top: 1px solid #D6DDD9; }
+  .figures div { padding: 16px 16px 0 0; }
+  .figures b { display: block; font-weight: 400; font-size: 30px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .figures span { font-size: 13.5px; color: var(--muted); line-height: 1.35; display: block; }
+  .textlink { font-weight: 500; text-decoration: underline; text-decoration-color: var(--stone); text-decoration-thickness: 2px; }
+
+  .services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 50px; }
+  .svc { background: var(--panel); border-radius: 10px; padding: 34px 32px 30px; display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 0; }
+  .svc h3 { font-weight: 400; font-size: 30px; letter-spacing: -.02em; line-height: 1.1; margin: 0 0 12px; }
+  .svc > p { color: var(--muted); margin: 0 0 24px; max-width: 46ch; }
+  .svc .inc { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 10px; border-bottom: 1px solid #D6DDD9; margin-bottom: 10px; }
+  .svc ul { list-style: none; margin: 0 0 24px; padding: 0; }
+  .svc li { display: flex; gap: 12px; padding: 7px 0; font-size: 15px; }
+  .svc li svg { width: 18px; height: 18px; flex: none; margin-top: 3px; }
+  .svc .by { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding-top: 16px; border-top: 1px solid #D6DDD9; }
+  .svc .by b { font-weight: 500; }
+  .controls { margin-top: 18px; padding: 20px 32px; border: 1px solid #D6DDD9; border-radius: 10px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 15px; }
+  .controls b { font-weight: 500; }
+
+  /* process: sticky photo + steps */
+  .process { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--panel); }
+  .process .pic { position: sticky; top: 0; height: 100vh; overflow: hidden; color: #fff; }
+  .process .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .process .pic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,25,21,.1) 30%, rgba(14,25,21,.82)); }
+  .process .pic .t { position: absolute; left: 40px; right: 40px; bottom: 48px; z-index: 2; }
+  .process .pic h2 { font-size: clamp(48px, 5.4vw, 84px); color: #fff; margin-bottom: 14px; }
+  .process .pic p { max-width: 44ch; color: #D9E0DC; margin: 0; font-size: 17px; }
+  .steps { padding: 90px 56px 90px; display: flex; flex-direction: column; gap: 18px; }
+  .step { background: var(--paper); border-radius: 10px; padding: 30px 32px; }
+  .step .n { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid #E1E6E3; margin-bottom: 16px; display: flex; justify-content: space-between; }
+  .step h3 { font-weight: 400; font-size: 28px; letter-spacing: -.02em; margin: 0 0 10px; line-height: 1.1; }
+  .step p { color: var(--muted); margin: 0; }
+
+  /* projects */
+  .projects { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; margin-top: 50px; }
+  .proj { position: relative; border-radius: 10px; overflow: hidden; color: #fff; grid-column: span 3; min-height: 440px; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; text-decoration: none; }
+  .proj.s { grid-column: span 2; min-height: 360px; }
+  .proj img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+  .proj::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(14,25,21,.78) 0%, rgba(14,25,21,.35) 34%, rgba(14,25,21,.08) 55%, rgba(14,25,21,.72) 100%); }
+  .proj:hover img { transform: scale(1.04); }
+  .proj > :not(img) { position: relative; z-index: 2; }
+  .proj h3 { font-weight: 400; font-size: 30px; letter-spacing: -.02em; line-height: 1.1; margin: 0 0 6px; }
+  .proj .loc { font-size: 15px; color: #D9E0DC; }
+  .proj .go { align-self: flex-start; margin-top: 18px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; }
+  .proj .data { display: flex; gap: 22px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .proj .data b { display: block; font-family: var(--sans); font-weight: 400; font-size: 22px; letter-spacing: -.01em; text-transform: none; }
+
+  /* partners */
+  .partners { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 50px; }
+  .partner { border-top: 1px solid var(--ink); padding-top: 20px; }
+  .partner h3 { font-weight: 400; font-size: 24px; letter-spacing: -.02em; margin: 0 0 4px; }
+  .partner .role { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--stone-d); margin-bottom: 14px; }
+  .partner p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* cta band */
+  .cta { position: relative; color: #fff; text-align: center; padding: 170px 40px; overflow: hidden; }
+  .cta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cta::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(14,25,21,.72); }
+  .cta > div { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
+  .cta h2 { color: #fff; font-size: clamp(44px, 5.6vw, 80px); margin-bottom: 20px; }
+  .cta h2 span { color: #A9B5AF; }
+  .cta p { color: #D9E0DC; font-size: 18px; margin: 0 auto 32px; max-width: 48ch; }
+  .cta .actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+  footer { background: var(--night); color: #C9D2CD; }
+  footer .in { max-width: 1360px; margin: 0 auto; padding: 60px 40px 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  footer h4 { font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft-d); margin: 0 0 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer .base { max-width: 1360px; margin: 0 auto; padding: 22px 40px 34px; border-top: 1px solid var(--line-d); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13.5px; color: var(--soft-d); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rise { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .rise.on { opacity: 1; transform: none; }
+    .hero h1 { animation: in 1s cubic-bezier(.16,1,.3,1) both; }
+    .hero h1 span { animation: in 1s .12s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes in { from { opacity: 0; transform: translateY(24px); } }
+  }
+
+  @media (max-width: 1000px) {
+    header.nav { padding: 16px 20px; }
+    nav.links { display: none; position: fixed; inset: 0; background: var(--night); flex-direction: column; justify-content: center; gap: 26px; font-size: 24px; }
+    nav.links.open { display: flex; }
+    nav.links .pill { font-size: 18px; }
+    .menu-btn { display: grid; place-items: center; position: relative; z-index: 30; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero .right { height: 56vh; order: -1; }
+    .hero .left { padding: 40px 20px 36px; border-right: 0; }
+    .hero .foot { margin-top: 44px; }
+    .strip .in { padding: 22px 20px; gap: 18px; }
+    .strip ul { gap: 18px 28px; justify-content: flex-start; }
+    .sec { grid-template-columns: 1fr; gap: 26px; padding: 90px 20px; }
+    .rail { position: static; }
+    .about, .services, .process { grid-template-columns: 1fr; }
+    .process .pic { position: relative; height: 70vh; }
+    .steps { padding: 40px 20px 60px; }
+    .projects { grid-template-columns: 1fr; }
+    .proj, .proj.s { grid-column: auto; min-height: 380px; }
+    .partners { grid-template-columns: 1fr 1fr; }
+    .cta { padding: 110px 20px; }
+    footer .in { grid-template-columns: 1fr; padding: 50px 20px 30px; }
+    footer .base { padding: 20px 20px 30px; }
+  }
+  @media (max-width: 560px) {
+    .hero .foot { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .strip .in { flex-direction: column; align-items: flex-start; }
+    .strip ul { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; width: 100%; }
+    .strip .lbl { max-width: none; }
+    .partners, .figures { grid-template-columns: 1fr; }
+    .figures div { padding: 14px 0; border-bottom: 1px solid #E1E6E3; }
+    .svc { padding: 26px 22px; }
+    .caption { left: 16px; right: 16px; bottom: 16px; }
+    .caption .loc { display: none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#8D7059"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#4A4A40"/></g>
+  <g id="chk"><circle cx="9" cy="9" r="8.5" fill="none" stroke="#9AA6A0"/><path d="M5.5 9.2l2.4 2.4 4.6-5" fill="none" stroke="#0E1915" stroke-width="1.5"/></g>
+  <g id="arr"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></g>
+</defs></svg>
+
+<header class="nav">
+  <a class="brand" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><b>Tillstone</b></a>
+  <nav class="links" id="links" aria-label="Main">
+    <a href="#services">Services</a><a href="#process">Process</a><a href="#experience">Experience</a><a href="#partners">Partners</a>
+    <a class="pill light" href="/contact/">Talk to a partner</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 20 20"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<section class="hero">
+  <div class="left">
+    <h1><span>Land development,</span>earned from the ground up.</h1>
+    <p>A partner-led firm in Raleigh, serving the U.S. Construction management, lender services, and development management from people who have run the crews, directed a national homebuilder’s land division, and built communities of their own.</p>
+    <div class="actions"><a class="pill light" href="#services">Our services <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></a><a class="pill dark" href="#experience">See the work</a></div>
+    <div class="foot"><span>Raleigh, NC</span><span>$750M+ in land development managed</span></div>
+  </div>
+  <div class="right">
+    <img src="/assets/img/img-05.jpg" alt="Dozer mass grading at River Mews Estates, Clayton, NC">
+    <div class="caption"><div class="card"><b>River Mews Estates</b>Mass grading on 275 acres in Clayton, planned for 825 units.</div><span class="loc">Johnston Co., NC</span></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="in">
+    <span class="lbl">Where the partners’ experience was earned</span>
+    <ul>
+      <li>Lennar<small>Raleigh land division</small></li>
+      <li>Barnhill Contracting<small>Public civil bids</small></li>
+      <li>NCDOT<small>State road work</small></li>
+      <li>HUD · Fannie Mae<small>Capital sources</small></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section class="sec" id="about">
+    <div class="rail">About</div>
+    <div class="about">
+      <h2 class="rise">Every seat at the development table. <span>Now on your side of it.</span></h2>
+      <div class="rise">
+        <p class="lead">We have worked every side of a land deal: excavating crews, public bid rooms, the land division of a national homebuilder, and communities of our own.</p>
+        <p>Every seat taught the same lesson. The quality of project oversight varies widely, and the gap is expensive. Tillstone is the owner’s rep that has actually been the owner, bringing principal-level experience to developers, owners, and lenders.</p>
+        <div class="figures">
+          <div><b>$750M+</b><span>Land development costs managed</span></div>
+          <div><b>10,000+</b><span>Lots delivered</span></div>
+          <div><b>3,000+</b><span>Units entitled</span></div>
+        </div>
+        <a class="textlink" href="/about/">Meet the partners</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" style="padding-top:0">
+    <div class="rail">Services</div>
+    <div>
+      <h2 class="rise">Four disciplines, <span>each led by a partner who has done the job.</span></h2>
+      <div class="services">
+        <article class="svc rise"><h3>Construction management</h3><p>Value engineering, contract bidding, and construction oversight that pay for themselves.</p><div class="inc">Includes</div><ul><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Bid packages and contractor selection</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Value engineering on sitework</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Construction oversight to delivery</li></ul><div class="by"><span>Led by <b>Landon Walls</b></span><span>Contractor · builder</span></div></article>
+        <article class="svc rise"><h3>Lender services</h3><p>Independent oversight for banks and capital providers, from people who have built the budgets lenders lend against.</p><div class="inc">Includes</div><ul><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Construction loan monitoring</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Draw review and certification</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Completion-risk assessment</li></ul><div class="by"><span>Led by <b>Drew Levin</b></span><span>$500M+ capitalized</span></div></article>
+        <article class="svc rise"><h3>Development management</h3><p>The full arc of a project, from site control through delivered lots.</p><div class="inc">Includes</div><ul><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Rezoning and entitlement</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Developer agreements and easements</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Phasing and builder takedowns</li></ul><div class="by"><span>Led by <b>Daniel Perkins</b></span><span>3,000+ units entitled</span></div></article>
+        <article class="svc rise"><h3>Land &amp; market strategy</h3><p>Confirming the site and the market before capital is committed.</p><div class="inc">Includes</div><ul><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Site selection and due diligence</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Market and absorption analysis</li><li><svg viewBox="0 0 18 18"><use href="#chk"/></svg>Land positioning for capital partners</li></ul><div class="by"><span>Led by <b>Joey Brehm</b></span><span>$70M+ acquired</span></div></article>
+      </div>
+      <div class="controls rise"><b>Project controls on every engagement</b><span>Schedule management, budget reconciliation, and cost analysis.</span></div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="pic">
+      <img src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial">
+      <div class="t"><h2>First walk to final plat.</h2><p>How a Tillstone engagement runs: one partner accountable at each stage, the same team from site control to closing.</p></div>
+    </div>
+    <div class="steps">
+      <div class="step rise"><div class="n"><span>Stage 1</span><span>Joey Brehm</span></div><h3>Site &amp; market</h3><p>Identify the site, run due diligence, and test absorption and product fit before capital is committed.</p></div>
+      <div class="step rise"><div class="n"><span>Stage 2</span><span>Daniel Perkins</span></div><h3>Entitlement</h3><p>Rezoning, conditions of approval, and developer agreements, with consensus built among boards, councils, and neighbors.</p></div>
+      <div class="step rise"><div class="n"><span>Stage 3</span><span>Landon Walls</span></div><h3>Construction</h3><p>Bid the work, value-engineer the sitework, and manage contractors against budget and schedule.</p></div>
+      <div class="step rise"><div class="n"><span>Stage 4</span><span>Drew Levin</span></div><h3>Capital &amp; draws</h3><p>Budgets built to be lent against, draws reviewed and certified, and completion risk reported to lenders.</p></div>
+      <div class="step rise"><div class="n"><span>Stage 5</span><span>All partners</span></div><h3>Delivery</h3><p>Final plat, lot delivery to homebuilders, and closing, with project controls carried through every phase.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="rail">Experience</div>
+    <div>
+      <h2 class="rise">Recent work, <span>from raw land to delivered lots.</span></h2>
+      <div class="projects">
+        <a class="proj rise" href="/experience/"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial"><div><h3>Bluejack Falls</h3><div class="loc">Raleigh, NC · full suite</div><span class="go">View project</span></div><div class="data"><span><b>1,200</b>Units</span><span><b>300</b>Acres</span></div></a>
+        <a class="proj rise" href="/experience/"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial"><div><h3>The Wilds at Cedar Mountain</h3><div class="loc">Asheville, NC · development management</div><span class="go">View project</span></div><div class="data"><span><b>425</b>Units</span><span><b>90</b>Acres</span></div></a>
+        <a class="proj s rise" href="/experience/"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial"><div><h3>Carolina Springs</h3><div class="loc">Apex, NC</div></div><div class="data"><span><b>800</b>Units</span><span><b>200</b>Acres</span></div></a>
+        <a class="proj s rise" href="/experience/"><img src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial"><div><h3>River Mews Estates</h3><div class="loc">Clayton, NC</div></div><div class="data"><span><b>825</b>Units</span><span><b>275</b>Acres</span></div></a>
+        <a class="proj s rise" href="/experience/"><img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial"><div><h3>Fountain Inn</h3><div class="loc">Fountain Inn, SC</div></div><div class="data"><span><b>288</b>Units</span><span><b>93</b>Acres</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="partners" style="padding-top:0">
+    <div class="rail">Partners</div>
+    <div>
+      <h2 class="rise">Four partners. <span>No business development layer.</span></h2>
+      <div class="partners">
+        <div class="partner rise"><h3>Landon Walls</h3><div class="role">Construction management</div><p>Raised in an excavating business, estimator at Barnhill Contracting, then Director of Land Development for Lennar Raleigh.</p></div>
+        <div class="partner rise"><h3>Daniel Perkins</h3><div class="role">Development services</div><p>Twenty years a private developer; 3,000+ units entitled on projects from 90 to 300 acres.</p></div>
+        <div class="partner rise"><h3>Joey Brehm</h3><div class="role">Land &amp; market strategy</div><p>A decade in land markets; $70M+ in acquisitions and entitlement across thousands of units.</p></div>
+        <div class="partner rise"><h3>Drew Levin</h3><div class="role">Underwriting &amp; lender services</div><p>Twenty years capitalizing $500M+ in debt and equity across HUD, Fannie Mae, banks, and private lenders.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <img src="/assets/img/img-02.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div>
+      <h2><span>Bring us the project.</span> A partner reads it.</h2>
+      <p>Whether you are delivering lots or funding them, bring the plans, the budget, and the schedule as they stand today.</p>
+      <div class="actions"><a class="pill light" href="/contact/">Talk to a partner <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></a><a class="pill dark" href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="in">
+    <div><a class="brand" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><b>Tillstone Land Solutions</b></a><p style="max-width:40ch;margin:16px 0 0;">Partner-led land development and project management. Raleigh, NC, serving the U.S.</p></div>
+    <div><h4>Pages</h4><ul><li><a href="/services/">Services</a></li><li><a href="/experience/">Experience</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></li><li><a href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="base"><span>© 2026 Tillstone Land Solutions</span><span>Raleigh, North Carolina</span></div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
+    btn.addEventListener('click', function () { var open = links.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+    links.addEventListener('click', function (e) { if (e.target.closest('a')) { links.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .12 });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

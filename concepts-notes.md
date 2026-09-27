@@ -50,4 +50,16 @@ STORY: map collar names the firm; projects plotted as benchmarks; legend holds s
 FIRST VIEWPORT: generated contour map full-bleed inside a map collar with coordinates, title block and scale bar.
 SIGNATURE: contours draw in; cursor crosshair reads coordinates.
 
+## 6 Field & Office (user-supplied reference: Webflow Nikka consulting template, inspiration only)
+THESIS: the category-standard consulting layout, executed cleanly, because the user chose it. No template code, copy, or assets reused.
+OWN-WORLD: deep green-black night, white and pale sage panels, stone accent from the logo; Geist light display + Geist Mono labels.
+STORY: split hero (headline left, grading photo right) -> experience strip -> about with track record -> 2x2 service panels led by partners -> sticky-photo process -> project photo cards -> partners -> photo CTA.
+SIGNATURE: sticky process photo while the five stages scroll past.
+
+## 7 Open Ground (same reference, lighter take)
+THESIS: the same grammar pushed toward open space: a wide inset aerial, the track record as one sentence, services as expanding rows.
+OWN-WORLD: warm-gray paper, white cards, ink, one blueprint-blue accent; Hanken Grotesk light + IBM Plex Mono.
+STORY: headline + intro over an inset aerial -> track-record sentence -> service accordion -> dark process band with five stages -> project carousel -> partners -> photo CTA.
+SIGNATURE: hero photo opens from an inset clip on load.
+
 FINISH: these are concepts for a direction choice. The chosen one gets the full build, finish review, and DESIGN.md.
