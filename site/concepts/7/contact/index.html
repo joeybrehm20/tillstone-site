@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact · Concept 7 · Open Ground · Tillstone</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F2EF; --card: #FFFFFF; --ink: #121519; --muted: #5C6168; --faint: #8E939A; --rule: #DADBD6; --blue: #2743D0; --blue-soft: #E4E8FA;
+    --sans: 'Hanken Grotesk', Arial, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --r: 14px; --gut: 32px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scrollbar-color: #9CA0A6 var(--paper); }
+  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--blue); color: #fff; }
+  a { color: inherit; text-underline-offset: 4px; }
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 var(--gut); }
+
+  header.nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 22px var(--gut); max-width: 1440px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+  .brand svg { width: 28px; height: 28px; }
+  .brand b { font-weight: 600; font-size: 18px; letter-spacing: .01em; }
+  nav.links { display: flex; gap: 6px; background: var(--card); border-radius: 999px; padding: 5px; }
+  nav.links a { text-decoration: none; font-size: 15px; padding: 8px 16px; border-radius: 999px; color: var(--muted); transition: background .15s, color .15s; }
+  nav.links a:hover { background: var(--paper); color: var(--ink); }
+  .nav-cta { justify-self: end; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, color .2s, border-color .2s; white-space: nowrap; }
+  .btn svg { width: 16px; height: 16px; transition: transform .2s; }
+  .btn:hover svg { transform: translateX(3px); }
+  .btn.ink { background: var(--ink); color: #fff; }
+  .btn.ink:hover { background: var(--blue); }
+  .btn.line { border: 1px solid #C4C6C2; color: var(--ink); }
+  .btn.line:hover { border-color: var(--ink); }
+  .menu-btn { display: none; justify-self: end; width: 44px; height: 44px; border-radius: 999px; border: 0; background: var(--card); cursor: pointer; }
+  .menu-btn svg { width: 20px; height: 20px; }
+  .links a[aria-current="page"] { background: var(--paper); color: var(--ink); font-weight: 500; }
+
+  .topbar { background: var(--ink); color: rgba(237,238,236,.85); }
+  .topbar .in { max-width: 1440px; margin: 0 auto; padding: 9px var(--gut); display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; }
+  .topbar a { color: #8EA2FF; text-decoration: none; }
+
+  .page-hero { padding: 54px 0 20px; }
+  .page-hero p { color: var(--muted); font-size: 18px; max-width: 66ch; margin: 0; }
+
+  .label { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+
+  h1 { font-weight: 300; font-size: clamp(50px, 6.2vw, 96px); line-height: .98; letter-spacing: -.045em; margin: 0; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 30px 0 130px; align-items: start; }
+  .info-block h3 { font-weight: 400; font-size: 26px; margin: 0 0 12px; }
+  .info-block p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+  .info-block + .info-block { margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--rule); }
+  .info-block .k { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .info-block a.email { font-size: 17px; border-bottom: 1px solid var(--blue); color: var(--ink); text-decoration: none; }
+  .info-block a.li { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--blue); text-decoration: none; }
+  .info-block a.li svg { width: 14px; height: 14px; }
+  .info-block a.arrow { display: inline-block; margin-top: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--blue); text-decoration: none; }
+
+  .form-card { background: var(--card); border-radius: var(--r); padding: 40px; }
+  .form-card h3 { font-weight: 400; font-size: 24px; margin: 0 0 24px; }
+  .form-card .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-card label { display: flex; flex-direction: column; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+  .form-card input, .form-card select, .form-card textarea { font-family: var(--sans); font-size: 16px; padding: 13px 14px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); color: var(--ink); }
+  .form-card input:focus, .form-card select:focus, .form-card textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+  .form-card textarea { resize: vertical; }
+  .form-card button[type=submit] { background: var(--ink); color: #fff; border: 0; padding: 15px 28px; border-radius: 999px; font-size: 15px; font-weight: 500; cursor: pointer; }
+  .form-card button[type=submit]:hover { background: var(--blue); }
+  .form-card button[type=submit]:disabled { opacity: .6; cursor: default; }
+  .form-note { font-family: var(--mono); font-size: 11px; letter-spacing: .02em; color: var(--muted); margin-top: 18px; }
+  .form-note a { color: var(--blue); }
+  .form-status { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 15px; display: none; }
+  .form-status.show { display: block; }
+  .form-status.err { color: #B3261E; }
+  .form-status a { color: var(--blue); }
+
+  footer { max-width: 1440px; margin: 0 auto; padding: 80px var(--gut) 36px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
+  footer h4 { font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 16px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--blue); }
+  footer .base { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); padding-top: 26px; border-top: 1px solid var(--rule); margin-top: 30px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rise { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .rise.on { opacity: 1; transform: none; }
+    h1 { animation: up 1s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes up { from { opacity: 0; transform: translateY(26px); } }
+  }
+  @media (max-width: 900px) {
+    :root { --gut: 18px; }
+    header.nav { grid-template-columns: 1fr auto; padding: 16px var(--gut); }
+    nav.links { display: none; position: fixed; inset: 0; z-index: 40; border-radius: 0; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: var(--paper); }
+    nav.links a { font-size: 26px; color: var(--ink); }
+    nav.links.open { display: flex; }
+    .nav-cta { display: none; }
+    .menu-btn { display: grid; place-items: center; position: relative; z-index: 50; }
+    .topbar .in { flex-direction: column; gap: 3px; text-align: center; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; padding: 20px 0 90px; }
+    .form-card { padding: 26px; }
+    .form-card .row2 { grid-template-columns: 1fr; gap: 0; }
+    footer { grid-template-columns: 1fr; padding-top: 60px; gap: 28px; }
+    footer .base { margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#8D7059"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#4A4A40"/></g>
+</defs></svg>
+
+<div class="topbar"><div class="in"><span>A PARTNER-LED FIRM &nbsp;·&nbsp; SERVING THE U.S.</span><span>RALEIGH, NC &nbsp;·&nbsp; <a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></span></div></div>
+<header class="nav">
+  <a class="brand" href="/concepts/7/"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><b>Tillstone</b></a>
+  <nav class="links" id="links" aria-label="Main">
+    <a href="/concepts/7/">Home</a><a href="/concepts/7/services/">Services</a><a href="/concepts/7/experience/">Experience</a><a href="/concepts/7/about/">About</a>
+  </nav>
+  <a class="btn ink nav-cta" href="/concepts/7/contact/" aria-current="page">Contact</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 20 20"><path d="M3 7h14M3 13h14" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+  <section class="wrap page-hero">
+    <div class="label">Contact</div>
+    <h1 class="rise" style="margin:16px 0 20px;">Start the conversation.</h1>
+    <p>Whether you’re building a community or financing one — reach out and a partner will respond directly.</p>
+  </section>
+
+  <section class="wrap contact-grid">
+    <div>
+      <div class="info-block">
+        <h3>Partner-led, always.</h3>
+        <p>Tillstone is a partner-led firm — when you reach out, you’re talking to a principal, not a business development layer.</p>
+      </div>
+      <div class="info-block">
+        <div class="k">General inquiries</div>
+        <a class="email" href="mailto:info@tillstoneland.com">info@tillstoneland.com</a>
+        <div><a class="li" href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Tillstone on LinkedIn</a></div>
+      </div>
+      <div class="info-block">
+        <h3>For Lenders, Capital Partners, Developers &amp; Owners</h3>
+        <p>Construction management, development management, lender oversight, feasibility, and owner’s representation — tell us where your project stands and what it needs.</p>
+        <a class="arrow" href="mailto:info@tillstoneland.com?subject=Project%20Inquiry">Tell us about your project →</a>
+      </div>
+    </div>
+
+    <form class="form-card rise" id="projectForm">
+      <h3>Tell us about your project.</h3>
+      <div class="row2">
+        <label>Project type
+          <select name="Project type">
+            <option>Construction Management</option>
+            <option>Lender Services / Loan Monitoring</option>
+            <option>Development Management</option>
+            <option>Feasibility / Advisory</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Your role
+          <select name="Role">
+            <option>Lender / Capital Partner</option>
+            <option>Developer</option>
+            <option>Owner</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <div class="row2">
+        <label>Project location
+          <input name="Location" type="text" placeholder="City, State">
+        </label>
+        <label>Timeline
+          <input name="Timeline" type="text" placeholder="e.g. breaking ground Q2 2027">
+        </label>
+      </div>
+      <label>Your email
+        <input name="Email" type="email" placeholder="you@company.com" required>
+      </label>
+      <label>Message
+        <textarea name="Message" rows="4" placeholder="Scope, schedule, budget — where the project stands today." required></textarea>
+      </label>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;" aria-hidden="true">
+      <button type="submit" id="submitBtn">Send inquiry</button>
+      <div class="form-status" id="statusOk">Thank you — your inquiry is on its way. A partner will reply directly.</div>
+      <div class="form-status err" id="statusErr">We couldn’t send that automatically. Email us instead: <a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></div>
+      <div class="form-note">Prefer your own email? &nbsp;<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@tillstoneland.com&amp;su=Project%20Inquiry%20%E2%80%94%20Tillstone" target="_blank" rel="noopener">Open in Gmail</a> &nbsp;·&nbsp; <a href="mailto:info@tillstoneland.com?subject=Project%20Inquiry%20%E2%80%94%20Tillstone">Mail app</a></div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div><a class="brand" href="/concepts/7/"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><b>Tillstone Land Solutions</b></a><p style="max-width:38ch;margin:16px 0 0;color:var(--muted);font-size:16px;">Partner-led land development and project management. Raleigh, NC, serving the U.S.</p></div>
+  <div><h4>Pages</h4><ul><li><a href="/concepts/7/services/">Services</a></li><li><a href="/concepts/7/experience/">Experience</a></li><li><a href="/concepts/7/about/">About</a></li><li><a href="/concepts/7/contact/">Contact</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></li><li><a href="https://www.linkedin.com/company/tillstone-land-solutions" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+  <div class="base"><span>© 2026 Tillstone Land Solutions</span><span>Raleigh, North Carolina</span></div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
+    btn.addEventListener('click', function () { var open = links.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+    links.addEventListener('click', function (e) { if (e.target.closest('a')) { links.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+
+    var CONTACT_FORM_KEY = 'e56c7360-a7ec-48d1-847f-0f770d257834';
+    var form = document.getElementById('projectForm'), submitBtn = document.getElementById('submitBtn');
+    var okBox = document.getElementById('statusOk'), errBox = document.getElementById('statusErr');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.botcheck.checked) return;
+      okBox.classList.remove('show'); errBox.classList.remove('show');
+      submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+      var data = new FormData(form);
+      data.append('access_key', CONTACT_FORM_KEY);
+      data.append('subject', 'Project Inquiry — Tillstone (Concept 7 preview)');
+      data.append('from_name', 'Tillstone site — Concept 7 preview');
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          if (json.success) { okBox.classList.add('show'); form.reset(); submitBtn.textContent = 'Sent'; }
+          else { errBox.classList.add('show'); submitBtn.disabled = false; submitBtn.textContent = 'Send inquiry'; }
+        })
+        .catch(function () { errBox.classList.add('show'); submitBtn.disabled = false; submitBtn.textContent = 'Send inquiry'; });
+    });
+
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .1 });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Concept 7 · Open Ground · Tillstone</title>
+<title>Experience · Concept 7 · Open Ground · Tillstone</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,13 +49,11 @@
   .topbar .in { max-width: 1440px; margin: 0 auto; padding: 9px var(--gut); display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; }
   .topbar a { color: #8EA2FF; text-decoration: none; }
 
-  /* page hero (interior pages) */
   .page-hero { padding: 54px 0 34px; }
   .page-hero p { color: var(--muted); font-size: 18px; max-width: 66ch; margin: 0; }
   .page-photo { position: relative; border-radius: var(--r); overflow: hidden; height: min(42vh, 420px); min-height: 220px; }
   .page-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-  /* services detail (services page) */
   .svc-detail { display: grid; grid-template-columns: 110px minmax(0,1fr) minmax(0,1fr); gap: 40px; padding: 60px 0; border-top: 1px solid var(--rule); }
   .svc-detail:last-of-type { border-bottom: 1px solid var(--rule); }
   .svc-detail .n { font-family: var(--mono); font-weight: 300; font-size: 60px; color: var(--faint); line-height: .8; }
@@ -66,11 +64,11 @@
   .svc-detail ul { list-style: none; margin: 8px 0 0; padding: 0; }
   .svc-detail li { padding: 12px 0; border-top: 1px solid var(--rule); font-size: 16px; }
 
-  /* project cards (experience page) */
   .proj-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px; }
   .proj-card { border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; background: var(--card); display: flex; flex-direction: column; }
   .proj-card .ph { position: relative; height: 300px; background: var(--paper); }
   .proj-card .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .3s; }
+  .proj-card .ph img[data-fit="contain"] { object-fit: contain; background: var(--paper); }
   .proj-card .ph img.active { opacity: 1; }
   .proj-card .switch { position: absolute; right: 12px; bottom: 12px; z-index: 2; display: flex; gap: 6px; }
   .proj-card .switch button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); background: rgba(18,21,25,.55); color: #fff; font-family: var(--mono); font-size: 11px; cursor: pointer; }
@@ -95,6 +93,8 @@
   .proj-card .detail ul { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
   .proj-card .detail li { padding-left: 20px; position: relative; font-size: 15px; line-height: 1.55; }
   .proj-card .detail li::before { content: "—"; position: absolute; left: 0; color: var(--blue); }
+  .proj-card.wide { grid-column: 1 / -1; }
+  .proj-card.wide .ph { height: 340px; }
 
   table.simple { width: 100%; border-collapse: collapse; margin-top: 24px; }
   table.simple th { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 16px 12px 0; border-bottom: 1px solid var(--ink); }
@@ -102,7 +102,6 @@
   table.simple td:first-child { font-weight: 500; color: var(--ink); }
   .table-wrap { overflow-x: auto; }
 
-  /* about page */
   .about-lead { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; padding: 50px 0 90px; }
   .about-lead p { font-size: 17px; line-height: 1.75; color: var(--muted); margin: 0 0 20px; }
   .about-lead p b { color: var(--ink); font-weight: 500; }
@@ -134,7 +133,6 @@
   .bio .role { font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
   .bio p { margin: 0 0 14px; color: var(--muted); font-size: 15.5px; line-height: 1.65; }
 
-  /* contact page */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 50px 0 130px; align-items: start; }
   .info-block h3 { font-weight: 400; font-size: 26px; margin: 0 0 12px; }
   .info-block p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
@@ -174,7 +172,6 @@
     .form-card .row2 { grid-template-columns: 1fr; gap: 0; }
   }
 
-  /* hero */
   .hero-top { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 60px; align-items: end; padding: 70px 0 44px; }
   h1 { font-weight: 300; font-size: clamp(50px, 6.2vw, 96px); line-height: .98; letter-spacing: -.045em; margin: 0; }
   h1 span, h2 span { color: var(--faint); }
@@ -187,7 +184,6 @@
   .chip { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.86); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--ink); }
   .hero-pic .note { position: absolute; right: 20px; top: 20px; background: rgba(18,21,25,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; border-radius: 10px; padding: 12px 14px; font-size: 14px; line-height: 1.4; max-width: 260px; }
 
-  /* record sentence */
   .record { padding-top: 130px; padding-bottom: 120px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; align-items: start; }
   .record .label, .quote .label { padding-top: 16px; }
   .label { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
@@ -195,90 +191,17 @@
   .record p { margin: 0; font-weight: 300; font-size: clamp(30px, 3.5vw, 52px); line-height: 1.16; letter-spacing: -.03em; color: var(--faint); max-width: 24ch; }
   .record p b { font-weight: 400; color: var(--ink); font-variant-numeric: tabular-nums; }
 
-  /* services accordion */
   .sec-head { display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 40px; align-items: end; margin-bottom: 44px; }
   h2 { font-weight: 300; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -.04em; margin: 0; max-width: 24ch; }
-  .svc-list { border-top: 1px solid var(--rule); }
-  details.svc { border-bottom: 1px solid var(--rule); }
-  details.svc summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 200px minmax(0, 1fr) 260px 44px; gap: 40px; align-items: center; padding: 26px 0; }
-  details.svc summary::-webkit-details-marker { display: none; }
-  .svc .num { font-family: var(--mono); font-size: 13px; color: var(--faint); }
-  .svc h3 { font-weight: 400; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -.03em; margin: 0; line-height: 1.1; transition: color .2s; }
-  .svc summary:hover h3 { color: var(--blue); }
-  .svc .lead { font-size: 15px; color: var(--muted); }
-  .svc .lead b { display: block; color: var(--ink); font-weight: 500; }
-  .svc .tog { width: 44px; height: 44px; border-radius: 50%; background: var(--card); display: grid; place-items: center; transition: background .2s, transform .3s; }
-  .svc .tog svg { width: 16px; height: 16px; }
-  details.svc[open] .tog { background: var(--ink); color: #fff; transform: rotate(45deg); }
-  .svc .body { display: grid; grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr); gap: 40px; padding: 0 0 36px; }
-  .svc .body p { margin: 0; color: var(--muted); max-width: 44ch; }
-  .svc .body ul { list-style: none; margin: 0; padding: 0; }
-  .svc .body li { padding: 10px 0; border-top: 1px solid var(--rule); font-size: 16px; display: flex; gap: 12px; }
-  .svc .body li::before { content: ""; width: 12px; height: 1px; background: var(--blue); margin-top: 13px; flex: none; }
-  .svc .body .ph { grid-column: 1; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 3; }
-  .svc .body .ph img { width: 100%; height: 100%; object-fit: cover; }
-  .controls { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; padding: 22px 0; color: var(--muted); font-size: 16px; }
 
-  /* process band */
-  .process { background: var(--ink); color: #EDEEEC; border-radius: var(--r); margin: 130px var(--gut) 0; padding: 90px 0 80px; }
-  .process .sec-head { padding: 0 var(--gut); }
-  .process .label { color: #A7ABB1; }
-  .process .label::before { background: #8EA2FF; }
-  .process h2 span { color: #7E848C; }
-  .process .intro { color: #B9BDC2; max-width: 40ch; margin: 0; font-size: 16px; }
-  .stages { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 0 var(--gut); margin-top: 20px; }
-  .stage { padding: 0 24px 0 0; position: relative; }
-  .stage .dot { display: flex; align-items: center; margin-bottom: 26px; }
-  .stage .dot::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: #8EA2FF; flex: none; box-shadow: 0 0 0 5px rgba(142,162,255,.16); }
-  .stage .dot::after { content: ""; height: 1px; background: rgba(237,238,236,.22); flex: 1; margin-left: 12px; }
-  .stage:last-child .dot::after { background: linear-gradient(90deg, rgba(237,238,236,.22), transparent); }
-  .stage .k { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #A7ABB1; margin-bottom: 8px; }
-  .stage h3 { font-weight: 400; font-size: 26px; letter-spacing: -.02em; margin: 0 0 10px; line-height: 1.1; color: #fff; }
-  .stage p { margin: 0 0 18px; color: #B9BDC2; font-size: 15.5px; }
-  .stage .who { font-size: 14px; color: #fff; display: inline-flex; align-items: center; gap: 8px; }
-  .stage .who i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; background: #2A2F36; display: grid; place-items: center; font-family: var(--mono); font-size: 10.5px; color: #C9D2FF; }
-
-  /* projects row */
-  .projects { padding-top: 130px; }
-  .row-ctrl { display: flex; gap: 8px; }
-  .row-ctrl button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #C4C6C2; background: transparent; cursor: pointer; display: grid; place-items: center; color: var(--ink); transition: background .2s, border-color .2s; }
-  .row-ctrl button:hover { background: var(--card); border-color: var(--ink); }
-  .row-ctrl svg { width: 18px; height: 18px; }
-  .row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(340px, calc((100% - 48px) / 3.3)); gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 var(--gut) 10px; scroll-padding: 0 var(--gut); scrollbar-width: none; }
-  .row::-webkit-scrollbar { display: none; }
-  .card { scroll-snap-align: start; background: var(--card); border-radius: var(--r); padding: 10px 10px 24px; text-decoration: none; display: flex; flex-direction: column; }
-  .card .ph { border-radius: 9px; overflow: hidden; aspect-ratio: 4 / 5; }
-  .card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.16,1,.3,1); }
-  .card:hover img { transform: scale(1.04); }
-  .card .meta { padding: 20px 14px 0; }
-  .card h3 { font-weight: 400; font-size: 26px; letter-spacing: -.02em; margin: 0 0 4px; line-height: 1.12; }
-  .card .loc { color: var(--muted); font-size: 15px; }
-  .card .nums { display: flex; gap: 24px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
-  .card .nums b { font-family: var(--sans); font-weight: 400; font-size: 20px; color: var(--ink); letter-spacing: -.01em; text-transform: none; margin-right: 6px; }
-
-  /* partners */
-  .partners { padding-top: 130px; }
-  .quote { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; margin-bottom: 70px; }
-  .quote p { margin: 0; font-weight: 300; font-size: clamp(28px, 3vw, 44px); line-height: 1.18; letter-spacing: -.03em; max-width: 30ch; }
-  .quote p span { color: var(--faint); }
-  .people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .person { background: var(--card); border-radius: var(--r); padding: 26px 24px 28px; display: flex; flex-direction: column; min-height: 300px; }
-  .person .mono { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 500; font-size: 17px; margin-bottom: 34px; }
-  .person h3 { font-weight: 400; font-size: 24px; letter-spacing: -.02em; margin: 0 0 2px; }
-  .person .role { font-size: 14.5px; color: var(--blue); margin-bottom: 12px; }
-  .person p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-
-  /* cta */
-  .cta { position: relative; border-radius: var(--r); overflow: hidden; margin: 130px var(--gut) 0; color: #fff; min-height: 560px; display: grid; align-content: end; padding: 60px; }
+  .cta { position: relative; border-radius: var(--r); overflow: hidden; margin: 130px var(--gut) 0; color: #fff; min-height: 400px; display: grid; align-content: center; justify-items: center; text-align: center; padding: 60px; }
   .cta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .cta::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(18,21,25,.84) 0%, rgba(18,21,25,.55) 55%, rgba(18,21,25,.2)); }
-  .cta > div { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 50px; align-items: end; }
-  .cta h2 { color: #fff; font-size: clamp(42px, 5.4vw, 82px); max-width: 14ch; }
+  .cta::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(18,21,25,.72); }
+  .cta > div { position: relative; z-index: 2; max-width: 640px; }
+  .cta h2 { color: #fff; font-size: clamp(38px, 4.6vw, 58px); }
   .cta h2 span { color: #A9AEB5; }
-  .cta p { margin: 0 0 24px; color: #D4D7DB; max-width: 40ch; }
-  .cta .actions { display: flex; gap: 10px; flex-wrap: wrap; }
-  .cta .btn.line { color: #fff; border-color: rgba(255,255,255,.4); }
-  .cta .btn.line:hover { border-color: #fff; }
+  .cta p { margin: 0 auto 24px; color: #D4D7DB; max-width: 46ch; }
+  .cta .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 
   footer { max-width: 1440px; margin: 0 auto; padding: 80px var(--gut) 36px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
   footer h4 { font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
@@ -291,15 +214,7 @@
     .rise { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .rise.on { opacity: 1; transform: none; }
     h1 { animation: up 1s cubic-bezier(.16,1,.3,1) both; }
-    .hero-pic { animation: open 1.2s .15s cubic-bezier(.16,1,.3,1) both; }
     @keyframes up { from { opacity: 0; transform: translateY(26px); } }
-    @keyframes open { from { clip-path: inset(8% 4% 0 4% round 14px); opacity: .4; } to { clip-path: inset(0 0 0 0 round 14px); opacity: 1; } }
-  }
-
-  @media (max-width: 1100px) {
-    .stages { grid-template-columns: repeat(5, minmax(240px, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gut); padding-bottom: 10px; scrollbar-width: none; }
-    .stage { scroll-snap-align: start; }
-    .people { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 900px) {
     :root { --gut: 18px; }
@@ -309,27 +224,10 @@
     nav.links.open { display: flex; }
     .nav-cta { display: none; }
     .menu-btn { display: grid; place-items: center; position: relative; z-index: 50; }
-    .hero-top { grid-template-columns: 1fr; gap: 26px; padding: 40px 0 30px; }
-    .hero-pic { height: 58vh; min-height: 320px; }
-    .hero-pic .note { display: none; }
-    .record, .sec-head, .quote, .controls { grid-template-columns: 1fr; gap: 18px; }
-    .record { padding-top: 90px; padding-bottom: 80px; }
-    details.svc summary { grid-template-columns: 36px minmax(0, 1fr) 44px; gap: 14px; }
-    .svc .lead { display: none; }
-    .svc .body { grid-template-columns: 1fr; gap: 22px; }
-    .svc .body .ph { grid-column: auto; order: 3; }
-    .process { margin-top: 90px; padding: 60px 0; }
-    .projects, .partners { padding-top: 90px; }
-    .row { grid-auto-columns: 82%; }
-    .cta { margin-top: 90px; padding: 34px 24px; min-height: 520px; }
-    .cta > div { grid-template-columns: 1fr; gap: 20px; }
+    .sec-head { grid-template-columns: 1fr; gap: 18px; }
+    .cta { margin-top: 90px; padding: 34px 24px; min-height: 380px; }
     footer { grid-template-columns: 1fr; padding-top: 60px; gap: 28px; }
     footer .base { margin-top: 0; }
-  }
-  @media (max-width: 560px) {
-    .people { grid-template-columns: 1fr; }
-    .person { min-height: 0; }
-      .hero-pic .tags .chip:nth-child(n+3) { display: none; }
   }
 </style>
 </head>
@@ -337,115 +235,224 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <g id="mark"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"/><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"/><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#8D7059"/><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#4A4A40"/></g>
   <g id="arr"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></g>
-  <g id="plus"><path d="M8 2v12M2 8h12" fill="none" stroke="currentColor" stroke-width="1.6"/></g>
 </defs></svg>
 
 <div class="topbar"><div class="in"><span>A PARTNER-LED FIRM &nbsp;·&nbsp; SERVING THE U.S.</span><span>RALEIGH, NC &nbsp;·&nbsp; <a href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></span></div></div>
 <header class="nav">
   <a class="brand" href="/concepts/7/"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#mark"/></svg><b>Tillstone</b></a>
   <nav class="links" id="links" aria-label="Main">
-    <a href="/concepts/7/" aria-current="page">Home</a><a href="/concepts/7/services/">Services</a><a href="/concepts/7/experience/">Experience</a><a href="/concepts/7/about/">About</a>
+    <a href="/concepts/7/">Home</a><a href="/concepts/7/services/">Services</a><a href="/concepts/7/experience/" aria-current="page">Experience</a><a href="/concepts/7/about/">About</a>
   </nav>
   <a class="btn ink nav-cta" href="/concepts/7/contact/">Contact</a>
   <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 20 20"><path d="M3 7h14M3 13h14" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </header>
 
 <main>
+  <section class="wrap page-hero">
+    <div class="label">Experience</div>
+    <h1 class="rise" style="margin:16px 0 20px;">Every discipline of land development.</h1>
+    <p>Construction management at production-builder scale. Publicly bid civil work. Master-planned communities carried from entitlement through delivery. Each project below states the discipline applied and the role held.</p>
+  </section>
   <section class="wrap">
-    <div class="hero-top">
-      <h1>The owner’s rep <span>that has been the owner.</span></h1>
-      <div>
-        <p>Tillstone is a partner-led land development firm in Raleigh, serving developers, owners, and lenders across the U.S. with construction management, lender services, and development management.</p>
-        <div class="actions"><a class="btn ink" href="/concepts/7/contact/">Talk to a partner <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></a><a class="btn line" href="#work">See the work</a></div>
+    <div class="page-photo"><img src="/assets/img/img-02.jpg" alt="Aerial of a new subdivision under construction beside finished neighborhoods at sunset"></div>
+  </section>
+
+  <section class="wrap" style="padding-top:70px;">
+    <div class="proj-list">
+
+      <div class="proj-card rise">
+        <div class="ph" data-proj="1">
+          <img data-label="Site plan" class="active" data-i="0" src="/assets/img/img-19.png" data-fit="contain" alt="Bluejack Falls site plan exhibit">
+          <img data-label="Progress aerial" data-i="1" src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial">
+          <div class="switch"><button class="active" data-i="0">01</button><button data-i="1">02</button></div>
+          <div class="tag" data-label>Site plan</div>
+        </div>
+        <div class="body">
+          <div class="kicker">N&deg; 01 — Full suite</div>
+          <h3>Bluejack Falls</h3>
+          <div class="loc">Raleigh, NC (Wake County) · Single family · Multifamily · Apartments</div>
+          <div class="stats"><div><b>1,200</b><span>Units</span></div><div><b>300</b><span>Acres</span></div></div>
+          <details>
+            <summary>Read the full record</summary>
+            <div class="detail">
+              <h4>Situation</h4>
+              <p>Two raw-land parcels in Raleigh. No unified plan, no entitlement.</p>
+              <h4>Services delivered</h4>
+              <ul>
+                <li>Directed a $70M-plus sitework program from entitlement through construction</li>
+                <li>Secured 18 easement acquisitions and negotiated developer agreements with adjacent owners for scheduling and pricing efficiencies</li>
+                <li>Engineered offsite road improvements to NCDOT standards</li>
+                <li>Guided the site through rezoning and a multiphase entitlement process, with individual construction-document sets per phase</li>
+                <li>Sequenced construction against conditions of approval — including traffic-impact timing and a phased first-lot delivery to a national homebuilder that reduced carry costs</li>
+                <li>Balanced earthwork by importing fill from a nearby project and maximized density in every phase</li>
+              </ul>
+              <h4>Outcome</h4>
+              <p>Combined and rezoned as a major subdivision: a 1,200-unit master-planned community across 300 acres.</p>
+            </div>
+          </details>
+        </div>
       </div>
-    </div>
-    <div class="hero-pic">
-      <img src="/assets/img/img-07.jpg" alt="Aerial of a master-planned community with new streets graded beside finished neighborhoods">
-      <div class="note">From raw ground to finished lots, with one partner accountable at every stage.</div>
-      <div class="tags"><span class="chip">Construction management</span><span class="chip">Lender services</span><span class="chip">Development management</span><span class="chip">Land strategy</span></div>
+
+      <div class="proj-card rise">
+        <div class="ph" data-proj="2">
+          <img data-label="Site plan" class="active" data-i="0" src="/assets/img/img-15.png" alt="River Mews Estates site plan">
+          <img data-label="Mass grading" data-i="1" src="/assets/img/img-05.jpg" alt="River Mews Estates mass grading">
+          <img data-label="Progress aerial" data-i="2" src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial">
+          <div class="switch"><button class="active" data-i="0">01</button><button data-i="1">02</button><button data-i="2">03</button></div>
+          <div class="tag" data-label>Site plan</div>
+        </div>
+        <div class="body">
+          <div class="kicker">N&deg; 02 — Entitlement &amp; development</div>
+          <h3>River Mews Estates</h3>
+          <div class="loc">Clayton, NC (Johnston County) · Single family · Townhomes · Multifamily</div>
+          <div class="stats"><div><b>825</b><span>Units</span></div><div><b>275</b><span>Acres</span></div></div>
+          <details>
+            <summary>Read the full record</summary>
+            <div class="detail">
+              <h4>Situation</h4>
+              <p>275 acres in Clayton, NC — Johnston County’s fastest-growing city — carrying entitlement risk on unannexed county land.</p>
+              <h4>Services delivered</h4>
+              <ul>
+                <li>Negotiated a complex developer agreement that reduced impact fees through park and greenway dedication</li>
+                <li>Carried the site through a contested conditional rezoning with neighbors, town staff, council, and mayor — securing target density and product mix with minimal developer impact</li>
+                <li>Managed successive major and minor site-plan modifications and product shifts to keep pace with a changing market</li>
+                <li>Balanced cash flow against builder takedown obligations through a just-in-time, sub-phased takedown model</li>
+                <li>Led the full zoning, design, MEP, and engineering effort to adaptively reuse an existing building as a world-class community amenity</li>
+                <li>Resolved unpermitted impacts left by the prior owner with the Army Corps of Engineers — removing existing ponds and completing a full stream restoration</li>
+              </ul>
+              <h4>Outcome</h4>
+              <p>PUD approval secured and the land annexed prior to purchase, de-risking entitlement before closing. The master-planned neighborhood will deliver 825 units of single family, townhomes, and multifamily housing.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="proj-card rise">
+        <div class="ph" data-proj="3">
+          <img data-label="Aerial" class="active" data-i="0" src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial">
+          <img data-label="Pool & clubhouse" data-i="1" src="/assets/img/img-03.webp" alt="The Wilds pool and clubhouse">
+          <img data-label="Pickleball courts" data-i="2" src="/assets/img/img-08.webp" alt="The Wilds pickleball courts">
+          <img data-label="Mountain overlook" data-i="3" src="/assets/img/img-09.webp" alt="The Wilds mountain overlook">
+          <img data-label="Site plan" data-i="4" src="/assets/img/img-20.jpg" data-fit="contain" alt="The Wilds site plan">
+          <div class="switch"><button class="active" data-i="0">01</button><button data-i="1">02</button><button data-i="2">03</button><button data-i="3">04</button><button data-i="4">05</button></div>
+          <div class="tag" data-label>Aerial</div>
+        </div>
+        <div class="body">
+          <div class="kicker">N&deg; 03 — Development management</div>
+          <h3>The Wilds at Cedar Mountain</h3>
+          <div class="loc">Asheville, NC (Buncombe County) · Single family · Townhomes · Multifamily</div>
+          <div class="stats"><div><b>425</b><span>Units</span></div><div><b>90</b><span>Acres</span></div></div>
+          <details>
+            <summary>Read the full record</summary>
+            <div class="detail">
+              <h4>Situation</h4>
+              <p>Steep, elevation-driven mountain terrain in a demanding municipal environment, further complicated by the shifting impacts of Hurricane Helene — developed simultaneously for three distinct end users: a for-sale builder, a multifamily builder-developer, and a build-for-rent operator.</p>
+              <h4>Services delivered</h4>
+              <ul>
+                <li>Navigated a complex municipality to the developer's desired entitlements</li>
+                <li>Managed the land-development and entitlement needs of all three end users</li>
+                <li>Structured the governing HOA and REOA documents to serve each end user</li>
+                <li>Designed and delivered an amenity package of trails, parks, pools, and pickleball</li>
+                <li>Applied multiple sitework strategies to minimize foundation and retaining-wall costs against the topography — a significant savings to the developer</li>
+              </ul>
+              <h4>Outcome</h4>
+              <p>A blend of three distinct product types — 80 single family homes, 133 townhomes, and 212 multifamily units — set across 90 acres in the Asheville market, with pristine walking trails, a clubhouse, and spectacular mountain views.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="proj-card rise">
+        <div class="ph" data-proj="4">
+          <img data-label="Aerial" class="active" data-i="0" src="/assets/img/img-16.jpg" alt="Fountain Inn aerial">
+          <img data-label="Site plan" data-i="1" src="/assets/img/img-21.jpg" data-fit="contain" alt="Fountain Inn proposed site plan">
+          <div class="switch"><button class="active" data-i="0">01</button><button data-i="1">02</button></div>
+          <div class="tag" data-label>Aerial</div>
+        </div>
+        <div class="body">
+          <div class="kicker">N&deg; 04 — Development management</div>
+          <h3>Fountain Inn</h3>
+          <div class="loc">Fountain Inn, SC (Greenville County) · Single family</div>
+          <div class="stats"><div><b>288</b><span>Units</span></div><div><b>93</b><span>Acres</span></div></div>
+          <details>
+            <summary>Read the full record</summary>
+            <div class="detail">
+              <h4>Situation</h4>
+              <p>A landlocked 93-acre parcel in Fountain Inn, SC — one of Greenville County’s fastest-growing communities — balancing density against a 31-acre nature preserve and water management requirements.</p>
+              <h4>Services delivered</h4>
+              <ul>
+                <li>Secured rezoning and entitlements for a landlocked site</li>
+                <li>Assembled the primary access road through multiple easements, utility relocations, and agreements with neighboring owners</li>
+                <li>Obtained secondary emergency access via an easement within the adjacent HOA</li>
+                <li>Tailored the site plan to minimize the impact of rock identified on site</li>
+                <li>Carried the project to final plat with an engineering partner before handing off to a regional homebuilder</li>
+              </ul>
+              <h4>Outcome</h4>
+              <p>A master-planned single family community incorporating a 31-acre nature preserve, sidewalk and trail system, amenity building with pool, pickleball courts, community garden, and thoughtfully designed water management features.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="proj-card wide rise">
+        <div class="ph" data-proj="5">
+          <img data-label="Master plan" class="active" data-i="0" src="/assets/img/img-11.jpg" data-fit="contain" alt="Carolina Springs master plan">
+          <img data-label="Playground" data-i="1" src="/assets/img/img-01.jpg" alt="Carolina Springs playground">
+          <img data-label="Pool & clubhouse" data-i="2" src="/assets/img/img-06.jpg" alt="Carolina Springs pool and clubhouse">
+          <img data-label="Townhomes aerial" data-i="3" src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial">
+          <div class="switch"><button class="active" data-i="0">01</button><button data-i="1">02</button><button data-i="2">03</button><button data-i="3">04</button></div>
+          <div class="tag" data-label>Master plan</div>
+        </div>
+        <div class="body">
+          <div class="kicker">N&deg; 05 — Development management</div>
+          <h3>Carolina Springs</h3>
+          <div class="loc">Apex, NC (Wake County) · Single family &amp; townhomes</div>
+          <div class="stats"><div><b>800</b><span>Units</span></div><div><b>200</b><span>Acres</span></div></div>
+          <details>
+            <summary>Read the full record</summary>
+            <div class="detail">
+              <h4>Situation</h4>
+              <p>800 units of single family homes and townhomes in Apex, North Carolina, carried against an overall site budget of $100,000,000+.</p>
+              <h4>Oversaw the following</h4>
+              <ul>
+                <li>Developer Agreement</li>
+                <li>Coordinated and consulted on a plethora of offsite improvements which required multiple partnerships with multiple entities including the collaboration in the construction of an elementary school</li>
+                <li>Oversaw delivery of all lots</li>
+                <li>Coordination of offsite utilities and pump stations to allow the opening of the school within its timeline</li>
+                <li>Required bridge over a large stream crossing</li>
+                <li>Overall site budget was $100,000,000+</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section class="wrap record">
-    <div class="label">Track record</div>
-    <p class="rise">Between us, <b>$750M+</b> in land development costs managed, <b>10,000+</b> lots delivered, and <b>3,000+</b> units entitled.</p>
-  </section>
-
-  <section class="wrap" id="services">
-    <div class="sec-head">
-      <div class="label">Services</div>
-      <h2 class="rise">Four disciplines. <span>A partner leads each one.</span></h2>
+  <section class="wrap" style="padding-top:100px;">
+    <div class="sec-head" style="margin-bottom:0;">
+      <div class="label">Additional projects</div>
+      <h2 class="rise">Further engagements</h2>
       <span></span>
     </div>
-    <div class="svc-list">
-      <details class="svc" open>
-        <summary><span class="num">01</span><h3>Construction management</h3><span class="lead"><b>Landon Walls</b>Former Lennar land director</span><span class="tog"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#plus"/></svg></span></summary>
-        <div class="body"><div class="ph"><img src="/assets/img/img-05.jpg" alt="Dozer mass grading at River Mews Estates" loading="lazy"></div><p>Value engineering, contract bidding, and construction oversight that pay for themselves. Run by someone who has graded the sites, bid the public work, and directed a national homebuilder’s land program.</p><ul><li>Bid packages and contractor selection</li><li>Value engineering on sitework</li><li>Construction oversight through delivery</li></ul></div>
-      </details>
-      <details class="svc">
-        <summary><span class="num">02</span><h3>Lender services</h3><span class="lead"><b>Drew Levin</b>$500M+ capitalized</span><span class="tog"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#plus"/></svg></span></summary>
-        <div class="body"><div class="ph"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial" loading="lazy"></div><p>Independent oversight for banks and capital providers, from people who have built the budgets lenders lend against and closed financing across HUD, Fannie Mae, banks, and private lenders.</p><ul><li>Construction loan monitoring</li><li>Draw review and certification</li><li>Completion-risk assessment</li></ul></div>
-      </details>
-      <details class="svc">
-        <summary><span class="num">03</span><h3>Development management</h3><span class="lead"><b>Daniel Perkins</b>3,000+ units entitled</span><span class="tog"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#plus"/></svg></span></summary>
-        <div class="body"><div class="ph"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial" loading="lazy"></div><p>The full arc of a project, from site control through delivered lots, led by a partner with twenty years as a private developer of master-planned communities.</p><ul><li>Rezoning and entitlement</li><li>Developer agreements and easements</li><li>Phasing and builder takedowns</li></ul></div>
-      </details>
-      <details class="svc">
-        <summary><span class="num">04</span><h3>Land &amp; market strategy</h3><span class="lead"><b>Joey Brehm</b>$70M+ in land acquired</span><span class="tog"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#plus"/></svg></span></summary>
-        <div class="body"><div class="ph"><img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial" loading="lazy"></div><p>Confirming the site and the market before capital is committed: acquisition due diligence, absorption analysis, and positioning land for developers and capital partners.</p><ul><li>Site selection and due diligence</li><li>Market and absorption analysis</li><li>Land positioning for capital partners</li></ul></div>
-      </details>
-    </div>
-    <div class="controls"><span></span><span>Every engagement carries project controls: schedule management, budget reconciliation, and cost analysis.</span></div>
-  </section>
-
-  <section class="process" id="process">
-    <div class="sec-head">
-      <div class="label">Process</div>
-      <h2>First walk <span>to final plat.</span></h2>
-      <p class="intro">The same partners from site control to closing, each accountable for the stage they know best.</p>
-    </div>
-    <div class="stages">
-      <div class="stage rise"><div class="dot"></div><div class="k">Stage 1</div><h3>Site &amp; market</h3><p>Due diligence, absorption, and product fit, tested before capital is committed.</p><span class="who"><i>JB</i>Joey Brehm</span></div>
-      <div class="stage rise"><div class="dot"></div><div class="k">Stage 2</div><h3>Entitlement</h3><p>Rezoning, conditions, and developer agreements, with consensus built among boards and neighbors.</p><span class="who"><i>DP</i>Daniel Perkins</span></div>
-      <div class="stage rise"><div class="dot"></div><div class="k">Stage 3</div><h3>Construction</h3><p>Bid the work, value-engineer the sitework, and manage contractors against budget and schedule.</p><span class="who"><i>LW</i>Landon Walls</span></div>
-      <div class="stage rise"><div class="dot"></div><div class="k">Stage 4</div><h3>Capital &amp; draws</h3><p>Budgets built to be lent against; draws reviewed, certified, and reported to lenders.</p><span class="who"><i>DL</i>Drew Levin</span></div>
-      <div class="stage rise"><div class="dot"></div><div class="k">Stage 5</div><h3>Delivery</h3><p>Final plat, lots delivered to homebuilders, and closing, with project controls to the end.</p><span class="who"><i>All</i>All partners</span></div>
-    </div>
-  </section>
-
-  <section class="projects" id="work">
-    <div class="wrap sec-head">
-      <div class="label">Work</div>
-      <h2 class="rise">Five communities, <span>raw land to delivered lots.</span></h2>
-      <div class="row-ctrl"><button id="prev" aria-label="Previous project"><svg viewBox="0 0 16 16" style="transform:scaleX(-1)" aria-hidden="true"><use href="#arr"/></svg></button><button id="next" aria-label="Next project"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></button></div>
-    </div>
-    <div class="row" id="row">
-      <a class="card" href="/concepts/7/experience/"><div class="ph"><img src="/assets/img/img-14.jpg" alt="Bluejack Falls grading progress aerial" loading="lazy"></div><div class="meta"><h3>Bluejack Falls</h3><div class="loc">Raleigh, NC · master-planned community</div><div class="nums"><span><b>1,200</b>units</span><span><b>300</b>acres</span></div></div></a>
-      <a class="card" href="/concepts/7/experience/"><div class="ph"><img src="/assets/img/img-10.jpg" alt="River Mews Estates grading progress aerial" loading="lazy"></div><div class="meta"><h3>River Mews Estates</h3><div class="loc">Clayton, NC · single family &amp; townhomes</div><div class="nums"><span><b>825</b>units</span><span><b>275</b>acres</span></div></div></a>
-      <a class="card" href="/concepts/7/experience/"><div class="ph"><img src="/assets/img/img-04.jpg" alt="Carolina Springs townhomes aerial" loading="lazy"></div><div class="meta"><h3>Carolina Springs</h3><div class="loc">Apex, NC · single family &amp; townhomes</div><div class="nums"><span><b>800</b>units</span><span><b>200</b>acres</span></div></div></a>
-      <a class="card" href="/concepts/7/experience/"><div class="ph"><img src="/assets/img/img-18.jpg" alt="The Wilds at Cedar Mountain aerial" loading="lazy"></div><div class="meta"><h3>The Wilds at Cedar Mountain</h3><div class="loc">Asheville, NC · three product types</div><div class="nums"><span><b>425</b>units</span><span><b>90</b>acres</span></div></div></a>
-      <a class="card" href="/concepts/7/experience/"><div class="ph"><img src="/assets/img/img-16.jpg" alt="Fountain Inn aerial" loading="lazy"></div><div class="meta"><h3>Fountain Inn</h3><div class="loc">Fountain Inn, SC · with a 31-acre preserve</div><div class="nums"><span><b>288</b>units</span><span><b>93</b>acres</span></div></div></a>
-    </div>
-  </section>
-
-  <section class="wrap partners" id="partners">
-    <div class="quote">
-      <div class="label">Partners</div>
-      <p class="rise">We have worked every side of a land deal. <span>Excavating crews, public bid rooms, a national homebuilder’s land division, and communities of our own.</span></p>
-    </div>
-    <div class="people">
-      <div class="person rise"><div class="mono" aria-hidden="true">LW</div><h3>Landon Walls</h3><div class="role">Construction management</div><p>Raised in his family’s excavating business, estimator at Barnhill Contracting, then Director of Land Development for Lennar Raleigh.</p></div>
-      <div class="person rise"><div class="mono" aria-hidden="true">DP</div><h3>Daniel Perkins</h3><div class="role">Development services</div><p>Twenty years as a private developer, with 3,000+ units entitled on projects from 90 to 300 acres.</p></div>
-      <div class="person rise"><div class="mono" aria-hidden="true">JB</div><h3>Joey Brehm</h3><div class="role">Land &amp; market strategy</div><p>More than a decade in land markets, with $70M+ in acquisitions and entitlement across thousands of units.</p></div>
-      <div class="person rise"><div class="mono" aria-hidden="true">DL</div><h3>Drew Levin</h3><div class="role">Underwriting &amp; lender services</div><p>Twenty years capitalizing $500M+ in debt and equity across HUD, Fannie Mae, banks, and private lenders.</p></div>
+    <div class="table-wrap">
+      <table class="simple">
+        <thead><tr><th>Project</th><th>Location</th><th>Product</th><th>Units</th><th>Acres</th><th>Discipline</th></tr></thead>
+        <tbody>
+          <tr><td>Lennar — Raleigh Division Program</td><td>Triangle, NC</td><td>Single family production</td><td>10,000+ homesites</td><td>—</td><td>Construction Management</td></tr>
+          <tr><td>Pinners Cove</td><td>Asheville, NC</td><td>Single family · Townhomes · Duplexes</td><td>267</td><td>120</td><td>Entitlement, CDs &amp; Platting Management</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
   <section class="cta">
     <img src="/assets/img/img-12.jpg" alt="" aria-hidden="true" loading="lazy">
     <div>
-      <h2>Bring us the project. <span>A partner reads it.</span></h2>
-      <div><p>Whether you are delivering lots or funding them, send the plans, the budget, and the schedule as they stand today.</p><div class="actions"><a class="btn white" href="/concepts/7/contact/">Talk to a partner <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></a><a class="btn line" href="mailto:info@tillstoneland.com">info@tillstoneland.com</a></div></div>
+      <h2>The same services, <span>on your project.</span></h2>
+      <p>Construction management, lender oversight, or the full development suite — delivered by the partners behind the work above.</p>
+      <div class="actions"><a class="btn white" href="/concepts/7/contact/">Discuss your project <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arr"/></svg></a></div>
     </div>
   </section>
 </main>
@@ -462,11 +469,18 @@
     var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
     btn.addEventListener('click', function () { var open = links.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
     links.addEventListener('click', function (e) { if (e.target.closest('a')) { links.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
-    var row = document.getElementById('row');
-    function step(d) { var c = row.querySelector('.card'); row.scrollBy({ left: d * (c.offsetWidth + 24), behavior: 'smooth' }); }
-    document.getElementById('prev').addEventListener('click', function () { step(-1); });
-    document.getElementById('next').addEventListener('click', function () { step(1); });
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .12 });
+
+    document.querySelectorAll('.ph[data-proj]').forEach(function (ph) {
+      var imgs = ph.querySelectorAll('img'), btns = ph.querySelectorAll('.switch button'), tag = ph.querySelector('.tag');
+      function show(i) {
+        imgs.forEach(function (im) { im.classList.toggle('active', im.dataset.i === i); });
+        btns.forEach(function (b) { b.classList.toggle('active', b.dataset.i === i); });
+        tag.textContent = ph.querySelector('img[data-i="' + i + '"]').dataset.label || '';
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.i); }); });
+    });
+
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .1 });
     document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
   })();
 </script>
