@@ -1,0 +1,15 @@
+# Security headers, applied by Cloudflare Pages to every response.
+# (Pages already adds X-Content-Type-Options and Referrer-Policy; they're repeated here so the policy is explicit.)
+#
+# The Content-Security-Policy allows 'unsafe-inline' and 'unsafe-eval' on purpose: the page runtime in
+# /assets/js builds screens with new Function() and the pages carry inline <script>/<style> blocks.
+# What it still locks down: no third-party scripts/styles/images/fonts, no framing, no plugins,
+# no <base> hijacking, and the only outside server the site may talk to or post forms to is Web3Forms.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
