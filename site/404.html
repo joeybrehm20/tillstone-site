@@ -355,7 +355,16 @@
      carries six items ("Who We Serve" added between Experience and About),
      and needs the wrapped/stacked mobile header a bit earlier to avoid the
      row overflowing past the viewport edge on narrow desktop and tablet
-     widths. */
+     widths.
+     With "Fractional Land Team" added the nav has seven items, so the stacked
+     header (logo row with CONTACT top-right, nav on its own row) starts at
+     1300px; everything else in this layer still switches at 1000px. */
+  @media (max-width: 1300px) {
+    header [style*="height: 78px"] { position: relative; height: auto !important; flex-wrap: wrap; gap: 14px 24px; padding-top: 14px !important; padding-bottom: 14px !important; }
+    header [style*="height: 78px"] > a { max-width: calc(100% - 130px); }
+    header nav { flex-wrap: wrap; gap: 12px 20px !important; width: 100%; border-top: 1px solid rgba(245,242,237,0.12); padding-top: 12px; }
+    header nav a[href="/contact/"] { position: absolute; right: 48px; top: 20px; padding: 11px 16px !important; margin: 0; }
+  }
   @media (max-width: 1000px) {
     /* Containers: tighter gutters and vertical rhythm */
     [style*="max-width: 1240px"] { padding-left: 20px !important; padding-right: 20px !important; }
@@ -367,13 +376,10 @@
     [style*="max-width: 1240px"][style*="padding: 84px"] { padding-top: 56px !important; padding-bottom: 56px !important; }
     [style*="max-width: 1240px"][style*="padding: 56px"] { padding-top: 40px !important; padding-bottom: 32px !important; }
 
-    /* Header on phones: one-line top bar; logo row with CONTACT pinned top-right; nav links on their own row */
+    /* Header on phones: one-line top bar; CONTACT sits inside the tighter 20px gutter (the stacked layout itself is defined above) */
     header [style*="height: 32px"] { height: auto !important; flex-direction: column; align-items: center; gap: 3px; padding-top: 8px !important; padding-bottom: 8px !important; }
     header [style*="height: 32px"] > span { text-align: center; white-space: nowrap; letter-spacing: 1.8px !important; }
-    header [style*="height: 78px"] { position: relative; height: auto !important; flex-wrap: wrap; gap: 14px 24px; padding-top: 14px !important; padding-bottom: 14px !important; }
-    header [style*="height: 78px"] > a { max-width: calc(100% - 130px); }
-    header nav { flex-wrap: wrap; gap: 12px 20px !important; width: 100%; border-top: 1px solid rgba(245,242,237,0.12); padding-top: 12px; }
-    header nav a[href="/contact/"] { position: absolute; right: 20px; top: 20px; padding: 11px 16px !important; margin: 0; }
+    header nav a[href="/contact/"] { right: 20px; }
 
     /* Type scale */
     [style*="font-size: 96px"] { font-size: 54px !important; }
@@ -433,6 +439,22 @@
     .wws-panel { min-width: 200px !important; }
   }
 </style>
+<style id="fractional-page">
+  /* ── Fractional Land Team header: page text on the left, partner logo lockup on the right ── */
+  .flt-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+  .flt-hero-text { flex: 1 1 0; min-width: 0; }
+  .flt-lockup { flex: none; display: flex; align-items: center; gap: 20px; background: #FBF9F5; border: 1px solid #E4DED3; padding: 20px 24px; box-sizing: border-box; }
+  .flt-logo-t { display: flex; align-items: center; gap: 12px; }
+  .flt-logo-name { display: block; font-family: 'Spectral','Spectral Fallback',Georgia,serif; font-size: 23px; font-weight: 500; letter-spacing: 3.6px; line-height: 1.1; color: #33312A; }
+  .flt-logo-sub { display: block; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; line-height: 1.5; color: #5F6B5A; margin-top: 2px; }
+  .flt-plus { flex: none; }
+  @media (max-width: 1000px) {
+    .flt-hero-row { flex-direction: column; align-items: flex-start; gap: 32px; }
+  }
+  @media (max-width: 560px) {
+    .flt-lockup { flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; padding: 20px; }
+  }
+</style>
 </helmet>
 
 <header style="position:sticky;top:0;z-index:100;background:#2C2A24;border-bottom:1px solid #24221D;">
@@ -453,6 +475,7 @@
     <nav style="display:flex;align-items:center;gap:30px;">
       <a href="/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uHome }};" style-hover="color:#D8BA99;">HOME</a>
       <a href="/services/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uServices }};" style-hover="color:#D8BA99;">SERVICES</a>
+      <a href="/fractional-land-team/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uFractional }};" style-hover="color:#D8BA99;">FRACTIONAL LAND TEAM</a>
       <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uExperience }};" style-hover="color:#D8BA99;">EXPERIENCE</a>
       <div class="wws" style="position:relative;">
         <button type="button" class="wws-trigger" style="display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:6px 0 5px;margin:0;cursor:pointer;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;border-bottom:2px solid transparent;">WHO WE SERVE<svg width="9" height="6" viewBox="0 0 9 6" aria-hidden="true" style="display:block;flex-shrink:0;"><path d="M1 1L4.5 4.5L8 1" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
@@ -1110,6 +1133,152 @@
 </main>
 </sc-if>
 
+<sc-if value="{{ isFractional }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Fractional Land Team">
+  <section style="background:#2C2A24;border-bottom:1px solid #24221D;">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 48px 60px;">
+      <div class="flt-hero-row">
+        <div class="flt-hero-text">
+        <h1 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:58px;font-weight:400;letter-spacing:-1px;line-height:1.08;margin:0 0 14px;color:#F5F2ED;">Fractional Land Team</h1>
+        <p style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:26px;font-style:italic;font-weight:300;line-height:1.3;margin:0 0 18px;color:#D8BA99;">A land team on call, built around your project.</p>
+        <p style="font-size:16.5px;line-height:1.7;color:rgba(245,242,237,0.9);max-width:680px;margin:0 0 30px;"><a href="/about/" style="color:#D8BA99;border-bottom:1px solid #D8BA99;">Tillstone</a> and <a href="https://yokleyes.com/" target="_blank" rel="noopener" style="color:#D8BA99;border-bottom:1px solid #D8BA99;">The&nbsp;YES&nbsp;Group</a> put experienced people on your project when it needs them, from market selection through finished lots, and step back when it doesn’t.</p>
+        <div style="display:flex;gap:16px;">
+          <a href="/contact/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;color:#33312A;">TALK TO A PARTNER</a>
+          <a href="/experience/" style="display:inline-block;border:1px solid rgba(245,242,237,0.6);color:#F5F2ED;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="border-color:#D8BA99;color:#D8BA99;">SEE THE WORK</a>
+        </div>
+        </div>
+        <div class="flt-lockup" role="img" aria-label="Tillstone plus The YES Group">
+          <div class="flt-logo-t" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;display:block;"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"></path><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"></path><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#7A6049"></path><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#3A382F"></path></svg>
+            <span><span class="flt-logo-name">TILLSTONE</span><span class="flt-logo-sub">LAND SOLUTIONS</span></span>
+          </div>
+          <svg class="flt-plus" width="22" height="22" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" fill="none" stroke="#7A6049" stroke-width="1.8"></path></svg>
+          <img src="/assets/img/yes-logo.png" alt="" width="600" height="130" style="height:52px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FBF9F5;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 18px;color:#33312A;">Why we partnered.</h2>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 16px;">A land deal is decided in two places: the hearing room, where it gets approved, and the field, where it gets built on budget. Most firms are strong at one.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0;">Tillstone&rsquo;s partners come from the build side, from excavating crews and public bid rooms to a national homebuilder&rsquo;s land division. The&nbsp;YES&nbsp;Group comes from the approval side, with a planner&rsquo;s view of how boards decide. Together, one team can speak to both whether a project can be approved and what it will cost to build, and nothing is lost in the handoff between approval and construction.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;">
+        <div>
+          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0 0 12px;color:#33312A;">Tillstone brings</h3>
+          <ul style="list-style:none;margin:0;padding:0;">
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Construction management and bidding</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Lender oversight and draw review</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Development management through delivered lots</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8;border-bottom:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Schedule, budget, and cost control</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0 0 12px;color:#33312A;">The&nbsp;YES&nbsp;Group brings</h3>
+          <ul style="list-style:none;margin:0;padding:0;">
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Entitlement and approval strategy</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">A read on how boards have actually voted</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Hearings and in-person work in the Carolinas</li>
+            <li style="padding:10px 0;border-top:1px solid #DDD6C8;border-bottom:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Pre-acquisition due diligence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F2ED;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 18px;color:#33312A;">Who is The&nbsp;YES&nbsp;Group?</h2>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 16px;">The YES Group (Yokley Entitlement Services) is an entitlement and development services firm that answers two questions on every parcel: can it be approved, and what will it cost to build. It is led by two principals. Charlie Yokley brings more than 20 years in planning and land development, across public, consulting, and builder roles.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 20px;">Their edge is reading what boards have actually done. Charlie co-founded KnowToYes, a tool that reads the public record of council and planning board meetings, so an approval strategy starts from how a board has voted, not only from what the zoning map allows.</p>
+        <a href="https://yokleyes.com/" target="_blank" rel="noopener" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;border-bottom:1px solid #7A6049;padding-bottom:3px;" style-hover="color:#6F5645;">VISIT YOKLEYES.COM →</a>
+      </div>
+      <div>
+        <div style="border-top:1px solid #33312A;padding-top:18px;">
+        <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 10px;color:#33312A;">Entitlement expertise</h3>
+        <p style="font-size:16px;line-height:1.7;color:#454239;margin:0 0 18px;">Entitlements are where YES started. Charlie began on the public side, writing ordinances, reviewing applications, and staffing boards, then built entitlement programs as a consultant. They shape each request from the board&rsquo;s own record, then carry it through the process.</p>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-bottom:1px solid #DDD6C8;">
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Rezonings</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Text and map amendments</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Site plan approval</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Variances</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Special use permits</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Subdivisions and plats</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Hearings and appeals</li>
+          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Pre-acquisition due diligence</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FBF9F5;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 16px;">Land work comes in waves. A deal heats up, a hearing lands the same week as a bid deadline, and the people who should be on it are stretched across three other projects.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0;">A fractional land team is the way out: experienced people brought in for exactly as long as the project needs them, scaled up for the heavy stretches and released when the work eases, with no new department to carry in between.</p>
+      </div>
+      <div style="border-top:1px solid #33312A;padding-top:18px;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 8px;color:#33312A;">How we price it</h2>
+        <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;">Every engagement is priced before work starts: a <strong style="font-weight:600;color:#33312A;">project retainer</strong> that keeps the team engaged from one stage to the next, plus <strong style="font-weight:600;color:#33312A;">task fees</strong> for defined pieces of work. Both are agreed in writing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F2ED;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;">
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 10px;color:#33312A;">Start at the stage you’re in.</h2>
+      <p style="font-size:16px;line-height:1.7;color:#454239;max-width:680px;margin:0 0 30px;">Tillstone and The YES Group cover all six. Most projects don’t need every one from day one, so bring us in where you are and add stages as the work moves.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px 40px;">
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">1</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Market selection</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">Where demand, absorption, and land pricing line up, checked before capital is committed.</p></div>
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">2</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Site identification</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">Sourcing and screening sites that fit the product you want to build.</p></div>
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">3</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Due diligence</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">Acquisition analysis and underwriting that surface problems while you can still walk away.</p></div>
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">4</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Concept</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">A concept plan that tests the site against your program before design money is spent.</p></div>
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">5</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Entitlements</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">Rezoning, permitting, and approvals, with consensus built among boards, councils, and neighbors.</p></div>
+        <div style="border-top:1px solid #33312A;padding-top:14px;"><div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;"><span style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:300;color:#9A8868;">6</span><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#33312A;">Development</h3></div><p style="font-size:15.5px;line-height:1.6;color:#454239;margin:0;">Bidding, value engineering, schedule and budget control, and contractor coordination through delivered lots.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FBF9F5;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;">
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 26px;color:#33312A;">Who this is for.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px 40px;">
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Developers.</strong> You find the deals. We carry them through approvals and construction without you adding a department.</p>
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Land owners.</strong> You hold the land. We help you learn what it can become before you sell or build.</p>
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Lenders.</strong> You fund the project. We give you independent eyes on budget, schedule, and approvals risk.</p>
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Capital partners.</strong> You’re backing a deal. We keep it on schedule and on budget between your reviews.</p>
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Civil engineers.</strong> You keep the engineering. We manage the approval process and the contractor bids around it.</p>
+        <p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><strong style="font-weight:600;color:#33312A;">Investors.</strong> You want exposure to land with a clear path. We map the route from raw parcel to approved, delivered lots.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F2ED;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;">
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 26px;color:#33312A;">Questions.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 64px;">
+        <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">Who does the work?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;"><a href="/about/" style="font-weight:600;color:#33312A;background:rgba(216,186,153,0.45);border-bottom:1px solid #7A6049;padding:0 3px;">Tillstone</a> and <a href="https://yokleyes.com/" target="_blank" rel="noopener" style="font-weight:600;color:#33312A;background:rgba(216,186,153,0.45);border-bottom:1px solid #7A6049;padding:0 3px;">The&nbsp;YES&nbsp;Group</a>, an entitlement and development services firm, work together as one team on select projects, and between us cover all six stages.</p></div>
+        <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">Can I bring you in for just one stage?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">Yes. Many projects start with a single stage, such as due diligence or entitlements, and add others as the work moves. Each step is scoped and priced in writing before it begins.</p></div>
+        <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">How is the work priced?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">A project retainer plus task fees, agreed in writing before work starts.</p></div>
+        <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">Where do you work?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">Tillstone serves projects across the U.S. Tell us where the site is and we’ll confirm how the team would cover it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#2C2A24;color:#F5F2ED;">
+    <div style="max-width:1240px;margin:0 auto;padding:52px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px;">
+      <div><h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 8px;">Tell us what you’re weighing.</h2><p style="font-size:16px;line-height:1.65;color:rgba(245,242,237,0.85);max-width:560px;margin:0;">Bring us the parcel or the deal. We’ll walk through which stages it needs and how the engagement would be set up.</p></div>
+      <a href="/contact/" style="display:inline-block;flex:none;background:#D8BA99;color:#33312A;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;color:#33312A;">TALK TO A PARTNER</a>
+    </div>
+  </section>
+</main>
+</sc-if>
+
 <footer style="background:#24221D;color:rgba(245,242,237,0.6);">
   <div style="max-width:1240px;margin:0 auto;padding:56px 48px 40px;">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;">
@@ -1123,6 +1292,7 @@
       <nav style="display:flex;gap:28px;">
         <a href="/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">HOME</a>
         <a href="/services/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">SERVICES</a>
+        <a href="/fractional-land-team/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">FRACTIONAL LAND TEAM</a>
         <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">EXPERIENCE</a>
         <a href="/about/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">ABOUT</a>
         <a href="/contact/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:rgba(245,242,237,0.7);" style-hover="color:#F5F2ED;">CONTACT</a>
@@ -1139,7 +1309,7 @@
 // Each page lives at its own URL (/services/, /about/, …) so search engines
 // index them separately. The first path segment picks the page; a legacy
 // #services-style hash is still honored and rewritten to the real URL.
-const PAGES = ['home', 'services', 'experience', 'about', 'contact'];
+const PAGES = ['home', 'services', 'fractional-land-team', 'experience', 'about', 'contact'];
 // Web3Forms access key for the contact form. Empty = the form opens a prefilled Gmail compose instead.
 const CONTACT_FORM_KEY = 'e56c7360-a7ec-48d1-847f-0f770d257834';
 function pageFromLocation() {
@@ -1164,15 +1334,15 @@ class Component extends DCLogic {
   }
   componentWillUnmount() { window.removeEventListener('hashchange', this._onHash); }
   renderVals() {
-    const valid = ['home', 'services', 'experience', 'about', 'contact'];
+    const valid = ['home', 'services', 'fractional-land-team', 'experience', 'about', 'contact'];
     const page = valid.includes(this.state.page) ? this.state.page : 'home';
     const u = (k) => (page === k ? '#D8BA99' : 'transparent');
     return {
       isHome: page === 'home', isServices: page === 'services', isExperience: page === 'experience',
-      isAbout: page === 'about', isContact: page === 'contact',
+      isFractional: page === 'fractional-land-team', isAbout: page === 'about', isContact: page === 'contact',
       submitLabel: this.state.form === 'sending' ? 'SENDING…' : 'SEND INQUIRY',
       formSent: this.state.form === 'sent', formError: this.state.form === 'error',
-      uHome: u('home'), uServices: u('services'), uExperience: u('experience'), uAbout: u('about'),
+      uHome: u('home'), uServices: u('services'), uFractional: u('fractional-land-team'), uExperience: u('experience'), uAbout: u('about'),
       ...(() => {
         const labels = ['EXHIBIT — SITE PLAN','SITE — GRADING PROGRESS AERIAL'];
         const i = this.state.photo1 || 0;
