@@ -25,6 +25,11 @@ function Esc([string]$s) { $s.Replace("&", "&amp;").Replace('"', "&quot;").Repla
 function SeoBlock($p, [bool]$noindex) {
   $t = Esc $p.title; $d = Esc $p.description; $u = "$origin$($p.path)"
   $robots = if ($noindex) { "`n<meta name=`"robots`" content=`"noindex`">" } else { "" }
+  $schema = ""
+  if ($p.PSObject.Properties.Name -contains 'schema') {
+    $json = [IO.File]::ReadAllText((Join-Path $root $p.schema), $utf8).Trim()
+    $schema = "`n<script type=`"application/ld+json`">`n$json`n</script>"
+  }
   @"
 <!-- SEO:BEGIN $em per-page values; build.ps1 rewrites this block for /services/, /about/, etc. Edit pages.json, not this. -->
 <title>$t</title>
@@ -39,7 +44,7 @@ function SeoBlock($p, [bool]$noindex) {
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tillstone Land Solutions $em aerial view of a master-planned community under development">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">$schema
 <!-- SEO:END -->
 "@
 }

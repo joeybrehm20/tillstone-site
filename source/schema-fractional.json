@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who does the work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tillstone and The YES Group, an entitlement and development services firm, work together as one team on select projects, and between us cover all six stages." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring you in for just one stage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many projects start with a single stage, such as due diligence or entitlements, and add others as the work moves. Each step is scoped and priced in writing before it begins." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the work priced?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A project retainer plus task fees, agreed in writing before work starts." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tillstone serves projects across the U.S. Tell us where the site is and we’ll confirm how the team would cover it." }
+    }
+  ]
+}

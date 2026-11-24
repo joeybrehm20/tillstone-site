@@ -12,7 +12,8 @@
   {
     "path": "/fractional-land-team/",
     "title": "Fractional Land Team — Tillstone & The YES Group",
-    "description": "An experienced land team, project by project. Tillstone and The YES Group cover market selection through development, priced in writing before work starts."
+    "description": "An experienced land team, project by project. Tillstone and The YES Group cover market selection through development, priced in writing before work starts.",
+    "schema": "source/schema-fractional.json"
   },
   {
     "path": "/experience/",
