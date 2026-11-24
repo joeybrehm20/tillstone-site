@@ -46,7 +46,7 @@ From the site repo `site/assets/img/`:
 - Logo: `marketing/linkedin-logo-300.png` (Google wants ≥250×250 — use this)
 - Cover: `assets/img/og-image.jpg` (1200×630 — Google's cover is 16:9; it will let you crop)
 - Work: `img-07.jpg` (hero aerial), `img-17.jpg` (master-planned community), `img-18.jpg` (The Wilds aerial),
-  `img-19.png` (Bluejack Falls site plan), `img-02.jpg`, `img-04.jpg`, `img-12.jpg`, `img-20.jpg`
+  `img-19.jpg` (Bluejack Falls site plan), `img-02.jpg`, `img-04.jpg`, `img-12.jpg`, `img-20.jpg`
 - Team: partner headshots when available
 
 ## Verification

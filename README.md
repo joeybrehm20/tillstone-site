@@ -77,3 +77,6 @@ placeholders. To fill one, drop a photo into `site/assets/img/` and replace the
 powershell -ExecutionPolicy Bypass -File serve.ps1
 ```
 then open http://localhost:8765. Folder URLs (`/services/`) and the 404 page work like they will on the real host.
+
+## Per-page structured data
+A page in `pages.json` can have `"schema": "source/<file>.json"`; the build adds it to that page as JSON-LD. The Fractional page uses `source/schema-fractional.json` (FAQPage). **If you change the FAQ wording in `source/master.html`, update that JSON file to match** - FAQ markup must mirror what is visible on the page.
