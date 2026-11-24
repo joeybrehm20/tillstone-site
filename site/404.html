@@ -440,20 +440,13 @@
   }
 </style>
 <style id="fractional-page">
-  /* ── Fractional Land Team header: page text on the left, partner logo lockup on the right ── */
-  .flt-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
-  .flt-hero-text { flex: 1 1 0; min-width: 0; }
-  .flt-lockup { flex: none; display: flex; align-items: center; gap: 20px; background: #FBF9F5; border: 1px solid #E4DED3; padding: 20px 24px; box-sizing: border-box; }
-  .flt-logo-t { display: flex; align-items: center; gap: 12px; }
-  .flt-logo-name { display: block; font-family: 'Spectral','Spectral Fallback',Georgia,serif; font-size: 23px; font-weight: 500; letter-spacing: 3.6px; line-height: 1.1; color: #33312A; }
-  .flt-logo-sub { display: block; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; line-height: 1.5; color: #5F6B5A; margin-top: 2px; }
-  .flt-plus { flex: none; }
-  @media (max-width: 1000px) {
-    .flt-hero-row { flex-direction: column; align-items: flex-start; gap: 32px; }
-  }
-  @media (max-width: 560px) {
-    .flt-lockup { flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; padding: 20px; }
-  }
+  /* ── Fractional Land Team: "Why we partnered" columns are headed by each partner's logo ── */
+  .flt-brand-h { margin: 0 0 18px; font-weight: 400; }
+  .flt-brand-logo { display: flex; align-items: center; gap: 10px; min-height: 60px; }
+  .flt-brand-logo svg { flex: none; display: block; }
+  .flt-brand-logo img { display: block; height: 56px; width: auto; max-width: 100%; }
+  .flt-logo-name { display: block; font-family: 'Spectral','Spectral Fallback',Georgia,serif; font-size: 20px; font-weight: 500; letter-spacing: 3px; line-height: 1.1; color: #33312A; }
+  .flt-logo-sub { display: block; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing: 2.6px; line-height: 1.5; color: #5F6B5A; margin-top: 2px; }
 </style>
 </helmet>
 
@@ -1137,8 +1130,6 @@
 <main data-screen-label="Fractional Land Team">
   <section style="background:#2C2A24;border-bottom:1px solid #24221D;">
     <div style="max-width:1240px;margin:0 auto;padding:64px 48px 60px;">
-      <div class="flt-hero-row">
-        <div class="flt-hero-text">
         <h1 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:58px;font-weight:400;letter-spacing:-1px;line-height:1.08;margin:0 0 14px;color:#F5F2ED;">Fractional Land Team</h1>
         <p style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:26px;font-style:italic;font-weight:300;line-height:1.3;margin:0 0 18px;color:#D8BA99;">A land team on call, built around your project.</p>
         <p style="font-size:16.5px;line-height:1.7;color:rgba(245,242,237,0.9);max-width:680px;margin:0 0 30px;"><a href="/about/" style="color:#D8BA99;border-bottom:1px solid #D8BA99;">Tillstone</a> and <a href="https://yokleyes.com/" target="_blank" rel="noopener" style="color:#D8BA99;border-bottom:1px solid #D8BA99;">The&nbsp;YES&nbsp;Group</a> put experienced people on your project when it needs them, from market selection through finished lots, and step back when it doesn’t.</p>
@@ -1146,21 +1137,11 @@
           <a href="/contact/" style="display:inline-block;background:#D8BA99;color:#33312A;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="background:#F5F2ED;color:#33312A;">TALK TO A PARTNER</a>
           <a href="/experience/" style="display:inline-block;border:1px solid rgba(245,242,237,0.6);color:#F5F2ED;padding:16px 32px;font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;" style-hover="border-color:#D8BA99;color:#D8BA99;">SEE THE WORK</a>
         </div>
-        </div>
-        <div class="flt-lockup" role="img" aria-label="Tillstone plus The YES Group">
-          <div class="flt-logo-t" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink:0;display:block;"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"></path><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"></path><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#7A6049"></path><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#3A382F"></path></svg>
-            <span><span class="flt-logo-name">TILLSTONE</span><span class="flt-logo-sub">LAND SOLUTIONS</span></span>
-          </div>
-          <svg class="flt-plus" width="22" height="22" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" fill="none" stroke="#7A6049" stroke-width="1.8"></path></svg>
-          <img src="/assets/img/yes-logo.png" alt="" width="600" height="130" style="height:52px;width:auto;display:block;">
-        </div>
-      </div>
     </div>
   </section>
 
   <section style="background:#FBF9F5;">
-    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;">
       <div>
         <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 18px;color:#33312A;">Why we partnered.</h2>
         <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 16px;">A land deal is decided in two places: the hearing room, where it gets approved, and the field, where it gets built on budget. Most firms are strong at one.</p>
@@ -1168,7 +1149,7 @@
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;">
         <div>
-          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0 0 12px;color:#33312A;">Tillstone brings</h3>
+          <h3 class="flt-brand-h"><span class="flt-brand-logo"><svg width="36" height="36" viewBox="0 0 40 40" style="flex-shrink:0;display:block;"><path d="M0 0H40V12C30 9 24 16 14 14C8 13 4 14 0 12Z" fill="#8B9A85"></path><path d="M0 14C4 16 8 15 14 16C24 18 30 11 40 14V23C30 20 24 27 14 25C8 24 4 25 0 23Z" fill="#D8BA99"></path><path d="M0 25C4 27 8 26 14 27C24 29 30 22 40 25V31C30 27.5 24 33 14 31.5C8 30.5 4 31.5 0 30Z" fill="#7A6049"></path><path d="M0 32C4 33.5 8 32.5 14 33.5C24 35 30 29.5 40 33V40H0Z" fill="#3A382F"></path></svg><span><span class="flt-logo-name">TILLSTONE</span><span class="flt-logo-sub">LAND SOLUTIONS</span></span></span></h3>
           <ul style="list-style:none;margin:0;padding:0;">
             <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Construction management and bidding</li>
             <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Lender oversight and draw review</li>
@@ -1177,7 +1158,7 @@
           </ul>
         </div>
         <div>
-          <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:21px;font-weight:400;margin:0 0 12px;color:#33312A;">The&nbsp;YES&nbsp;Group brings</h3>
+          <h3 class="flt-brand-h"><span class="flt-brand-logo"><img src="/assets/img/yes-logo.png" alt="The YES Group" width="600" height="130"></span></h3>
           <ul style="list-style:none;margin:0;padding:0;">
             <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">Entitlement and approval strategy</li>
             <li style="padding:10px 0;border-top:1px solid #DDD6C8; font-size:15.5px;line-height:1.5;color:#33312A;">A read on how boards have actually voted</li>
