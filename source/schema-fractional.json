@@ -21,6 +21,11 @@
       "@type": "Question",
       "name": "Where do you work?",
       "acceptedAnswer": { "@type": "Answer", "text": "Tillstone serves projects across the U.S. Tell us where the site is and we’ll confirm how the team would cover it." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I reach out?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A partner responds directly. We talk through the parcel or the deal, which stages it needs, and how the engagement would be set up. Nothing starts until the scope and price are agreed in writing." }
     }
   ]
 }

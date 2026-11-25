@@ -473,6 +473,12 @@
 </style>
 <style id="fractional-page">
   /* ── Fractional Land Team: "Why we partnered" columns are headed by each partner's logo ── */
+  .flt-path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px 20px; }
+  .flt-path li { border-top: 2px solid #7A6049; padding-top: 12px; }
+  .flt-path-n { display: block; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #7A6049; margin-bottom: 6px; }
+  .flt-path-t { display: block; font-family: 'Spectral','Spectral Fallback',Georgia,serif; font-size: 19px; line-height: 1.25; color: #33312A; }
+  @media (max-width: 1000px) { .flt-path { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .flt-path { grid-template-columns: repeat(2, 1fr); } }
   .flt-brand-h { margin: 0 0 18px; font-weight: 400; }
   .flt-brand-logo { display: flex; align-items: center; gap: 10px; min-height: 60px; }
   .flt-brand-logo svg { flex: none; display: block; }

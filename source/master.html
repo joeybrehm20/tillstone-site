@@ -472,6 +472,12 @@
 </style>
 <style id="fractional-page">
   /* ── Fractional Land Team: "Why we partnered" columns are headed by each partner's logo ── */
+  .flt-path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px 20px; }
+  .flt-path li { border-top: 2px solid #7A6049; padding-top: 12px; }
+  .flt-path-n { display: block; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #7A6049; margin-bottom: 6px; }
+  .flt-path-t { display: block; font-family: 'Spectral','Spectral Fallback',Georgia,serif; font-size: 19px; line-height: 1.25; color: #33312A; }
+  @media (max-width: 1000px) { .flt-path { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .flt-path { grid-template-columns: repeat(2, 1fr); } }
   .flt-brand-h { margin: 0 0 18px; font-weight: 400; }
   .flt-brand-logo { display: flex; align-items: center; gap: 10px; min-height: 60px; }
   .flt-brand-logo svg { flex: none; display: block; }
@@ -1175,6 +1181,38 @@
   </section>
 
   <section style="background:#FBF9F5;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;">
+      <div style="border-top:1px solid #33312A;padding-top:18px;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 10px;color:#33312A;">What you get</h2>
+        <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;">Experienced land people on your project for as long as it needs them. Scaled up for the busy stretch, released when it eases.</p>
+      </div>
+      <div style="border-top:1px solid #33312A;padding-top:18px;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 10px;color:#33312A;">Who it&rsquo;s for</h2>
+        <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;">Developers, land owners, lenders, and investors who need land expertise without hiring for it.</p>
+      </div>
+      <div style="border-top:1px solid #33312A;padding-top:18px;">
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 10px;color:#33312A;">How it&rsquo;s priced</h2>
+        <p style="font-size:16px;line-height:1.7;color:#454239;margin:0;">A project retainer plus task fees, agreed in writing before work starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F2ED;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;">
+      <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 12px;color:#33312A;">Start at any stage.</h2>
+      <p style="font-size:16.5px;line-height:1.7;color:#454239;margin:0 0 28px;max-width:640px;">Tillstone and The&nbsp;YES&nbsp;Group cover all six. Bring us in where you are and add stages as the work moves.</p>
+      <ol class="flt-path">
+        <li><span class="flt-path-n">1</span><span class="flt-path-t">Market selection</span></li>
+        <li><span class="flt-path-n">2</span><span class="flt-path-t">Site identification</span></li>
+        <li><span class="flt-path-n">3</span><span class="flt-path-t">Due diligence</span></li>
+        <li><span class="flt-path-n">4</span><span class="flt-path-t">Concept</span></li>
+        <li><span class="flt-path-n">5</span><span class="flt-path-t">Entitlements</span></li>
+        <li><span class="flt-path-n">6</span><span class="flt-path-t">Development</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section style="background:#FBF9F5;border-top:1px solid #C9C2B4;">
     <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;">
       <div>
         <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 18px;color:#33312A;">Why we partnered.</h2>
@@ -1215,22 +1253,25 @@
         <div style="border-top:1px solid #33312A;padding-top:18px;">
         <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 10px;color:#33312A;">Entitlement expertise</h3>
         <p style="font-size:16px;line-height:1.7;color:#454239;margin:0 0 18px;">Entitlements are where YES started. Charlie began on the public side, writing ordinances, reviewing applications, and staffing boards, then built entitlement programs as a consultant. They shape each request from the board&rsquo;s own record, then carry it through the process.</p>
-        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-bottom:1px solid #DDD6C8;">
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Rezonings</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Text and map amendments</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Site plan approval</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Variances</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Special use permits</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Subdivisions and plats</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Hearings and appeals</li>
-          <li style="padding:9px 0;border-top:1px solid #DDD6C8;font-size:15.5px;color:#33312A;">Pre-acquisition due diligence</li>
-        </ul>
       </div>
       </div>
     </div>
   </section>
 
   <section style="background:#FBF9F5;border-top:1px solid #C9C2B4;">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;">
+      <img src="/assets/img/img-19.jpg" alt="Bluejack Falls master plan, Raleigh, NC" width="1312" height="890" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border:1px solid #E4DED3;">
+      <div>
+        <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 12px;color:#33312A;">A recent project.</h2>
+        <h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:22px;font-weight:400;margin:0 0 6px;color:#33312A;">Bluejack Falls</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#7A6049;margin:0 0 14px;">Raleigh, NC &middot; 1,200 units &middot; 300 acres &middot; a Tillstone project</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#454239;margin:0 0 20px;">Two raw-land parcels combined and rezoned as a major subdivision: a 1,200-unit master-planned community with open space, trails, parks, and mixed residential product.</p>
+        <a href="/experience/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7A6049;border-bottom:1px solid #7A6049;padding-bottom:3px;" style-hover="color:#6F5645;">SEE MORE PROJECTS &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F2ED;border-top:1px solid #C9C2B4;">
     <div style="max-width:1240px;margin:0 auto;padding:56px 48px;">
       <h2 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-0.25px;margin:0 0 26px;color:#33312A;">Questions.</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 64px;">
@@ -1238,6 +1279,7 @@
         <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">Can I bring you in for just one stage?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">Yes. Many projects start with a single stage, such as due diligence or entitlements, and add others as the work moves. Each step is scoped and priced in writing before it begins.</p></div>
         <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">How is the work priced?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">A project retainer plus task fees, agreed in writing before work starts.</p></div>
         <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">Where do you work?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">Tillstone serves projects across the U.S. Tell us where the site is and we’ll confirm how the team would cover it.</p></div>
+        <div><h3 style="font-family:'Spectral','Spectral Fallback',Georgia,serif;font-size:20px;font-weight:400;margin:0 0 6px;color:#33312A;">What happens after I reach out?</h3><p style="font-size:15.5px;line-height:1.65;color:#454239;margin:0;">A partner responds directly. We talk through the parcel or the deal, which stages it needs, and how the engagement would be set up. Nothing starts until the scope and price are agreed in writing.</p></div>
       </div>
     </div>
   </section>
