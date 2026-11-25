@@ -439,7 +439,7 @@
 
     /* Touch targets: grow the hit area of small text links without moving anything */
     header nav a, header nav .wws-trigger, footer a, main a[style*="font-size: 11px"], main a[style*="font-size: 12px"] { position: relative; }
-    header nav a::before, header nav .wws-trigger::before, footer a::before, main a[style*="font-size: 11px"]::before, main a[style*="font-size: 12px"]::before { content: ""; position: absolute; left: -6px; right: -6px; top: -12px; bottom: -12px; }
+    header nav a::before, header nav .wws-trigger::before, footer a::before, main a[style*="font-size: 11px"]::before, main a[style*="font-size: 12px"]::before { content: ""; position: absolute; left: -6px; right: -6px; top: -16px; bottom: -16px; }
 
     /* Forms */
     main form { padding: 24px !important; }
@@ -464,6 +464,38 @@
   .wws:hover .wws-trigger svg, .wws:focus-within .wws-trigger svg { transform: rotate(180deg); }
   @media (max-width: 1000px) {
     .wws-panel { min-width: 200px !important; }
+  }
+</style>
+<style id="mobile-header">
+  /* ── Phone header: logo + CONTACT + menu button; the nav opens as a list. Desktop/tablet header is unchanged. ── */
+  /* Small label text: 11px -> 12px site-wide (Fractional page left as approved). */
+  main:not([data-screen-label="Fractional Land Team"]) [style*="font-size: 11px"], footer [style*="font-size: 11px"] { font-size: 12px !important; }
+  .m-contact, .m-menu { display: none; }
+  @media (max-width: 760px) {
+    header > div:first-child { display: none; }
+    header [style*="height: 78px"] { padding: 10px 16px !important; gap: 8px 8px !important; flex-wrap: wrap; align-items: center; justify-content: flex-start; }
+    header [style*="height: 78px"] > a:first-child { flex: 1 1 auto; min-width: 0; max-width: none !important; gap: 10px !important; }
+    header [style*="height: 78px"] > a:first-child svg { width: 32px; height: 32px; }
+    header [style*="height: 78px"] > a:first-child > div > div:first-child { font-size: 17px !important; letter-spacing: 2.6px !important; }
+    header [style*="height: 78px"] > a:first-child > div > div + div { font-size: 9.5px !important; letter-spacing: 2.2px !important; }
+    header [style*="height: 78px"] > a.m-contact { display: inline-flex; flex: none; align-items: center; min-height: 44px; padding: 0 14px; max-width: none !important; background: #D8BA99; color: #33312A; font-family: 'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    .m-menu { display: block; flex: none; }
+    .m-menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+    .m-menu summary::-webkit-details-marker { display: none; }
+    .m-menu .m-x { display: none; }
+    .m-menu[open] .m-x { display: block; }
+    .m-menu[open] .m-bars { display: none; }
+    header nav { display: none !important; order: 5; flex: 0 0 100%; flex-direction: column; align-items: flex-start !important; gap: 0 !important; width: 100%; margin-top: 2px; padding: 4px 0 10px !important; max-height: calc(100vh - 84px); overflow-y: auto; }
+    .m-menu[open] ~ nav { display: flex !important; }
+    header nav > a { padding: 14px 0 13px !important; font-size: 13px !important; letter-spacing: 2.5px !important; }
+    header nav > a[href="/contact/"] { display: none !important; }
+    header nav .wws { width: 100%; }
+    header nav .wws-trigger { padding: 14px 0 8px !important; font-size: 13px !important; letter-spacing: 2.5px !important; pointer-events: none; }
+    header nav .wws-trigger svg { display: none; }
+    header nav .wws-panel { position: static !important; opacity: 1; visibility: visible; transform: none; pointer-events: auto; margin: 0 !important; min-width: 0 !important; max-width: none !important; background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 0 6px 14px !important; }
+    header nav .wws-panel > div:first-child { display: none; }
+    header nav .wws-panel > div:last-child { border-top: 0 !important; }
+    header nav .wws-panel span { padding: 8px 0 !important; color: rgba(245,242,237,0.82) !important; font-size: 15px !important; }
   }
 </style>
 <style id="fractional-page">
@@ -492,6 +524,8 @@
         <div style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;color:#A8B5A1;margin-top:2px;">LAND SOLUTIONS</div>
       </div>
     </a>
+    <a class="m-contact" href="/contact/">CONTACT</a>
+    <details class="m-menu"><summary aria-label="Menu"><svg class="m-bars" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" fill="none" stroke="#F5F2ED" stroke-width="1.8"></path></svg><svg class="m-x" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 5l12 12M17 5L5 17" fill="none" stroke="#F5F2ED" stroke-width="1.8"></path></svg></summary></details>
     <nav style="display:flex;align-items:center;gap:30px;">
       <a href="/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uHome }};" style-hover="color:#D8BA99;">HOME</a>
       <a href="/services/" style="font-family:'Public Sans','Public Sans Fallback',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#F5F2ED;padding:6px 0 5px;border-bottom:2px solid {{ uServices }};" style-hover="color:#D8BA99;">SERVICES</a>
